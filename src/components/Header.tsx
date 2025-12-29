@@ -1,231 +1,212 @@
-import { Link } from '@tanstack/react-router'
-
-import { useState } from 'react'
+import * as React from "react"
+import { Link } from "@tanstack/react-router"
+import { Menu } from "lucide-react"
 import {
-  ChevronDown,
-  ChevronRight,
-  ClipboardType,
-  Database,
-  Home,
-  Menu,
-  Network,
-  SquareFunction,
-  StickyNote,
-  X,
-} from 'lucide-react'
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+    navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+import {
+    Sheet,
+    SheetContent,
+    SheetTrigger,
+} from "@/components/ui/sheet"
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
+import { cn } from "@/lib/utils"
+import { atlassianSolutions, marketplaceApps, mainNavItems, footerNavItems } from "@/lib/data"
+
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [groupedExpanded, setGroupedExpanded] = useState<
-    Record<string, boolean>
-  >({})
+    return (
+        <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+            <header className="w-full max-w-7xl border bg-background/95 backdrop-blur-sm rounded-xl px-4 md:px-6 shadow-sm">
+                <div className="flex h-16 items-center justify-between gap-4">
+                    <div className="flex items-center gap-6">
+                        <Link to="/" className="flex items-center gap-3 shrink-0">
+                            <img
+                                src="/achlys_logo.svg"
+                                alt="Achlys Logo"
+                                className="w-15"
+                            />
+                            <span className="text-xl font-bold tracking-tight text-slate-700">
+                                Achlys Solutions
+                            </span>
+                        </Link>
 
-  return (
-    <>
-      <header className="p-4 flex items-center bg-gray-800 text-white shadow-lg">
-        <button
-          onClick={() => setIsOpen(true)}
-          className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
-          aria-label="Open menu"
-        >
-          <Menu size={24} />
-        </button>
-        <h1 className="ml-4 text-xl font-semibold">
-          <Link to="/">
-            <img
-              src="/tanstack-word-logo-white.svg"
-              alt="TanStack Logo"
-              className="h-10"
-            />
-          </Link>
-        </h1>
-      </header>
+                        {/* Desktop Navigation */}
+                        <NavigationMenu className="hidden xl:flex">
+                            <NavigationMenuList>
+                                {mainNavItems.map((item) => (
+                                    <NavigationMenuItem key={item.title}>
+                                        <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-md")}>
+                                            <Link to={item.href}>{item.title}</Link>
+                                        </NavigationMenuLink>
+                                    </NavigationMenuItem>
+                                ))}
 
-      <aside
-        className={`fixed top-0 left-0 h-full w-80 bg-gray-900 text-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
-      >
-        <div className="flex items-center justify-between p-4 border-b border-gray-700">
-          <h2 className="text-xl font-bold">Navigation</h2>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
-            aria-label="Close menu"
-          >
-            <X size={24} />
-          </button>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className="bg-transparent text-md">Atlassian Solutions</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                                            {atlassianSolutions.map((item) => (
+                                                <ListItem key={item.title} title={item.title} to={item.href}>
+                                                    {item.description}
+                                                </ListItem>
+                                            ))}
+                                        </ul>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className="bg-transparent text-md">Marketplace Apps</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                                            {marketplaceApps.map((item) => (
+                                                <ListItem key={item.title} title={item.title} to={item.href}>
+                                                    {item.description}
+                                                </ListItem>
+                                            ))}
+                                        </ul>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+
+                                {footerNavItems.map((item) => (
+                                    <NavigationMenuItem key={item.title}>
+                                        <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-md")}>
+                                            <Link to={item.href}>{item.title}</Link>
+                                        </NavigationMenuLink>
+                                    </NavigationMenuItem>
+                                ))}
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                    </div>
+
+                    <div className="flex items-center gap-2 md:gap-4">
+                        <Link
+                            to="/contact"
+                            className="hidden md:inline-flex h-9 items-center justify-center rounded-lg bg-purple-600 px-6 text-sm font-semibold text-white transition-colors hover:bg-purple-700"
+                        >
+                            Book Consultation
+                        </Link>
+
+                        {/* Mobile Navigation Trigger */}
+                        <div className="xl:hidden">
+                            <Sheet>
+                                <SheetTrigger asChild>
+                                    <button className="p-2 -mr-2 hover:bg-accent rounded-md transition-colors" aria-label="Open menu">
+                                        <Menu className="w-6 h-6" />
+                                    </button>
+                                </SheetTrigger>
+                                <SheetContent side="right" className="w-[300px] sm:w-[350px] flex flex-col p-8 bg-background/98 backdrop-blur-xl">
+                                    <nav className="flex flex-col w-full gap-2 items-center">
+                                        {mainNavItems.map((item) => (
+                                            <Link
+                                                key={item.title}
+                                                to={item.href}
+                                                className="w-full py-4 text-center text-xl font-semibold rounded-xl hover:bg-purple-50 hover:text-purple-600 transition-all active:scale-95"
+                                            >
+                                                {item.title}
+                                            </Link>
+                                        ))}
+
+                                        <Accordion type="single" collapsible className="w-full">
+                                            <AccordionItem value="solutions" className="border-none">
+                                                <AccordionTrigger className="text-xl font-semibold hover:no-underline py-4 flex justify-center gap-2 rounded-xl hover:bg-purple-50 hover:text-purple-600 transition-all [&[data-state=open]]:text-purple-600">
+                                                    Atlassian Solutions
+                                                </AccordionTrigger>
+                                                <AccordionContent className="flex flex-col gap-1 pb-2">
+                                                    {atlassianSolutions.map((item) => (
+                                                        <Link
+                                                            key={item.title}
+                                                            to={item.href}
+                                                            className="w-full py-3 text-center text-base font-medium text-muted-foreground rounded-lg hover:bg-purple-50/50 hover:text-purple-600 transition-all"
+                                                        >
+                                                            {item.title}
+                                                        </Link>
+                                                    ))}
+                                                </AccordionContent>
+                                            </AccordionItem>
+
+                                            <AccordionItem value="apps" className="border-none mt-1">
+                                                <AccordionTrigger className="text-xl font-semibold hover:no-underline py-4 flex justify-center gap-2 rounded-xl hover:bg-purple-50 hover:text-purple-600 transition-all [&[data-state=open]]:text-purple-600">
+                                                    Marketplace Apps
+                                                </AccordionTrigger>
+                                                <AccordionContent className="flex flex-col gap-1 pb-2">
+                                                    {marketplaceApps.map((item) => (
+                                                        <Link
+                                                            key={item.title}
+                                                            to={item.href}
+                                                            className="w-full py-3 text-center text-base font-medium text-muted-foreground rounded-lg hover:bg-purple-50/50 hover:text-purple-600 transition-all"
+                                                        >
+                                                            {item.title}
+                                                        </Link>
+                                                    ))}
+                                                </AccordionContent>
+                                            </AccordionItem>
+                                        </Accordion>
+
+                                        {footerNavItems.map((item) => (
+                                            <Link
+                                                key={item.title}
+                                                to={item.href}
+                                                className="w-full py-4 text-center text-xl font-semibold rounded-xl hover:bg-purple-50 hover:text-purple-600 transition-all active:scale-95"
+                                            >
+                                                {item.title}
+                                            </Link>
+                                        ))}
+
+                                        {/* Mobile CTA */}
+                                        <div className="mt-8 w-full md:hidden px-2">
+                                            <Link
+                                                to="/contact"
+                                                className="flex w-full h-14 items-center justify-center rounded-2xl bg-purple-600 text-lg font-bold text-white transition-all hover:bg-purple-700"
+                                            >
+                                                Book Consultation
+                                            </Link>
+                                        </div>
+                                    </nav>
+                                </SheetContent>
+                            </Sheet>
+                        </div>
+                    </div>
+                </div>
+            </header>
         </div>
-
-        <nav className="flex-1 p-4 overflow-y-auto">
-          <Link
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
-          >
-            <Home size={20} />
-            <span className="font-medium">Home</span>
-          </Link>
-
-          {/* Demo Links Start */}
-
-          <Link
-            to="/demo/start/server-funcs"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
-          >
-            <SquareFunction size={20} />
-            <span className="font-medium">Start - Server Functions</span>
-          </Link>
-
-          <Link
-            to="/demo/start/api-request"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
-          >
-            <Network size={20} />
-            <span className="font-medium">Start - API Request</span>
-          </Link>
-
-          <div className="flex flex-row justify-between">
-            <Link
-              to="/demo/start/ssr"
-              onClick={() => setIsOpen(false)}
-              className="flex-1 flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-              activeProps={{
-                className:
-                  'flex-1 flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-              }}
-            >
-              <StickyNote size={20} />
-              <span className="font-medium">Start - SSR Demos</span>
-            </Link>
-            <button
-              className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
-              onClick={() =>
-                setGroupedExpanded((prev) => ({
-                  ...prev,
-                  StartSSRDemo: !prev.StartSSRDemo,
-                }))
-              }
-            >
-              {groupedExpanded.StartSSRDemo ? (
-                <ChevronDown size={20} />
-              ) : (
-                <ChevronRight size={20} />
-              )}
-            </button>
-          </div>
-          {groupedExpanded.StartSSRDemo && (
-            <div className="flex flex-col ml-4">
-              <Link
-                to="/demo/start/ssr/spa-mode"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-                activeProps={{
-                  className:
-                    'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-                }}
-              >
-                <StickyNote size={20} />
-                <span className="font-medium">SPA Mode</span>
-              </Link>
-
-              <Link
-                to="/demo/start/ssr/full-ssr"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-                activeProps={{
-                  className:
-                    'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-                }}
-              >
-                <StickyNote size={20} />
-                <span className="font-medium">Full SSR</span>
-              </Link>
-
-              <Link
-                to="/demo/start/ssr/data-only"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-                activeProps={{
-                  className:
-                    'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-                }}
-              >
-                <StickyNote size={20} />
-                <span className="font-medium">Data Only</span>
-              </Link>
-            </div>
-          )}
-
-          <Link
-            to="/demo/tanstack-query"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
-          >
-            <Network size={20} />
-            <span className="font-medium">TanStack Query</span>
-          </Link>
-
-          <Link
-            to="/demo/form/simple"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
-          >
-            <ClipboardType size={20} />
-            <span className="font-medium">Simple Form</span>
-          </Link>
-
-          <Link
-            to="/demo/form/address"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
-          >
-            <ClipboardType size={20} />
-            <span className="font-medium">Address Form</span>
-          </Link>
-
-          <Link
-            to="/demo/drizzle"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
-          >
-            <Database size={20} />
-            <span className="font-medium">Drizzle</span>
-          </Link>
-
-          {/* Demo Links End */}
-        </nav>
-      </aside>
-    </>
-  )
+    )
 }
+
+const ListItem = React.forwardRef<
+    React.ElementRef<"a">,
+    React.ComponentPropsWithoutRef<"a"> & { to: string }
+>(({ className, title, children, to, ...props }, ref) => {
+    return (
+        <li>
+            <NavigationMenuLink asChild>
+                <Link
+                    to={to as any}
+                    ref={ref as any}
+                    className={cn(
+                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group",
+                        className
+                    )}
+                    {...props}
+                >
+                    <div className="text-sm font-semibold leading-none group-hover:text-purple-600 transition-colors">{title}</div>
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                        {children}
+                    </p>
+                </Link>
+            </NavigationMenuLink>
+        </li>
+    )
+})
+ListItem.displayName = "ListItem"

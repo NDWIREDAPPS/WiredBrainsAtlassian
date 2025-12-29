@@ -14,6 +14,8 @@ import appCss from '../styles.css?url'
 
 import type { QueryClient } from '@tanstack/react-query'
 
+import { BackgroundShapes } from '../components/ui/BackgroundShapes'
+
 interface MyRouterContext {
   queryClient: QueryClient
 }
@@ -49,9 +51,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className='bg-slate-100 relative overflow-x-hidden'>
+        <BackgroundShapes />
         <Header />
-        {children}
+        <main className="pt-28 min-h-screen">
+          {children}
+        </main>
         <TanStackDevtools
           config={{
             position: 'bottom-right',
