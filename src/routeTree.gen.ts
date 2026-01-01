@@ -11,8 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogsRouteImport } from './routes/blogs'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutUsIndexRouteImport } from './routes/about-us/index'
 import { Route as SolutionsTrainingRouteImport } from './routes/solutions/training'
 import { Route as SolutionsSupportRouteImport } from './routes/solutions/support'
 import { Route as SolutionsItsmRouteImport } from './routes/solutions/itsm'
@@ -34,14 +34,14 @@ const BlogsRoute = BlogsRouteImport.update({
   path: '/blogs',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutUsIndexRoute = AboutUsIndexRouteImport.update({
+  id: '/about-us/',
+  path: '/about-us/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SolutionsTrainingRoute = SolutionsTrainingRouteImport.update({
@@ -100,7 +100,6 @@ const MarketplaceAppsChecklistRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
   '/contact': typeof ContactRoute
   '/marketplace-apps/checklist': typeof MarketplaceAppsChecklistRoute
@@ -113,10 +112,10 @@ export interface FileRoutesByFullPath {
   '/solutions/itsm': typeof SolutionsItsmRoute
   '/solutions/support': typeof SolutionsSupportRoute
   '/solutions/training': typeof SolutionsTrainingRoute
+  '/about-us': typeof AboutUsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
   '/contact': typeof ContactRoute
   '/marketplace-apps/checklist': typeof MarketplaceAppsChecklistRoute
@@ -129,11 +128,11 @@ export interface FileRoutesByTo {
   '/solutions/itsm': typeof SolutionsItsmRoute
   '/solutions/support': typeof SolutionsSupportRoute
   '/solutions/training': typeof SolutionsTrainingRoute
+  '/about-us': typeof AboutUsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/blogs': typeof BlogsRoute
   '/contact': typeof ContactRoute
   '/marketplace-apps/checklist': typeof MarketplaceAppsChecklistRoute
@@ -146,12 +145,12 @@ export interface FileRoutesById {
   '/solutions/itsm': typeof SolutionsItsmRoute
   '/solutions/support': typeof SolutionsSupportRoute
   '/solutions/training': typeof SolutionsTrainingRoute
+  '/about-us/': typeof AboutUsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
     | '/blogs'
     | '/contact'
     | '/marketplace-apps/checklist'
@@ -164,10 +163,10 @@ export interface FileRouteTypes {
     | '/solutions/itsm'
     | '/solutions/support'
     | '/solutions/training'
+    | '/about-us'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about'
     | '/blogs'
     | '/contact'
     | '/marketplace-apps/checklist'
@@ -180,10 +179,10 @@ export interface FileRouteTypes {
     | '/solutions/itsm'
     | '/solutions/support'
     | '/solutions/training'
+    | '/about-us'
   id:
     | '__root__'
     | '/'
-    | '/about'
     | '/blogs'
     | '/contact'
     | '/marketplace-apps/checklist'
@@ -196,11 +195,11 @@ export interface FileRouteTypes {
     | '/solutions/itsm'
     | '/solutions/support'
     | '/solutions/training'
+    | '/about-us/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
   BlogsRoute: typeof BlogsRoute
   ContactRoute: typeof ContactRoute
   MarketplaceAppsChecklistRoute: typeof MarketplaceAppsChecklistRoute
@@ -213,6 +212,7 @@ export interface RootRouteChildren {
   SolutionsItsmRoute: typeof SolutionsItsmRoute
   SolutionsSupportRoute: typeof SolutionsSupportRoute
   SolutionsTrainingRoute: typeof SolutionsTrainingRoute
+  AboutUsIndexRoute: typeof AboutUsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -231,18 +231,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-us/': {
+      id: '/about-us/'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/solutions/training': {
@@ -320,7 +320,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
   BlogsRoute: BlogsRoute,
   ContactRoute: ContactRoute,
   MarketplaceAppsChecklistRoute: MarketplaceAppsChecklistRoute,
@@ -333,6 +332,7 @@ const rootRouteChildren: RootRouteChildren = {
   SolutionsItsmRoute: SolutionsItsmRoute,
   SolutionsSupportRoute: SolutionsSupportRoute,
   SolutionsTrainingRoute: SolutionsTrainingRoute,
+  AboutUsIndexRoute: AboutUsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

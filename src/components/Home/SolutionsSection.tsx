@@ -34,10 +34,11 @@ function CarouselArrows() {
 export function SolutionsSection() {
     return (
         <section id="solutions" className="scroll-mt-24 space-y-12 container mx-auto px-4 md:px-10">
-            <div className="text-center space-y-4 max-w-2xl mx-auto">
-                <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Atlassian Solutions</h2>
+            <div className="text-center space-y-4 max-w-3xl mx-auto">
+                <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Atlassian Solutions We Offer</h2>
+                <p className="text-xl font-semibold text-purple-600">Comprehensive Atlassian Consulting Services</p>
                 <p className="text-lg text-slate-600">
-                    Comprehensive services to optimize your team's workflow and productivity.
+                    We design, implement and optimize Atlassian platforms for organizations of all sizes. From IT service management to enterprise agility and AI-driven collaboration, our solutions are built to evolve with your business.
                 </p>
             </div>
 

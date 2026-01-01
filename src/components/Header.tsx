@@ -120,7 +120,7 @@ export default function Header() {
 
                                         <Accordion type="single" collapsible className="w-full">
                                             <AccordionItem value="solutions" className="border-none">
-                                                <AccordionTrigger className="text-xl font-semibold hover:no-underline py-4 flex justify-center gap-2 rounded-xl hover:bg-purple-50 hover:text-purple-600 transition-all [&[data-state=open]]:text-purple-600">
+                                                <AccordionTrigger className="text-xl font-semibold hover:no-underline py-4 flex justify-center gap-2 rounded-xl hover:bg-purple-50 hover:text-purple-600 transition-all `data-[state=open]:text-purple-600">
                                                     Atlassian Solutions
                                                 </AccordionTrigger>
                                                 <AccordionContent className="flex flex-col gap-1 pb-2">
@@ -137,7 +137,7 @@ export default function Header() {
                                             </AccordionItem>
 
                                             <AccordionItem value="apps" className="border-none mt-1">
-                                                <AccordionTrigger className="text-xl font-semibold hover:no-underline py-4 flex justify-center gap-2 rounded-xl hover:bg-purple-50 hover:text-purple-600 transition-all [&[data-state=open]]:text-purple-600">
+                                                <AccordionTrigger className="text-xl font-semibold hover:no-underline py-4 flex justify-center gap-2 rounded-xl hover:bg-purple-50 hover:text-purple-600 transition-all `data-[state=open]:text-purple-600">
                                                     Marketplace Apps
                                                 </AccordionTrigger>
                                                 <AccordionContent className="flex flex-col gap-1 pb-2">

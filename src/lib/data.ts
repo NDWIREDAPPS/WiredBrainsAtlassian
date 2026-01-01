@@ -15,77 +15,76 @@ export const atlassianSolutions = [
     {
         title: "IT Service Management",
         href: "/solutions/itsm",
-        description: "Streamline your IT services and support with Jira Service Management.",
+        description: "We implement robust ITSM and ESM solutions using Jira Service Management, enabling incident, request, problem, change and asset management aligned with ITIL best practices.",
         icon: Server
     },
     {
         title: "Cloud Migration",
         href: "/solutions/cloud-migration",
-        description: "Seamlessly transition your infrastructure to the Atlassian Cloud.",
+        description: "We help organizations migrate from Server or Data Center to Atlassian Cloud with minimal disruption, ensuring data integrity, performance optimization and post-migration readiness.",
         icon: Cloud
     },
     {
         title: "Training",
         href: "/solutions/training",
-        description: "Expert-led training sessions for your teams on Atlassian tools.",
+        description: "Role-based Atlassian training programs for administrators, developers, agents and end users—focused on real-world usage, best practices and long-term adoption.",
         icon: GraduationCap
     },
     {
         title: "Support & Managed Services",
         href: "/solutions/support",
-        description: "Focus on your business while we handle your Atlassian ecosystem.",
+        description: "Ongoing administration, enhancements, performance tuning and platform support to ensure your Atlassian tools continue delivering value.",
         icon: HeadphonesIcon
     },
     {
         title: "Advisory & Licensing",
         href: "/solutions/advisory",
-        description: "Strategic advice and cost-effective license management.",
+        description: "Strategic guidance on Atlassian tool selection, architecture, licensing optimization and long-term roadmap planning.",
         icon: Lightbulb
     },
     {
         title: "Integration & Performance",
         href: "/solutions/integration",
-        description: "Optimize and connect your tools for peak organizational performance.",
+        description: "Seamless integrations with third-party systems, custom automation, API-based extensions and performance optimization for enterprise-scale environments.",
         icon: Cpu
     },
-
     {
         title: "Rovo",
         href: "/solutions/rovo",
-        description: "AI-powered search that helps teams find knowledge and insights across Atlassian tools.",
+        description: "We support organizations adopting Atlassian Rovo to enhance search, insights and productivity using AI. From knowledge discovery to contextual assistance, Rovo helps teams work smarter.",
         icon: Cpu,
     },
     {
         title: "Jira Align",
         href: "/solutions/jira-align",
-        description: "Connect strategy with execution to scale agile planning across the organization.",
+        description: "We help organizations implement Jira Align to connect strategy, portfolios, programs and teams, enabling visibility from executive goals to team-level execution.",
         icon: Server,
     },
 ]
 
 export const marketplaceApps = [
     {
-        title: "Time Sheet",
+        title: "Timesheet App",
         href: "/marketplace-apps/time-sheet",
-        description: "Accurate time tracking and reporting for Jira projects.",
+        description: "Advanced time tracking with timelines, reporting and project insights.",
         icon: Clock
     },
     {
         title: "Checklist App",
         href: "/marketplace-apps/checklist",
-        description: "Manage tasks and quality control with integrated checklists.",
+        description: "Powerful checklist management for Jira issues and workflows.",
         icon: CheckSquare
     },
     {
-        title: "Issue Template",
+        title: "Issue Template App",
         href: "/marketplace-apps/issue-template",
-        description: "Standardize your workflow with reusable issue templates.",
+        description: "Standardize issue creation with reusable templates.",
         icon: FileText
     },
     {
         title: "Timer App",
         href: "/marketplace-apps/timer",
-        description: "Real-time timers to boost productivity and focus.",
+        description: "Built-in time tracking to improve productivity and accuracy.",
         icon: Timer
     },
 ]
@@ -95,6 +94,6 @@ export const mainNavItems = [
 ]
 
 export const footerNavItems = [
-    { title: "About Us", href: "/about" },
+    { title: "About Us", href: "/about-us" },
     { title: "Blogs", href: "/blogs" },
 ]
