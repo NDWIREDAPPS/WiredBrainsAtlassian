@@ -98,6 +98,7 @@ function ManagedServicesSection() {
       subheading="Our Managed Services Offering"
       features={services}
       columns={3}
+      useCarousel={true}
     />
   )
 }

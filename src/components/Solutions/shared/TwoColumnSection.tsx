@@ -33,8 +33,8 @@ export function TwoColumnSection({
         </div>
     )
 
-    const listColumn = (
-        <ul className="grid grid-cols-1 gap-4">
+    const itemsColumn = (
+        <ul className="flex flex-col gap-4">
             {items.map((item, index) => (
                 <CheckListItem key={index}>{item}</CheckListItem>
             ))}
@@ -43,16 +43,16 @@ export function TwoColumnSection({
 
     return (
         <section className="container mx-auto px-4 md:px-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 {reversed ? (
                     <>
-                        {listColumn}
+                        {itemsColumn}
                         {contentColumn}
                     </>
                 ) : (
                     <>
                         {contentColumn}
-                        {listColumn}
+                        {itemsColumn}
                     </>
                 )}
             </div>

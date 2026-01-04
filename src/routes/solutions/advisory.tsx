@@ -76,6 +76,7 @@ function AdvisoryServicesSection() {
       subheading="What We Advise On"
       features={services}
       columns={2}
+      useCarousel={true}
     />
   )
 }
