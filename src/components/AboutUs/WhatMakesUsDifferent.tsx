@@ -32,7 +32,7 @@ export function WhatMakesUsDifferent() {
                                 <div className="p-1 rounded-full bg-purple-100 mt-1">
                                     <Check className="h-5 w-5 text-purple-600" />
                                 </div>
-                                <span className="text-slate-700 text-xl font-medium">{item}</span>
+                                <span className="text-slate-700  font-medium">{item}</span>
                             </li>
                         ))}
                     </ul>

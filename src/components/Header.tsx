@@ -48,7 +48,14 @@ export default function Header() {
                                 {mainNavItems.map((item) => (
                                     <NavigationMenuItem key={item.title}>
                                         <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-md")}>
-                                            <Link to={item.href}>{item.title}</Link>
+                                            <Link
+                                                to={item.href}
+                                                activeProps={{
+                                                    className: "text-purple-600 font-semibold"
+                                                }}
+                                            >
+                                                {item.title}
+                                            </Link>
                                         </NavigationMenuLink>
                                     </NavigationMenuItem>
                                 ))}
@@ -82,7 +89,14 @@ export default function Header() {
                                 {footerNavItems.map((item) => (
                                     <NavigationMenuItem key={item.title}>
                                         <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-md")}>
-                                            <Link to={item.href}>{item.title}</Link>
+                                            <Link
+                                                to={item.href}
+                                                activeProps={{
+                                                    className: "text-purple-600 font-semibold"
+                                                }}
+                                            >
+                                                {item.title}
+                                            </Link>
                                         </NavigationMenuLink>
                                     </NavigationMenuItem>
                                 ))}
@@ -113,6 +127,9 @@ export default function Header() {
                                                 key={item.title}
                                                 to={item.href}
                                                 className="w-full py-4 text-center text-xl font-semibold rounded-xl hover:bg-purple-50 hover:text-purple-600 transition-all active:scale-95"
+                                                activeProps={{
+                                                    className: "bg-purple-100 text-purple-600"
+                                                }}
                                             >
                                                 {item.title}
                                             </Link>
@@ -129,6 +146,9 @@ export default function Header() {
                                                             key={item.title}
                                                             to={item.href}
                                                             className="w-full py-3 text-center text-base font-medium text-muted-foreground rounded-lg hover:bg-purple-50/50 hover:text-purple-600 transition-all"
+                                                            activeProps={{
+                                                                className: "bg-purple-100 text-purple-600 font-semibold"
+                                                            }}
                                                         >
                                                             {item.title}
                                                         </Link>
@@ -146,6 +166,9 @@ export default function Header() {
                                                             key={item.title}
                                                             to={item.href}
                                                             className="w-full py-3 text-center text-base font-medium text-muted-foreground rounded-lg hover:bg-purple-50/50 hover:text-purple-600 transition-all"
+                                                            activeProps={{
+                                                                className: "bg-purple-100 text-purple-600 font-semibold"
+                                                            }}
                                                         >
                                                             {item.title}
                                                         </Link>
@@ -159,6 +182,9 @@ export default function Header() {
                                                 key={item.title}
                                                 to={item.href}
                                                 className="w-full py-4 text-center text-xl font-semibold rounded-xl hover:bg-purple-50 hover:text-purple-600 transition-all active:scale-95"
+                                                activeProps={{
+                                                    className: "bg-purple-100 text-purple-600"
+                                                }}
                                             >
                                                 {item.title}
                                             </Link>
@@ -198,6 +224,9 @@ const ListItem = React.forwardRef<
                         "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group",
                         className
                     )}
+                    activeProps={{
+                        className: "bg-purple-50"
+                    }}
                     {...props}
                 >
                     <div className="text-sm font-semibold leading-none group-hover:text-purple-600 transition-colors">{title}</div>
