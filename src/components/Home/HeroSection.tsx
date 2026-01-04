@@ -10,7 +10,7 @@ export function HeroSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     <div className="flex flex-col items-center sm:items-start space-y-8 animate-in fade-in slide-in-from-left-10 duration-700">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 drop-shadow-sm text-center sm:text-left">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 drop-shadow-sm text-center sm:text-left">
                             Atlassian Consulting &{' '}
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-600 to-blue-600">
                                 App Development
@@ -18,7 +18,7 @@ export function HeroSection() {
                             {' '}Experts
                         </h1>
 
-                        <p className="text-lg md:text-xl text-slate-600 max-w-xl leading-relaxed text-center sm:text-left">
+                        <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-xl leading-relaxed text-center sm:text-left">
                             We help organizations plan, build, scale and innovate using Atlassian tools — from enterprise Jira implementations to secure Forge-based Atlassian Marketplace apps.
                         </p>
 

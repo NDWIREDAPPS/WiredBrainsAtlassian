@@ -37,7 +37,7 @@ export default function Header() {
                                 alt="Achlys Logo"
                                 className="w-15"
                             />
-                            <span className="text-xl font-bold tracking-tight text-slate-700">
+                            <span className="text-xl font-semibold tracking-tight text-slate-700">
                                 Achlys Solutions
                             </span>
                         </Link>
@@ -168,7 +168,7 @@ export default function Header() {
                                         <div className="mt-8 w-full md:hidden px-2">
                                             <Link
                                                 to="/contact"
-                                                className="flex w-full h-14 items-center justify-center rounded-2xl bg-purple-600 text-lg font-bold text-white transition-all hover:bg-purple-700"
+                                                className="flex w-full h-14 items-center justify-center rounded-2xl bg-purple-600 text-lg font-semibold text-white transition-all hover:bg-purple-700"
                                             >
                                                 Book Consultation
                                             </Link>

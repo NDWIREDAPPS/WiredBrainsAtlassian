@@ -16,10 +16,10 @@ export function WhyChooseUs() {
                     <div className="inline-flex items-center justify-center p-4 bg-purple-100 rounded-2xl mb-6 shadow-xs">
                         <Users className="h-10 w-10 text-purple-600" />
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4 font-display">
+                    <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4 font-display">
                         Why Organizations Choose Us
                     </h2>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
                         We combine technical depth with strategic insight to deliver outcomes that matter.
                     </p>
                 </div>
@@ -35,7 +35,7 @@ export function WhyChooseUs() {
                     ))}
                 </ul>
 
-                <p className="text-center text-purple-600 font-bold mt-12 text-xl italic">
+                <p className="text-center text-purple-600 font-semibold mt-12 text-xl italic">
                     "We don't just implement Atlassian tools—we help organizations build long-term capability on the platform."
                 </p>
             </div>

@@ -15,6 +15,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutUsIndexRouteImport } from './routes/about-us/index'
 import { Route as SolutionsTrainingRouteImport } from './routes/solutions/training'
 import { Route as SolutionsSupportRouteImport } from './routes/solutions/support'
+import { Route as SolutionsRovoRouteImport } from './routes/solutions/rovo'
+import { Route as SolutionsJiraAlignRouteImport } from './routes/solutions/jira-align'
 import { Route as SolutionsItsmRouteImport } from './routes/solutions/itsm'
 import { Route as SolutionsIntegrationRouteImport } from './routes/solutions/integration'
 import { Route as SolutionsCloudMigrationRouteImport } from './routes/solutions/cloud-migration'
@@ -52,6 +54,16 @@ const SolutionsTrainingRoute = SolutionsTrainingRouteImport.update({
 const SolutionsSupportRoute = SolutionsSupportRouteImport.update({
   id: '/solutions/support',
   path: '/solutions/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsRovoRoute = SolutionsRovoRouteImport.update({
+  id: '/solutions/rovo',
+  path: '/solutions/rovo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsJiraAlignRoute = SolutionsJiraAlignRouteImport.update({
+  id: '/solutions/jira-align',
+  path: '/solutions/jira-align',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SolutionsItsmRoute = SolutionsItsmRouteImport.update({
@@ -110,6 +122,8 @@ export interface FileRoutesByFullPath {
   '/solutions/cloud-migration': typeof SolutionsCloudMigrationRoute
   '/solutions/integration': typeof SolutionsIntegrationRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
+  '/solutions/jira-align': typeof SolutionsJiraAlignRoute
+  '/solutions/rovo': typeof SolutionsRovoRoute
   '/solutions/support': typeof SolutionsSupportRoute
   '/solutions/training': typeof SolutionsTrainingRoute
   '/about-us': typeof AboutUsIndexRoute
@@ -126,6 +140,8 @@ export interface FileRoutesByTo {
   '/solutions/cloud-migration': typeof SolutionsCloudMigrationRoute
   '/solutions/integration': typeof SolutionsIntegrationRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
+  '/solutions/jira-align': typeof SolutionsJiraAlignRoute
+  '/solutions/rovo': typeof SolutionsRovoRoute
   '/solutions/support': typeof SolutionsSupportRoute
   '/solutions/training': typeof SolutionsTrainingRoute
   '/about-us': typeof AboutUsIndexRoute
@@ -143,6 +159,8 @@ export interface FileRoutesById {
   '/solutions/cloud-migration': typeof SolutionsCloudMigrationRoute
   '/solutions/integration': typeof SolutionsIntegrationRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
+  '/solutions/jira-align': typeof SolutionsJiraAlignRoute
+  '/solutions/rovo': typeof SolutionsRovoRoute
   '/solutions/support': typeof SolutionsSupportRoute
   '/solutions/training': typeof SolutionsTrainingRoute
   '/about-us/': typeof AboutUsIndexRoute
@@ -161,6 +179,8 @@ export interface FileRouteTypes {
     | '/solutions/cloud-migration'
     | '/solutions/integration'
     | '/solutions/itsm'
+    | '/solutions/jira-align'
+    | '/solutions/rovo'
     | '/solutions/support'
     | '/solutions/training'
     | '/about-us'
@@ -177,6 +197,8 @@ export interface FileRouteTypes {
     | '/solutions/cloud-migration'
     | '/solutions/integration'
     | '/solutions/itsm'
+    | '/solutions/jira-align'
+    | '/solutions/rovo'
     | '/solutions/support'
     | '/solutions/training'
     | '/about-us'
@@ -193,6 +215,8 @@ export interface FileRouteTypes {
     | '/solutions/cloud-migration'
     | '/solutions/integration'
     | '/solutions/itsm'
+    | '/solutions/jira-align'
+    | '/solutions/rovo'
     | '/solutions/support'
     | '/solutions/training'
     | '/about-us/'
@@ -210,6 +234,8 @@ export interface RootRouteChildren {
   SolutionsCloudMigrationRoute: typeof SolutionsCloudMigrationRoute
   SolutionsIntegrationRoute: typeof SolutionsIntegrationRoute
   SolutionsItsmRoute: typeof SolutionsItsmRoute
+  SolutionsJiraAlignRoute: typeof SolutionsJiraAlignRoute
+  SolutionsRovoRoute: typeof SolutionsRovoRoute
   SolutionsSupportRoute: typeof SolutionsSupportRoute
   SolutionsTrainingRoute: typeof SolutionsTrainingRoute
   AboutUsIndexRoute: typeof AboutUsIndexRoute
@@ -257,6 +283,20 @@ declare module '@tanstack/react-router' {
       path: '/solutions/support'
       fullPath: '/solutions/support'
       preLoaderRoute: typeof SolutionsSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/rovo': {
+      id: '/solutions/rovo'
+      path: '/solutions/rovo'
+      fullPath: '/solutions/rovo'
+      preLoaderRoute: typeof SolutionsRovoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/jira-align': {
+      id: '/solutions/jira-align'
+      path: '/solutions/jira-align'
+      fullPath: '/solutions/jira-align'
+      preLoaderRoute: typeof SolutionsJiraAlignRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/solutions/itsm': {
@@ -330,6 +370,8 @@ const rootRouteChildren: RootRouteChildren = {
   SolutionsCloudMigrationRoute: SolutionsCloudMigrationRoute,
   SolutionsIntegrationRoute: SolutionsIntegrationRoute,
   SolutionsItsmRoute: SolutionsItsmRoute,
+  SolutionsJiraAlignRoute: SolutionsJiraAlignRoute,
+  SolutionsRovoRoute: SolutionsRovoRoute,
   SolutionsSupportRoute: SolutionsSupportRoute,
   SolutionsTrainingRoute: SolutionsTrainingRoute,
   AboutUsIndexRoute: AboutUsIndexRoute,

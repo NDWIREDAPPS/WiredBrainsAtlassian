@@ -11,10 +11,10 @@ export function AboutFinalCTA() {
                         <MessageCircle className="h-10 w-10 text-purple-600" />
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6 leading-tight font-display">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6 leading-tight font-display">
                         Let's Build Smarter Atlassian Solutions
                     </h2>
-                    <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+                    <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
                         Whether you need expert consulting, a custom Atlassian app, or a scalable enterprise solution, Achlys Solutions brings the experience and focus to help you succeed.
                     </p>
 
