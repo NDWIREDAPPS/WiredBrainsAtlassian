@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "@tanstack/react-router"
+import { Link, useLocation } from "@tanstack/react-router"
 import { Menu } from "lucide-react"
 import {
     NavigationMenu,
@@ -26,6 +26,10 @@ import { atlassianSolutions, marketplaceApps, mainNavItems, footerNavItems } fro
 
 
 export default function Header() {
+    const location = useLocation()
+    const isOnSolutionsPage = location.pathname.startsWith('/solutions/')
+    const isOnMarketplacePage = location.pathname.startsWith('/marketplace-apps/')
+
     return (
         <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
             <header className="w-full max-w-7xl border bg-background/95 backdrop-blur-sm rounded-xl px-4 md:px-6 shadow-sm">
@@ -61,7 +65,12 @@ export default function Header() {
                                 ))}
 
                                 <NavigationMenuItem>
-                                    <NavigationMenuTrigger className="bg-transparent text-md">Atlassian Solutions</NavigationMenuTrigger>
+                                    <NavigationMenuTrigger className={cn(
+                                        "bg-transparent text-md",
+                                        isOnSolutionsPage && "text-purple-600 font-semibold"
+                                    )}>
+                                        Atlassian Solutions
+                                    </NavigationMenuTrigger>
                                     <NavigationMenuContent>
                                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                                             {atlassianSolutions.map((item) => (
@@ -74,7 +83,12 @@ export default function Header() {
                                 </NavigationMenuItem>
 
                                 <NavigationMenuItem>
-                                    <NavigationMenuTrigger className="bg-transparent text-md">Marketplace Apps</NavigationMenuTrigger>
+                                    <NavigationMenuTrigger className={cn(
+                                        "bg-transparent text-md",
+                                        isOnMarketplacePage && "text-purple-600 font-semibold"
+                                    )}>
+                                        Marketplace Apps
+                                    </NavigationMenuTrigger>
                                     <NavigationMenuContent>
                                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                                             {marketplaceApps.map((item) => (
@@ -225,7 +239,7 @@ const ListItem = React.forwardRef<
                         className
                     )}
                     activeProps={{
-                        className: "bg-purple-50"
+                        className: "[&>div]:text-purple-600"
                     }}
                     {...props}
                 >
