@@ -16,7 +16,7 @@ export function SolutionHero({
     return (
         <section className="container mx-auto px-4 md:px-10 pt-8">
             <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 mb-6 leading-tight">
                     {title}
                     {highlightedTitle && (
                         <>
