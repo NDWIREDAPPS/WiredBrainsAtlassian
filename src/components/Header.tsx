@@ -51,16 +51,16 @@ export default function Header() {
 
     return (
         <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
-            <header className="w-full max-w-7xl border bg-background/95 backdrop-blur-sm rounded-xl px-4 md:px-6 shadow-sm">
+            <header className="w-full max-w-7xl border bg-background/95 backdrop-blur-sm rounded-xl px-4 md:px-6 shadow-sm relative">
                 <div className="flex h-16 items-center justify-between gap-4">
                     <div className="flex items-center gap-6">
-                        <Link to="/" className="flex items-center gap-3 shrink-0">
+                        <Link to="/" className="flex items-center gap-2 shrink-0 relative">
                             <img
-                                src="/achlys_logo.svg"
+                                src="/achlys_logo.png"
                                 alt="Achlys Logo"
-                                className="w-15"
+                                className="absolute -left-2 top-1/2 -translate-y-[45%] h-16 w-auto"
                             />
-                            <span className="text-xl font-semibold tracking-tight text-slate-700">
+                            <span className="text-xl font-semibold tracking-tight text-slate-700 pl-20">
                                 Achlys Solutions
                             </span>
                         </Link>
