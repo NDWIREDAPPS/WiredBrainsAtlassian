@@ -47,7 +47,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className='bg-slate-100 relative overflow-x-hidden'>
+      <body className='bg-white relative overflow-x-hidden'>
         <BackgroundShapes />
         <Header />
         <main className="pt-28 min-h-screen">
