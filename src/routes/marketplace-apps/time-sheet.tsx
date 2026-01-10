@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { ExternalLink, BookOpen, Clock, Calendar, GanttChartSquare, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ImageZoom } from '@/components/ui/image-zoom'
 
 // External links used in this page
 const MARKETPLACE_URL = "https://marketplace.atlassian.com/apps/797864630/timesheets-by-achlys-time-tracking-for-jira?tab=pricing"
@@ -16,7 +17,8 @@ function TimeSheetPage() {
       {/* Hero Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-10 text-center space-y-8 max-w-5xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-100 mb-4">
+          <img src="/timesheets.png" alt="Timesheets App" className="w-20 h-20 mx-auto" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 border border-purple-100">
             <Clock className="w-4 h-4 text-purple-600" />
             <span className="text-sm font-medium text-purple-700">Advanced Time Tracking for Jira</span>
           </div>
@@ -75,10 +77,12 @@ function TimeSheetPage() {
           </div>
           <div className="flex-1 w-full">
             <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-xl bg-white p-2">
-              <img
+              <ImageZoom
                 src="/timehsheet-app/visual-reports-time-analytics.jpg"
                 alt="Visual Reports & Time Analytics"
-                className="w-full rounded-2xl"
+                className="rounded-2xl"
+                zoomLevel={2.5}
+                lensSize={220}
               />
             </div>
           </div>
@@ -113,10 +117,12 @@ function TimeSheetPage() {
           </div>
           <div className="flex-1 w-full">
             <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-xl bg-white p-2">
-              <img
+              <ImageZoom
                 src="/timehsheet-app/calender-view-for-planning-logging.jpg"
                 alt="Calendar View"
-                className="w-full rounded-2xl"
+                className="rounded-2xl"
+                zoomLevel={2.5}
+                lensSize={220}
               />
             </div>
           </div>
@@ -151,10 +157,12 @@ function TimeSheetPage() {
           </div>
           <div className="flex-1 w-full">
             <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-xl bg-white p-2">
-              <img
+              <ImageZoom
                 src="/timehsheet-app/timeline-view-for-projects-and-users.jpg"
                 alt="Timeline View"
-                className="w-full rounded-2xl"
+                className="rounded-2xl"
+                zoomLevel={2.5}
+                lensSize={220}
               />
             </div>
           </div>

@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { ExternalLink, BookOpen, Timer, Settings, CheckCircle2, Clock, Users, Shield } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ImageZoom } from '@/components/ui/image-zoom'
 
 // External links used in this page
 const MARKETPLACE_URL = "https://marketplace.atlassian.com/apps/1233876/timer?hosting=cloud&tab=overview"
@@ -16,7 +17,8 @@ function TimerAppPage() {
       {/* Hero Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-10 text-center space-y-8 max-w-5xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-4">
+          <img src="/timer.png" alt="Timer App" className="w-20 h-20 mx-auto" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100">
             <Timer className="w-4 h-4 text-blue-600" />
             <span className="text-sm font-medium text-blue-700">Simple Time Tracking for Jira</span>
           </div>
@@ -75,10 +77,12 @@ function TimerAppPage() {
           </div>
           <div className="flex-1 w-full">
             <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-xl bg-white p-2">
-              <img
+              <ImageZoom
                 src="/timer/timer-2.jpg"
                 alt="Timer Panel on Jira Issue"
-                className="w-full rounded-2xl"
+                className="rounded-2xl"
+                zoomLevel={2.5}
+                lensSize={220}
               />
             </div>
           </div>
@@ -113,10 +117,12 @@ function TimerAppPage() {
           </div>
           <div className="flex-1 w-full">
             <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-xl bg-white p-2">
-              <img
+              <ImageZoom
                 src="/timer/timer-1.jpg"
                 alt="Project Configuration Admin Page"
-                className="w-full rounded-2xl"
+                className="rounded-2xl"
+                zoomLevel={2.5}
+                lensSize={220}
               />
             </div>
           </div>

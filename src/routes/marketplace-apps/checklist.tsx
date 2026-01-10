@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { ExternalLink, BookOpen, ListChecks, Settings, Palette, CheckCircle2, FileSpreadsheet, Workflow } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { ImageZoom } from '@/components/ui/image-zoom'
 
 // External links used in this page
 const MARKETPLACE_URL = "https://marketplace.atlassian.com/apps/1238405/checklists-for-jira-by-achlys?hosting=cloud&tab=overview"
@@ -16,7 +17,8 @@ function ChecklistPage() {
       {/* Hero Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-10 text-center space-y-8 max-w-5xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-100 mb-4">
+          <img src="/checklist.png" alt="Checklist App" className="w-20 h-20 mx-auto" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-100">
             <ListChecks className="w-4 h-4 text-emerald-600" />
             <span className="text-sm font-medium text-emerald-700">Checklist App built on Forge</span>
           </div>
@@ -75,10 +77,12 @@ function ChecklistPage() {
           </div>
           <div className="flex-1 w-full">
             <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-xl bg-white p-2">
-              <img
+              <ImageZoom
                 src="/checklists-app/checklists-1.jpg"
                 alt="Smart Checklists in Jira"
-                className="w-full rounded-2xl"
+                className="rounded-2xl"
+                zoomLevel={2.5}
+                lensSize={220}
               />
             </div>
           </div>
@@ -113,10 +117,12 @@ function ChecklistPage() {
           </div>
           <div className="flex-1 w-full">
             <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-xl bg-white p-2">
-              <img
+              <ImageZoom
                 src="/checklists-app/checklists-2.jpg"
                 alt="Project Access Control"
-                className="w-full rounded-2xl"
+                className="rounded-2xl"
+                zoomLevel={2.5}
+                lensSize={220}
               />
             </div>
           </div>
@@ -151,10 +157,12 @@ function ChecklistPage() {
           </div>
           <div className="flex-1 w-full">
             <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-xl bg-white p-2">
-              <img
+              <ImageZoom
                 src="/checklists-app/checlists-3.jpg"
                 alt="Custom Checklist Statuses"
-                className="w-full rounded-2xl"
+                className="rounded-2xl"
+                zoomLevel={2.5}
+                lensSize={220}
               />
             </div>
           </div>
