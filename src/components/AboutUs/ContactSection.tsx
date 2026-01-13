@@ -7,6 +7,7 @@ import { submitContactLead } from '@/server/contact'
 export function ContactSection() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [website, setWebsite] = useState('') // Honeypot field
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [success, setSuccess] = useState('');
     const [isLoading, setIsLoading] = useState(false)
@@ -18,7 +19,7 @@ export function ContactSection() {
         setIsLoading(true)
 
         try {
-            const res = await submitContactLead({ data: { name, email } })
+            const res = await submitContactLead({ data: { name, email, website } })
             setSuccess(res.message)
             setIsSubmitted(true)
             setName('')
@@ -83,6 +84,17 @@ export function ContactSection() {
                                         required
                                         disabled={isLoading}
                                         className="h-14 pl-5 pr-4 text-base bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 rounded-xl focus-visible:border-purple-500 focus-visible:ring-purple-500/30 disabled:opacity-50"
+                                    />
+                                </div>
+                                {/* Honeypot field - hidden from humans, bots will fill it */}
+                                <div className="absolute -left-[9999px]" aria-hidden="true">
+                                    <Input
+                                        type="text"
+                                        name="website"
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                        value={website}
+                                        onChange={(e) => setWebsite(e.target.value)}
                                     />
                                 </div>
                                 <Button

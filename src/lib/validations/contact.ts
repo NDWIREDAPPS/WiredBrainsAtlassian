@@ -13,6 +13,8 @@ export const contactLeadSchema = z.object({
         .max(255, 'Email must be less than 255 characters')
         .trim()
         .toLowerCase(),
+    // Honeypot field - should always be empty (bots fill this, humans don't see it)
+    website: z.string().max(0, 'Invalid submission').optional(),
 })
 
 export type ContactLeadInput = z.infer<typeof contactLeadSchema>
