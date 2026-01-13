@@ -23,7 +23,7 @@ const apps = [
     {
         title: "Issue Template App",
         description: "Standardize issue creation with reusable templates. Ensure consistency across your team with pre-configured fields and descriptions.",
-        image: null,
+        image: "/issue-template.png",
         href: "/marketplace-apps/issue-template",
     },
 ]

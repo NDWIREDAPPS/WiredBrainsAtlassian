@@ -47,7 +47,7 @@ export function HeroSection() {
                                 size="lg"
                                 className="h-12 bg-white text-purple-600 rounded-xl px-6 text-base font-medium shadow-lg shadow-purple-200/50 hover:bg-purple-50 hover:scale-105 active:scale-95"
                             >
-                                <Link to="/contact">
+                                <Link to="/about-us" hash="contact-section">
                                     Contact Us
                                     <ArrowRight className="ml-2 h-5 w-5" />
                                 </Link>

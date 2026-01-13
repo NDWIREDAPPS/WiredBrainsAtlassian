@@ -139,7 +139,8 @@ export default function Header() {
 
                     <div className="flex items-center gap-2 md:gap-4">
                         <Link
-                            to="/contact"
+                            to="/about-us"
+                            hash="contact-section"
                             className="hidden md:inline-flex h-9 items-center justify-center rounded-lg bg-purple-600 px-6 text-sm font-semibold text-white transition-colors hover:bg-purple-700"
                         >
                             Book Consultation
@@ -234,7 +235,8 @@ export default function Header() {
                                         {/* Mobile CTA */}
                                         <div className="mt-4 w-full">
                                             <Link
-                                                to="/contact"
+                                                to="/about-us"
+                                                hash="contact-section"
                                                 onClick={handleLinkClick}
                                                 className="flex w-full h-14 items-center justify-center rounded-2xl bg-purple-600 text-lg font-semibold text-white transition-all hover:bg-purple-700"
                                             >

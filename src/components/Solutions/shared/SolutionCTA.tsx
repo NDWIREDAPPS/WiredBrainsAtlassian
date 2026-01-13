@@ -15,7 +15,7 @@ export function SolutionCTA({
     heading,
     content,
     primaryButtonText = "Contact Us",
-    primaryButtonHref = "/contact",
+    primaryButtonHref = "/about-us#contact-section",
     secondaryButtonText = "Explore Atlassian Solutions",
     secondaryButtonHref = "/#solutions"
 }: SolutionCTAProps) {

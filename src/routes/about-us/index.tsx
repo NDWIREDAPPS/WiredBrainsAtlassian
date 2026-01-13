@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { AboutHero } from '@/components/AboutUs/AboutHero'
+import { ContactSection } from '@/components/AboutUs/ContactSection'
 import { AtlassianApproach } from '@/components/AboutUs/AtlassianApproach'
 import { WhatMakesUsDifferent } from '@/components/AboutUs/WhatMakesUsDifferent'
 import { MarketplaceExpertise } from '@/components/AboutUs/MarketplaceExpertise'
@@ -17,6 +18,7 @@ function AboutUsPage() {
   return (
     <div className="flex flex-col gap-24 pb-24 relative overflow-hidden w-full">
       <AboutHero />
+      <ContactSection />
       <AtlassianApproach />
       <WhatMakesUsDifferent />
       <MarketplaceExpertise />

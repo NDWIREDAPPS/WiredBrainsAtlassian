@@ -20,7 +20,7 @@ export function FinalCTASection() {
                         size="lg"
                         className="h-12 bg-white text-purple-600 border border-purple-200 rounded-xl px-8 text-base font-medium shadow-lg shadow-purple-100/50 hover:bg-purple-50 hover:border-purple-300 hover:scale-105 active:scale-95 transition-all"
                     >
-                        <Link to="/contact">
+                        <Link to="/about-us" hash="contact-section">
                             Contact Us
                             <ArrowRight className="ml-2 h-5 w-5" />
                         </Link>
