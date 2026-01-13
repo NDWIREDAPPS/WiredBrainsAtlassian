@@ -9,6 +9,15 @@ import {
 } from '@/components/Solutions/shared'
 
 export const Route = createFileRoute('/solutions/cloud-migration')({
+  head: () => ({
+    meta: [
+      { title: 'Cloud Migration Services | Achlys Solutions' },
+      { name: 'description', content: 'Seamless migration from Atlassian Server or Data Center to Cloud with minimal disruption. Expert cloud migration services by Achlys Solutions.' },
+      { property: 'og:title', content: 'Cloud Migration Services | Achlys Solutions' },
+      { property: 'og:description', content: 'Seamless migration from Atlassian Server or Data Center to Cloud with minimal disruption.' },
+      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/solutions/cloud-migration' },
+    ],
+  }),
   component: CloudMigrationPage,
 })
 

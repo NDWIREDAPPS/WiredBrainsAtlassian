@@ -9,6 +9,15 @@ import { BlogsInsightsSection } from '@/components/Home/BlogsInsightsSection'
 import { FinalCTASection } from '@/components/Home/FinalCTASection'
 
 export const Route = createFileRoute('/')({
+  head: () => ({
+    meta: [
+      { title: 'Achlys Solutions | Atlassian Consulting & Marketplace Apps' },
+      { name: 'description', content: 'Expert Atlassian consulting services including cloud migration, ITSM, Jira Align, and custom Marketplace apps for Jira and Confluence.' },
+      { property: 'og:title', content: 'Achlys Solutions | Atlassian Consulting & Marketplace Apps' },
+      { property: 'og:description', content: 'Expert Atlassian consulting services including cloud migration, ITSM, Jira Align, and custom Marketplace apps.' },
+      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/' },
+    ],
+  }),
   component: Index,
 })
 

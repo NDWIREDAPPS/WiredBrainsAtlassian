@@ -19,6 +19,15 @@ import {
 } from 'lucide-react'
 
 export const Route = createFileRoute('/solutions/rovo')({
+    head: () => ({
+        meta: [
+            { title: 'Rovo AI Solutions | Achlys Solutions' },
+            { name: 'description', content: 'Adopt and operationalize Atlassian Rovo AI. Transform how teams find information, gain insights, and take action across Jira and Confluence.' },
+            { property: 'og:title', content: 'Rovo AI Solutions | Achlys Solutions' },
+            { property: 'og:description', content: 'Adopt Atlassian Rovo AI to transform how teams find information and take action across Jira and Confluence.' },
+            { property: 'og:url', content: 'https://achlyssolutions.netlify.app/solutions/rovo' },
+        ],
+    }),
     component: RovoPage,
 })
 

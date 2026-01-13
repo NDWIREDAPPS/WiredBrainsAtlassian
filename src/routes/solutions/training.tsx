@@ -19,6 +19,15 @@ import {
 } from 'lucide-react'
 
 export const Route = createFileRoute('/solutions/training')({
+  head: () => ({
+    meta: [
+      { title: 'Atlassian Training | Achlys Solutions' },
+      { name: 'description', content: 'Role-based Atlassian training for administrators, developers, agents, and end users. Practical training on Jira, Confluence, JSM, and Jira Align.' },
+      { property: 'og:title', content: 'Atlassian Training | Achlys Solutions' },
+      { property: 'og:description', content: 'Role-based Atlassian training for administrators, developers, agents, and end users.' },
+      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/solutions/training' },
+    ],
+  }),
   component: TrainingPage,
 })
 

@@ -18,6 +18,15 @@ import {
 } from 'lucide-react'
 
 export const Route = createFileRoute('/solutions/jira-align')({
+    head: () => ({
+        meta: [
+            { title: 'Jira Align Enterprise Agility | Achlys Solutions' },
+            { name: 'description', content: 'Connect strategy to execution with Jira Align. Enterprise agility solutions for portfolio management, program execution, and strategic visibility.' },
+            { property: 'og:title', content: 'Jira Align Enterprise Agility | Achlys Solutions' },
+            { property: 'og:description', content: 'Connect strategy to execution with Jira Align for enterprise agility and portfolio management.' },
+            { property: 'og:url', content: 'https://achlyssolutions.netlify.app/solutions/jira-align' },
+        ],
+    }),
     component: JiraAlignPage,
 })
 

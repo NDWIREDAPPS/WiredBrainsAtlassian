@@ -17,6 +17,15 @@ import {
 } from 'lucide-react'
 
 export const Route = createFileRoute('/solutions/advisory')({
+  head: () => ({
+    meta: [
+      { title: 'Advisory & Licensing | Achlys Solutions' },
+      { name: 'description', content: 'Strategic Atlassian advisory and licensing guidance. Tool selection, architecture design, licensing optimization, and Marketplace app advisory.' },
+      { property: 'og:title', content: 'Advisory & Licensing | Achlys Solutions' },
+      { property: 'og:description', content: 'Strategic Atlassian advisory including tool selection, architecture design, and licensing optimization.' },
+      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/solutions/advisory' },
+    ],
+  }),
   component: AdvisoryPage,
 })
 

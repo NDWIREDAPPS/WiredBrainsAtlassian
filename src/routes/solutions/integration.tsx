@@ -17,6 +17,15 @@ import {
 } from 'lucide-react'
 
 export const Route = createFileRoute('/solutions/integration')({
+  head: () => ({
+    meta: [
+      { title: 'Integration & Performance Optimization | Achlys Solutions' },
+      { name: 'description', content: 'Build seamlessly integrated and high-performance Atlassian environments. Third-party integrations, API extensions, and performance optimization.' },
+      { property: 'og:title', content: 'Integration & Performance Optimization | Achlys Solutions' },
+      { property: 'og:description', content: 'Build seamlessly integrated and high-performance Atlassian environments with expert consulting.' },
+      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/solutions/integration' },
+    ],
+  }),
   component: IntegrationPage,
 })
 

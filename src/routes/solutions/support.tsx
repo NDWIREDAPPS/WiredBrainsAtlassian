@@ -16,6 +16,15 @@ import {
 } from 'lucide-react'
 
 export const Route = createFileRoute('/solutions/support')({
+  head: () => ({
+    meta: [
+      { title: 'Support & Managed Services | Achlys Solutions' },
+      { name: 'description', content: 'End-to-end Atlassian support and managed services. Platform administration, enhancements, performance tuning, and proactive monitoring.' },
+      { property: 'og:title', content: 'Support & Managed Services | Achlys Solutions' },
+      { property: 'og:description', content: 'End-to-end Atlassian support and managed services for platform administration and optimization.' },
+      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/solutions/support' },
+    ],
+  }),
   component: SupportPage,
 })
 

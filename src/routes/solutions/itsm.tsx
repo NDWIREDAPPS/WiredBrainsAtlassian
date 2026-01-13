@@ -18,6 +18,15 @@ import {
 } from 'lucide-react'
 
 export const Route = createFileRoute('/solutions/itsm')({
+  head: () => ({
+    meta: [
+      { title: 'IT Service Management (ITSM) Solutions | Achlys Solutions' },
+      { name: 'description', content: 'Modern ITSM and ESM solutions built on Jira Service Management. Incident, request, problem, and change management aligned with ITIL best practices.' },
+      { property: 'og:title', content: 'IT Service Management (ITSM) Solutions | Achlys Solutions' },
+      { property: 'og:description', content: 'Modern ITSM and ESM solutions built on Jira Service Management aligned with ITIL best practices.' },
+      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/solutions/itsm' },
+    ],
+  }),
   component: ITSMPage,
 })
 

@@ -8,6 +8,15 @@ const MARKETPLACE_URL = "https://marketplace.atlassian.com/apps/797864630/timesh
 const DOCS_URL = "https://achlys-apps.atlassian.net/wiki/external/ODk3NDRmMDE3NWFlNGFkZWFiOGEyNDI5MTcxZjg5ODI"
 
 export const Route = createFileRoute('/marketplace-apps/time-sheet')({
+  head: () => ({
+    meta: [
+      { title: 'Timesheets for Jira - Time Tracking | Achlys Solutions' },
+      { name: 'description', content: 'Advanced time tracking for Jira with timers, calendar view, and timesheets. Visual reports, timeline analysis, and worklog management built on Atlassian Forge.' },
+      { property: 'og:title', content: 'Timesheets for Jira - Time Tracking | Achlys Solutions' },
+      { property: 'og:description', content: 'Advanced time tracking for Jira with timers, calendar view, and visual reports built on Atlassian Forge.' },
+      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/marketplace-apps/time-sheet' },
+    ],
+  }),
   component: TimeSheetPage,
 })
 

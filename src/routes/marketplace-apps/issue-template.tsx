@@ -8,6 +8,15 @@ const MARKETPLACE_URL = "#" // TODO: Add Atlassian Marketplace URL
 const DOCS_URL = "#" // TODO: Add Documentation URL
 
 export const Route = createFileRoute('/marketplace-apps/issue-template')({
+  head: () => ({
+    meta: [
+      { title: 'Issue Template App for Jira | Achlys Solutions' },
+      { name: 'description', content: 'Standardize Jira issue creation with reusable templates. Pre-fill fields, auto-populate values, and ensure consistency across teams and projects.' },
+      { property: 'og:title', content: 'Issue Template App for Jira | Achlys Solutions' },
+      { property: 'og:description', content: 'Standardize Jira issue creation with reusable templates and field auto-population.' },
+      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/marketplace-apps/issue-template' },
+    ],
+  }),
   component: IssueTemplatePage,
 })
 

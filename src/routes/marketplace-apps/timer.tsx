@@ -8,6 +8,15 @@ const MARKETPLACE_URL = "https://marketplace.atlassian.com/apps/1233876/timer?ho
 const DOCS_URL = "https://achlys.atlassian.net/wiki/spaces/General/pages/7274512/Documentation"
 
 export const Route = createFileRoute('/marketplace-apps/timer')({
+  head: () => ({
+    meta: [
+      { title: 'Timer App for Jira | Achlys Solutions' },
+      { name: 'description', content: 'Track time effortlessly with a simple timer in Jira. Start, pause, and log worklogs directly from any issue with the Timer app by Achlys Solutions.' },
+      { property: 'og:title', content: 'Timer App for Jira | Achlys Solutions' },
+      { property: 'og:description', content: 'Track time effortlessly with a simple timer in Jira. Start, pause, and log worklogs directly from any issue.' },
+      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/marketplace-apps/timer' },
+    ],
+  }),
   component: TimerAppPage,
 })
 

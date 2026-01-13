@@ -27,10 +27,31 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Achlys Solutions',
+        title: 'Achlys Solutions | Atlassian Consulting & Marketplace Apps',
+      },
+      {
+        name: 'description',
+        content: 'Achlys Solutions provides expert Atlassian consulting, cloud migration, ITSM solutions, and Marketplace apps for Jira and Confluence.',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        property: 'og:site_name',
+        content: 'Achlys Solutions',
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
       },
     ],
     links: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/achlys_logo.png',
+      },
       {
         rel: 'stylesheet',
         href: appCss,

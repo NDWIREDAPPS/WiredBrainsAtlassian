@@ -8,6 +8,15 @@ const MARKETPLACE_URL = "https://marketplace.atlassian.com/apps/1238405/checklis
 const DOCS_URL = "https://achlys-apps.atlassian.net/wiki/spaces/CFJBA/pages/22904833/User+Guide"
 
 export const Route = createFileRoute('/marketplace-apps/checklist')({
+  head: () => ({
+    meta: [
+      { title: 'Checklists for Jira | Achlys Solutions' },
+      { name: 'description', content: 'Streamline Jira tasks with smart checklists, custom statuses, automation, and workflow integration. Built on Atlassian Forge for compliance and accountability.' },
+      { property: 'og:title', content: 'Checklists for Jira | Achlys Solutions' },
+      { property: 'og:description', content: 'Streamline Jira tasks with smart checklists, custom statuses, and workflow automation built on Forge.' },
+      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/marketplace-apps/checklist' },
+    ],
+  }),
   component: ChecklistPage,
 })
 
