@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutUsIndexRouteImport } from './routes/about-us/index'
@@ -26,11 +25,6 @@ import { Route as MarketplaceAppsTimeSheetRouteImport } from './routes/marketpla
 import { Route as MarketplaceAppsIssueTemplateRouteImport } from './routes/marketplace-apps/issue-template'
 import { Route as MarketplaceAppsChecklistRouteImport } from './routes/marketplace-apps/checklist'
 
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BlogsRoute = BlogsRouteImport.update({
   id: '/blogs',
   path: '/blogs',
@@ -113,7 +107,6 @@ const MarketplaceAppsChecklistRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blogs': typeof BlogsRoute
-  '/contact': typeof ContactRoute
   '/marketplace-apps/checklist': typeof MarketplaceAppsChecklistRoute
   '/marketplace-apps/issue-template': typeof MarketplaceAppsIssueTemplateRoute
   '/marketplace-apps/time-sheet': typeof MarketplaceAppsTimeSheetRoute
@@ -131,7 +124,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/blogs': typeof BlogsRoute
-  '/contact': typeof ContactRoute
   '/marketplace-apps/checklist': typeof MarketplaceAppsChecklistRoute
   '/marketplace-apps/issue-template': typeof MarketplaceAppsIssueTemplateRoute
   '/marketplace-apps/time-sheet': typeof MarketplaceAppsTimeSheetRoute
@@ -150,7 +142,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/blogs': typeof BlogsRoute
-  '/contact': typeof ContactRoute
   '/marketplace-apps/checklist': typeof MarketplaceAppsChecklistRoute
   '/marketplace-apps/issue-template': typeof MarketplaceAppsIssueTemplateRoute
   '/marketplace-apps/time-sheet': typeof MarketplaceAppsTimeSheetRoute
@@ -170,7 +161,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/blogs'
-    | '/contact'
     | '/marketplace-apps/checklist'
     | '/marketplace-apps/issue-template'
     | '/marketplace-apps/time-sheet'
@@ -188,7 +178,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/blogs'
-    | '/contact'
     | '/marketplace-apps/checklist'
     | '/marketplace-apps/issue-template'
     | '/marketplace-apps/time-sheet'
@@ -206,7 +195,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/blogs'
-    | '/contact'
     | '/marketplace-apps/checklist'
     | '/marketplace-apps/issue-template'
     | '/marketplace-apps/time-sheet'
@@ -225,7 +213,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogsRoute: typeof BlogsRoute
-  ContactRoute: typeof ContactRoute
   MarketplaceAppsChecklistRoute: typeof MarketplaceAppsChecklistRoute
   MarketplaceAppsIssueTemplateRoute: typeof MarketplaceAppsIssueTemplateRoute
   MarketplaceAppsTimeSheetRoute: typeof MarketplaceAppsTimeSheetRoute
@@ -243,13 +230,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/blogs': {
       id: '/blogs'
       path: '/blogs'
@@ -361,7 +341,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogsRoute: BlogsRoute,
-  ContactRoute: ContactRoute,
   MarketplaceAppsChecklistRoute: MarketplaceAppsChecklistRoute,
   MarketplaceAppsIssueTemplateRoute: MarketplaceAppsIssueTemplateRoute,
   MarketplaceAppsTimeSheetRoute: MarketplaceAppsTimeSheetRoute,
