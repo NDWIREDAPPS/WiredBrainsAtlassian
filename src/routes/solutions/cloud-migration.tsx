@@ -45,6 +45,7 @@ function HeroSection() {
       tagline="Seamless Migration to Atlassian Cloud"
       description="Achlys Solutions helps organizations migrate from Server or Data Center to Atlassian Cloud with minimal disruption and maximum confidence."
       secondaryDescription="Our cloud migration approach ensures data integrity, performance optimization, security alignment, and post-migration readiness, enabling teams to fully leverage the benefits of Atlassian's cloud-first platform."
+      image="/cloud_migration.jpg"
     />
   )
 }

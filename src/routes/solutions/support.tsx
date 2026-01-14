@@ -51,6 +51,7 @@ function HeroSection() {
       tagline="Reliable Atlassian Support That Grows with You"
       description="Achlys Solutions provides end-to-end support and managed services to ensure your Atlassian platform continues to deliver value long after implementation."
       secondaryDescription="From day-to-day administration to performance optimization and continuous enhancements, we help organizations keep their Atlassian tools stable, secure, and aligned with evolving business needs."
+      image="/supports_and_managed_services.jpg"
     />
   )
 }

@@ -54,6 +54,7 @@ function HeroSection() {
       tagline="Practical Atlassian Training for Real-World Teams"
       description="Achlys Solutions delivers role-based Atlassian training programs designed for administrators, developers, agents, and end users."
       secondaryDescription="Our training focuses on real-world usage, platform best practices, and long-term adoption, ensuring teams don't just learn Atlassian tools—but use them effectively. We combine platform expertise with hands-on experience to help teams build confidence and capability across the Atlassian ecosystem."
+      image="/training.jpg"
     />
   )
 }

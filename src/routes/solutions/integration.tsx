@@ -52,6 +52,7 @@ function HeroSection() {
       tagline="Connected Atlassian Platforms. Optimized for Scale."
       description="Achlys Solutions helps organizations build seamlessly integrated and high-performance Atlassian environments."
       secondaryDescription="We design and implement integrations with third-party systems, create custom automation and API-based extensions, and optimize platform performance to support enterprise-scale usage. Our focus is on reliability, scalability, and long-term maintainability—ensuring Atlassian tools work as a connected ecosystem, not isolated applications."
+      image="/integration_and_performance.jpg"
     />
   )
 }

@@ -51,6 +51,7 @@ function HeroSection() {
       tagline="Strategic Guidance for Smarter Atlassian Decisions"
       description="Achlys Solutions provides strategic advisory and licensing guidance to help organizations make informed decisions across the Atlassian ecosystem."
       secondaryDescription="From selecting the right tools and designing scalable architecture to optimizing licenses and planning long-term roadmaps, we help teams align Atlassian investments with business outcomes. Our advisory services are independent, practical, and grounded in real implementation and app-development experience."
+      image="/advisory_and_license.jpg"
     />
   )
 }

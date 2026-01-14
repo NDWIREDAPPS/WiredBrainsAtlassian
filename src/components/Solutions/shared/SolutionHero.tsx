@@ -4,6 +4,7 @@ interface SolutionHeroProps {
     tagline: string
     description: string
     secondaryDescription?: string
+    image?: string
 }
 
 export function SolutionHero({
@@ -11,7 +12,8 @@ export function SolutionHero({
     highlightedTitle,
     tagline,
     description,
-    secondaryDescription
+    secondaryDescription,
+    image
 }: SolutionHeroProps) {
     return (
         <section className="container mx-auto px-4 md:px-10 pt-8">
@@ -39,6 +41,15 @@ export function SolutionHero({
                     </p>
                 )}
             </div>
+            {image && (
+                <div className="mt-12 flex justify-center">
+                    <img
+                        src={image}
+                        alt=""
+                        className="w-full max-w-5xl rounded-xl shadow-2xl border border-slate-200/50"
+                    />
+                </div>
+            )}
         </section>
     )
 }

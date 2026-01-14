@@ -53,6 +53,7 @@ function HeroSection() {
       tagline="Modern ITSM & ESM Solutions Built on Atlassian"
       description="Achlys Solutions helps organizations design and implement robust IT Service Management (ITSM) and Enterprise Service Management (ESM) solutions using Jira Service Management."
       secondaryDescription="We enable IT teams to efficiently manage incidents, service requests, problems, changes, and assets—while providing business teams with fast, reliable, and transparent service experiences. Our implementations are aligned with ITIL best practices and built to scale with organizational growth."
+      image="/ITSM.png"
     />
   )
 }
