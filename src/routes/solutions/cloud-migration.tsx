@@ -5,17 +5,32 @@ import {
   ContentBlock,
   TwoColumnSection,
   ProcessSection,
-  type ProcessStep
+  type ProcessStep,
 } from '@/components/Solutions/shared'
 
 export const Route = createFileRoute('/solutions/cloud-migration')({
   head: () => ({
     meta: [
       { title: 'Cloud Migration Services | Achlys Solutions' },
-      { name: 'description', content: 'Seamless migration from Atlassian Server or Data Center to Cloud with minimal disruption. Expert cloud migration services by Achlys Solutions.' },
-      { property: 'og:title', content: 'Cloud Migration Services | Achlys Solutions' },
-      { property: 'og:description', content: 'Seamless migration from Atlassian Server or Data Center to Cloud with minimal disruption.' },
-      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/solutions/cloud-migration' },
+      {
+        name: 'description',
+        content:
+          'Seamless migration from Atlassian Server or Data Center to Cloud with minimal disruption. Expert cloud migration services by Achlys Solutions.',
+      },
+      {
+        property: 'og:title',
+        content: 'Cloud Migration Services | Achlys Solutions',
+      },
+      {
+        property: 'og:description',
+        content:
+          'Seamless migration from Atlassian Server or Data Center to Cloud with minimal disruption.',
+      },
+      {
+        property: 'og:url',
+        content:
+          'https://achlyssolutions.netlify.app/solutions/cloud-migration',
+      },
     ],
   }),
   component: CloudMigrationPage,
@@ -44,7 +59,7 @@ function HeroSection() {
       highlightedTitle="Migration"
       tagline="Seamless Migration to Atlassian Cloud"
       description="Achlys Solutions helps organizations migrate from Server or Data Center to Atlassian Cloud with minimal disruption and maximum confidence."
-      secondaryDescription="Our cloud migration approach ensures data integrity, performance optimization, security alignment, and post-migration readiness, enabling teams to fully leverage the benefits of Atlassian's cloud-first platform."
+      secondaryDescription="Our cloud migration approach ensures data integrity, performance optimization, security alignment and post-migration readiness, enabling teams to fully leverage the benefits of Atlassian's cloud-first platform."
       image="/cloud_migration.jpg"
     />
   )
@@ -55,12 +70,12 @@ function BenefitsSection() {
     <ContentBlock
       heading="The Benefits of Cloud-First Atlassian"
       subheading="Why Move to Atlassian Cloud"
-      content="Atlassian Cloud provides organizations with continuous innovation, enhanced security, and reduced infrastructure overhead. Moving to the cloud enables:"
+      content="Atlassian Cloud provides organizations with continuous innovation, enhanced security and reduced infrastructure overhead. Moving to the cloud enables:"
       items={[
-        "Automatic feature updates and enhancements",
-        "Improved reliability and scalability",
-        "Reduced infrastructure and maintenance costs",
-        "Built-in security and compliance capabilities"
+        'Automatic feature updates and enhancements',
+        'Improved reliability and scalability',
+        'Reduced infrastructure and maintenance costs',
+        'Built-in security and compliance capabilities',
       ]}
     />
   )
@@ -71,12 +86,12 @@ function WhatWeMigrateSection() {
     <ContentBlock
       heading="Comprehensive Platform Migration"
       subheading="What We Migrate"
-      content="We support cloud migrations across the Atlassian ecosystem. Each migration is tailored to your environment, scale, and business needs."
+      content="We support cloud migrations across the Atlassian ecosystem. Each migration is tailored to your environment, scale and business needs."
       items={[
-        "Jira Software",
-        "Jira Service Management",
-        "Confluence",
-        "Marketplace apps and custom integrations"
+        'Jira Software',
+        'Jira Service Management',
+        'Confluence',
+        'Marketplace apps and custom integrations',
       ]}
     />
   )
@@ -85,30 +100,35 @@ function WhatWeMigrateSection() {
 function ApproachSection() {
   const steps: ProcessStep[] = [
     {
-      title: "Assessment & Planning",
-      description: "We begin with a detailed assessment of your current environment, including projects, users, workflows, apps, and integrations. This helps define scope, risks, timelines, and migration strategy."
+      title: 'Assessment & Planning',
+      description:
+        'We begin with a detailed assessment of your current environment, including projects, users, workflows, apps and integrations. This helps define scope, risks, timelines and migration strategy.',
     },
     {
-      title: "Data & Configuration Migration",
-      description: "We migrate issues, projects, spaces, users, permissions, and configurations while preserving historical data and ensuring accuracy and consistency."
+      title: 'Data & Configuration Migration',
+      description:
+        'We migrate issues, projects, spaces, users, permissions and configurations while preserving historical data and ensuring accuracy and consistency.',
     },
     {
-      title: "App & Integration Strategy",
-      description: "We evaluate existing apps and integrations, identify cloud-compatible alternatives, and recommend Forge-based or cloud-native solutions where required."
+      title: 'App & Integration Strategy',
+      description:
+        'We evaluate existing apps and integrations, identify cloud-compatible alternatives and recommend Forge-based or cloud-native solutions where required.',
     },
     {
-      title: "Performance Optimization",
-      description: "Post-migration, we optimize configurations, workflows, and automation to align with cloud best practices and improve system performance."
+      title: 'Performance Optimization',
+      description:
+        'Post-migration, we optimize configurations, workflows and automation to align with cloud best practices and improve system performance.',
     },
     {
-      title: "Validation & Go-Live",
-      description: "We perform thorough validation, user acceptance testing, and production readiness checks to ensure a smooth go-live experience."
-    }
+      title: 'Validation & Go-Live',
+      description:
+        'We perform thorough validation, user acceptance testing and production readiness checks to ensure a smooth go-live experience.',
+    },
   ]
 
   return (
     <ProcessSection
-      heading="Structured, Secure, and Proven"
+      heading="Structured, Secure and Proven"
       subheading="Our Cloud Migration Approach"
       steps={steps}
     />
@@ -118,14 +138,14 @@ function ApproachSection() {
 function PostMigrationSection() {
   return (
     <ContentBlock
-      heading="Beyond Migration — Long-Term Success"
+      heading="Beyond Migration - Long-Term Success"
       subheading="Post-Migration Readiness"
       content="Our work doesn't stop at go-live. We ensure your teams are fully prepared to operate in Atlassian Cloud by providing:"
       items={[
-        "Administrator and end-user enablement",
-        "Cloud governance and best practices",
-        "Security and access reviews",
-        "Ongoing support and optimization"
+        'Administrator and end-user enablement',
+        'Cloud governance and best practices',
+        'Security and access reviews',
+        'Ongoing support and optimization',
       ]}
     />
   )
@@ -142,7 +162,10 @@ function SecuritySection() {
           Security & Compliance Focus
         </p>
         <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-          We design cloud migrations with a strong focus on security, data protection, and compliance. Our approach aligns with Atlassian Cloud security standards and supports organizations operating in regulated and enterprise environments.
+          We design cloud migrations with a strong focus on security, data
+          protection and compliance. Our approach aligns with Atlassian Cloud
+          security standards and supports organizations operating in regulated
+          and enterprise environments.
         </p>
       </div>
     </section>
@@ -154,13 +177,13 @@ function WhyAchlysSection() {
     <TwoColumnSection
       heading="Our Cloud Migration Advantage"
       subheading="Why Achlys Solutions for Cloud Migration"
-      content="We don't just move data—we help organizations transition confidently to a cloud-first operating model."
+      content="We don't just move data-we help organizations transition confidently to a cloud-first operating model."
       items={[
-        "Deep Atlassian platform expertise",
-        "Experience with complex Server & Data Center environments",
-        "Cloud-native and Forge-first mindset",
-        "Proven migration frameworks",
-        "Focus on stability, performance, and adoption"
+        'Deep Atlassian platform expertise',
+        'Experience with complex Server & Data Center environments',
+        'Cloud-native and Forge-first mindset',
+        'Proven migration frameworks',
+        'Focus on stability, performance and adoption',
       ]}
     />
   )
@@ -172,10 +195,10 @@ function TargetOrganizationsSection() {
       heading="Organizations We Support"
       subheading="Who This Is For"
       items={[
-        "Teams planning Server or Data Center end-of-life transitions",
-        "Enterprises modernizing Atlassian platforms",
-        "Organizations seeking scalability and reduced infrastructure overhead",
-        "Compliance-driven and security-focused environments"
+        'Teams planning Server or Data Center end-of-life transitions',
+        'Enterprises modernizing Atlassian platforms',
+        'Organizations seeking scalability and reduced infrastructure overhead',
+        'Compliance-driven and security-focused environments',
       ]}
       reversed
     />
@@ -186,7 +209,7 @@ function CTASection() {
   return (
     <SolutionCTA
       heading="Start Your Atlassian Cloud Journey"
-      content="Whether you are preparing for end-of-support or proactively modernizing your Atlassian environment, Achlys Solutions ensures a smooth, secure, and future-ready transition to Atlassian Cloud."
+      content="Whether you are preparing for end-of-support or proactively modernizing your Atlassian environment, Achlys Solutions ensures a smooth, secure and future-ready transition to Atlassian Cloud."
     />
   )
 }

@@ -32,7 +32,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
       {
         name: 'description',
-        content: 'Achlys Solutions provides expert Atlassian consulting, cloud migration, ITSM solutions, and Marketplace apps for Jira and Confluence.',
+        content:
+          'Achlys Solutions provides expert Atlassian consulting, cloud migration, ITSM solutions and Marketplace apps for Jira and Confluence.',
       },
       {
         property: 'og:type',
@@ -69,12 +70,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className='bg-white relative overflow-x-hidden'>
+      <body className="bg-white relative overflow-x-hidden">
         <BackgroundShapes />
         <Header />
-        <main className="pt-28 min-h-screen">
-          {children}
-        </main>
+        <main className="pt-28 min-h-screen">{children}</main>
         <Footer />
         {/* <TanStackDevtools
           config={{

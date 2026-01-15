@@ -14,10 +14,21 @@ export const Route = createFileRoute('/about-us/')({
   head: () => ({
     meta: [
       { title: 'About Us | Achlys Solutions' },
-      { name: 'description', content: 'Learn about Achlys Solutions - an Atlassian consulting partner specializing in enterprise solutions, cloud migration, and Marketplace app development.' },
+      {
+        name: 'description',
+        content:
+          'Learn about Achlys Solutions - an Atlassian consulting partner specializing in enterprise solutions, cloud migration and Marketplace app development.',
+      },
       { property: 'og:title', content: 'About Us | Achlys Solutions' },
-      { property: 'og:description', content: 'Atlassian consulting partner specializing in enterprise solutions, cloud migration, and Marketplace app development.' },
-      { property: 'og:url', content: 'https://achlyssolutions.netlify.app/about-us/' },
+      {
+        property: 'og:description',
+        content:
+          'Atlassian consulting partner specializing in enterprise solutions, cloud migration and Marketplace app development.',
+      },
+      {
+        property: 'og:url',
+        content: 'https://achlyssolutions.netlify.app/about-us/',
+      },
     ],
   }),
   component: AboutUsPage,
