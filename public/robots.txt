@@ -1,3 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
+# Robots.txt for Achlys Solutions
+# https://achlyssolutions.netlify.app/
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://achlyssolutions.netlify.app/sitemap.xml

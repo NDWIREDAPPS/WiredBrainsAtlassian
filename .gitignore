@@ -5,9 +5,13 @@ dist-ssr
 *.local
 count.txt
 .env
+dev.db
 .nitro
 .tanstack
 .wrangler
 .output
 .vinxi
 todos.json
+
+# Local Netlify folder
+.netlify

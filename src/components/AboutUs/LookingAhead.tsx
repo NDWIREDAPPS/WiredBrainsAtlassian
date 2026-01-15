@@ -23,13 +23,13 @@ export function LookingAhead() {
                     <div className="inline-flex items-center justify-center p-4 bg-purple-100 rounded-2xl mb-6">
                         <TrendingUp className="h-10 w-10 text-purple-600" />
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4 leading-tight">
+                    <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4 leading-tight">
                         Looking Ahead
                     </h2>
-                    <p className="text-xl font-semibold text-purple-600 mb-6 font-display">
+                    <p className="text-lg sm:text-xl font-semibold text-purple-600 mb-6 font-display">
                         Focused on the Future of Atlassian
                     </p>
-                    <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
                         As Atlassian continues to evolve with enterprise agility and AI, Achlys Solutions is focused on pioneering the next wave of productivity:
                     </p>
                 </div>

@@ -9,12 +9,13 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogsIndexRouteImport } from './routes/blogs/index'
 import { Route as AboutUsIndexRouteImport } from './routes/about-us/index'
 import { Route as SolutionsTrainingRouteImport } from './routes/solutions/training'
 import { Route as SolutionsSupportRouteImport } from './routes/solutions/support'
+import { Route as SolutionsRovoRouteImport } from './routes/solutions/rovo'
+import { Route as SolutionsJiraAlignRouteImport } from './routes/solutions/jira-align'
 import { Route as SolutionsItsmRouteImport } from './routes/solutions/itsm'
 import { Route as SolutionsIntegrationRouteImport } from './routes/solutions/integration'
 import { Route as SolutionsCloudMigrationRouteImport } from './routes/solutions/cloud-migration'
@@ -23,20 +24,20 @@ import { Route as MarketplaceAppsTimerRouteImport } from './routes/marketplace-a
 import { Route as MarketplaceAppsTimeSheetRouteImport } from './routes/marketplace-apps/time-sheet'
 import { Route as MarketplaceAppsIssueTemplateRouteImport } from './routes/marketplace-apps/issue-template'
 import { Route as MarketplaceAppsChecklistRouteImport } from './routes/marketplace-apps/checklist'
+import { Route as BlogsRovoIntelligentWorkRouteImport } from './routes/blogs/rovo-intelligent-work'
+import { Route as BlogsMarketplaceAppsDesignRouteImport } from './routes/blogs/marketplace-apps-design'
+import { Route as BlogsJiraAlignStrategyRouteImport } from './routes/blogs/jira-align-strategy'
+import { Route as BlogsAtlassianServicesImportanceRouteImport } from './routes/blogs/atlassian-services-importance'
+import { Route as BlogsAtlassianForgeFutureRouteImport } from './routes/blogs/atlassian-forge-future'
 
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogsRoute = BlogsRouteImport.update({
-  id: '/blogs',
-  path: '/blogs',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsIndexRoute = BlogsIndexRouteImport.update({
+  id: '/blogs/',
+  path: '/blogs/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutUsIndexRoute = AboutUsIndexRouteImport.update({
@@ -52,6 +53,16 @@ const SolutionsTrainingRoute = SolutionsTrainingRouteImport.update({
 const SolutionsSupportRoute = SolutionsSupportRouteImport.update({
   id: '/solutions/support',
   path: '/solutions/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsRovoRoute = SolutionsRovoRouteImport.update({
+  id: '/solutions/rovo',
+  path: '/solutions/rovo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsJiraAlignRoute = SolutionsJiraAlignRouteImport.update({
+  id: '/solutions/jira-align',
+  path: '/solutions/jira-align',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SolutionsItsmRoute = SolutionsItsmRouteImport.update({
@@ -97,11 +108,43 @@ const MarketplaceAppsChecklistRoute =
     path: '/marketplace-apps/checklist',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BlogsRovoIntelligentWorkRoute =
+  BlogsRovoIntelligentWorkRouteImport.update({
+    id: '/blogs/rovo-intelligent-work',
+    path: '/blogs/rovo-intelligent-work',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogsMarketplaceAppsDesignRoute =
+  BlogsMarketplaceAppsDesignRouteImport.update({
+    id: '/blogs/marketplace-apps-design',
+    path: '/blogs/marketplace-apps-design',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogsJiraAlignStrategyRoute = BlogsJiraAlignStrategyRouteImport.update({
+  id: '/blogs/jira-align-strategy',
+  path: '/blogs/jira-align-strategy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsAtlassianServicesImportanceRoute =
+  BlogsAtlassianServicesImportanceRouteImport.update({
+    id: '/blogs/atlassian-services-importance',
+    path: '/blogs/atlassian-services-importance',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogsAtlassianForgeFutureRoute =
+  BlogsAtlassianForgeFutureRouteImport.update({
+    id: '/blogs/atlassian-forge-future',
+    path: '/blogs/atlassian-forge-future',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/blogs': typeof BlogsRoute
-  '/contact': typeof ContactRoute
+  '/blogs/atlassian-forge-future': typeof BlogsAtlassianForgeFutureRoute
+  '/blogs/atlassian-services-importance': typeof BlogsAtlassianServicesImportanceRoute
+  '/blogs/jira-align-strategy': typeof BlogsJiraAlignStrategyRoute
+  '/blogs/marketplace-apps-design': typeof BlogsMarketplaceAppsDesignRoute
+  '/blogs/rovo-intelligent-work': typeof BlogsRovoIntelligentWorkRoute
   '/marketplace-apps/checklist': typeof MarketplaceAppsChecklistRoute
   '/marketplace-apps/issue-template': typeof MarketplaceAppsIssueTemplateRoute
   '/marketplace-apps/time-sheet': typeof MarketplaceAppsTimeSheetRoute
@@ -110,14 +153,20 @@ export interface FileRoutesByFullPath {
   '/solutions/cloud-migration': typeof SolutionsCloudMigrationRoute
   '/solutions/integration': typeof SolutionsIntegrationRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
+  '/solutions/jira-align': typeof SolutionsJiraAlignRoute
+  '/solutions/rovo': typeof SolutionsRovoRoute
   '/solutions/support': typeof SolutionsSupportRoute
   '/solutions/training': typeof SolutionsTrainingRoute
   '/about-us': typeof AboutUsIndexRoute
+  '/blogs': typeof BlogsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/blogs': typeof BlogsRoute
-  '/contact': typeof ContactRoute
+  '/blogs/atlassian-forge-future': typeof BlogsAtlassianForgeFutureRoute
+  '/blogs/atlassian-services-importance': typeof BlogsAtlassianServicesImportanceRoute
+  '/blogs/jira-align-strategy': typeof BlogsJiraAlignStrategyRoute
+  '/blogs/marketplace-apps-design': typeof BlogsMarketplaceAppsDesignRoute
+  '/blogs/rovo-intelligent-work': typeof BlogsRovoIntelligentWorkRoute
   '/marketplace-apps/checklist': typeof MarketplaceAppsChecklistRoute
   '/marketplace-apps/issue-template': typeof MarketplaceAppsIssueTemplateRoute
   '/marketplace-apps/time-sheet': typeof MarketplaceAppsTimeSheetRoute
@@ -126,15 +175,21 @@ export interface FileRoutesByTo {
   '/solutions/cloud-migration': typeof SolutionsCloudMigrationRoute
   '/solutions/integration': typeof SolutionsIntegrationRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
+  '/solutions/jira-align': typeof SolutionsJiraAlignRoute
+  '/solutions/rovo': typeof SolutionsRovoRoute
   '/solutions/support': typeof SolutionsSupportRoute
   '/solutions/training': typeof SolutionsTrainingRoute
   '/about-us': typeof AboutUsIndexRoute
+  '/blogs': typeof BlogsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/blogs': typeof BlogsRoute
-  '/contact': typeof ContactRoute
+  '/blogs/atlassian-forge-future': typeof BlogsAtlassianForgeFutureRoute
+  '/blogs/atlassian-services-importance': typeof BlogsAtlassianServicesImportanceRoute
+  '/blogs/jira-align-strategy': typeof BlogsJiraAlignStrategyRoute
+  '/blogs/marketplace-apps-design': typeof BlogsMarketplaceAppsDesignRoute
+  '/blogs/rovo-intelligent-work': typeof BlogsRovoIntelligentWorkRoute
   '/marketplace-apps/checklist': typeof MarketplaceAppsChecklistRoute
   '/marketplace-apps/issue-template': typeof MarketplaceAppsIssueTemplateRoute
   '/marketplace-apps/time-sheet': typeof MarketplaceAppsTimeSheetRoute
@@ -143,16 +198,22 @@ export interface FileRoutesById {
   '/solutions/cloud-migration': typeof SolutionsCloudMigrationRoute
   '/solutions/integration': typeof SolutionsIntegrationRoute
   '/solutions/itsm': typeof SolutionsItsmRoute
+  '/solutions/jira-align': typeof SolutionsJiraAlignRoute
+  '/solutions/rovo': typeof SolutionsRovoRoute
   '/solutions/support': typeof SolutionsSupportRoute
   '/solutions/training': typeof SolutionsTrainingRoute
   '/about-us/': typeof AboutUsIndexRoute
+  '/blogs/': typeof BlogsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/blogs'
-    | '/contact'
+    | '/blogs/atlassian-forge-future'
+    | '/blogs/atlassian-services-importance'
+    | '/blogs/jira-align-strategy'
+    | '/blogs/marketplace-apps-design'
+    | '/blogs/rovo-intelligent-work'
     | '/marketplace-apps/checklist'
     | '/marketplace-apps/issue-template'
     | '/marketplace-apps/time-sheet'
@@ -161,14 +222,20 @@ export interface FileRouteTypes {
     | '/solutions/cloud-migration'
     | '/solutions/integration'
     | '/solutions/itsm'
+    | '/solutions/jira-align'
+    | '/solutions/rovo'
     | '/solutions/support'
     | '/solutions/training'
     | '/about-us'
+    | '/blogs'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/blogs'
-    | '/contact'
+    | '/blogs/atlassian-forge-future'
+    | '/blogs/atlassian-services-importance'
+    | '/blogs/jira-align-strategy'
+    | '/blogs/marketplace-apps-design'
+    | '/blogs/rovo-intelligent-work'
     | '/marketplace-apps/checklist'
     | '/marketplace-apps/issue-template'
     | '/marketplace-apps/time-sheet'
@@ -177,14 +244,20 @@ export interface FileRouteTypes {
     | '/solutions/cloud-migration'
     | '/solutions/integration'
     | '/solutions/itsm'
+    | '/solutions/jira-align'
+    | '/solutions/rovo'
     | '/solutions/support'
     | '/solutions/training'
     | '/about-us'
+    | '/blogs'
   id:
     | '__root__'
     | '/'
-    | '/blogs'
-    | '/contact'
+    | '/blogs/atlassian-forge-future'
+    | '/blogs/atlassian-services-importance'
+    | '/blogs/jira-align-strategy'
+    | '/blogs/marketplace-apps-design'
+    | '/blogs/rovo-intelligent-work'
     | '/marketplace-apps/checklist'
     | '/marketplace-apps/issue-template'
     | '/marketplace-apps/time-sheet'
@@ -193,15 +266,21 @@ export interface FileRouteTypes {
     | '/solutions/cloud-migration'
     | '/solutions/integration'
     | '/solutions/itsm'
+    | '/solutions/jira-align'
+    | '/solutions/rovo'
     | '/solutions/support'
     | '/solutions/training'
     | '/about-us/'
+    | '/blogs/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BlogsRoute: typeof BlogsRoute
-  ContactRoute: typeof ContactRoute
+  BlogsAtlassianForgeFutureRoute: typeof BlogsAtlassianForgeFutureRoute
+  BlogsAtlassianServicesImportanceRoute: typeof BlogsAtlassianServicesImportanceRoute
+  BlogsJiraAlignStrategyRoute: typeof BlogsJiraAlignStrategyRoute
+  BlogsMarketplaceAppsDesignRoute: typeof BlogsMarketplaceAppsDesignRoute
+  BlogsRovoIntelligentWorkRoute: typeof BlogsRovoIntelligentWorkRoute
   MarketplaceAppsChecklistRoute: typeof MarketplaceAppsChecklistRoute
   MarketplaceAppsIssueTemplateRoute: typeof MarketplaceAppsIssueTemplateRoute
   MarketplaceAppsTimeSheetRoute: typeof MarketplaceAppsTimeSheetRoute
@@ -210,32 +289,28 @@ export interface RootRouteChildren {
   SolutionsCloudMigrationRoute: typeof SolutionsCloudMigrationRoute
   SolutionsIntegrationRoute: typeof SolutionsIntegrationRoute
   SolutionsItsmRoute: typeof SolutionsItsmRoute
+  SolutionsJiraAlignRoute: typeof SolutionsJiraAlignRoute
+  SolutionsRovoRoute: typeof SolutionsRovoRoute
   SolutionsSupportRoute: typeof SolutionsSupportRoute
   SolutionsTrainingRoute: typeof SolutionsTrainingRoute
   AboutUsIndexRoute: typeof AboutUsIndexRoute
+  BlogsIndexRoute: typeof BlogsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blogs': {
-      id: '/blogs'
-      path: '/blogs'
-      fullPath: '/blogs'
-      preLoaderRoute: typeof BlogsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/': {
+      id: '/blogs/'
+      path: '/blogs'
+      fullPath: '/blogs'
+      preLoaderRoute: typeof BlogsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about-us/': {
@@ -257,6 +332,20 @@ declare module '@tanstack/react-router' {
       path: '/solutions/support'
       fullPath: '/solutions/support'
       preLoaderRoute: typeof SolutionsSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/rovo': {
+      id: '/solutions/rovo'
+      path: '/solutions/rovo'
+      fullPath: '/solutions/rovo'
+      preLoaderRoute: typeof SolutionsRovoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/jira-align': {
+      id: '/solutions/jira-align'
+      path: '/solutions/jira-align'
+      fullPath: '/solutions/jira-align'
+      preLoaderRoute: typeof SolutionsJiraAlignRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/solutions/itsm': {
@@ -315,13 +404,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketplaceAppsChecklistRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blogs/rovo-intelligent-work': {
+      id: '/blogs/rovo-intelligent-work'
+      path: '/blogs/rovo-intelligent-work'
+      fullPath: '/blogs/rovo-intelligent-work'
+      preLoaderRoute: typeof BlogsRovoIntelligentWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/marketplace-apps-design': {
+      id: '/blogs/marketplace-apps-design'
+      path: '/blogs/marketplace-apps-design'
+      fullPath: '/blogs/marketplace-apps-design'
+      preLoaderRoute: typeof BlogsMarketplaceAppsDesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/jira-align-strategy': {
+      id: '/blogs/jira-align-strategy'
+      path: '/blogs/jira-align-strategy'
+      fullPath: '/blogs/jira-align-strategy'
+      preLoaderRoute: typeof BlogsJiraAlignStrategyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/atlassian-services-importance': {
+      id: '/blogs/atlassian-services-importance'
+      path: '/blogs/atlassian-services-importance'
+      fullPath: '/blogs/atlassian-services-importance'
+      preLoaderRoute: typeof BlogsAtlassianServicesImportanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/atlassian-forge-future': {
+      id: '/blogs/atlassian-forge-future'
+      path: '/blogs/atlassian-forge-future'
+      fullPath: '/blogs/atlassian-forge-future'
+      preLoaderRoute: typeof BlogsAtlassianForgeFutureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BlogsRoute: BlogsRoute,
-  ContactRoute: ContactRoute,
+  BlogsAtlassianForgeFutureRoute: BlogsAtlassianForgeFutureRoute,
+  BlogsAtlassianServicesImportanceRoute: BlogsAtlassianServicesImportanceRoute,
+  BlogsJiraAlignStrategyRoute: BlogsJiraAlignStrategyRoute,
+  BlogsMarketplaceAppsDesignRoute: BlogsMarketplaceAppsDesignRoute,
+  BlogsRovoIntelligentWorkRoute: BlogsRovoIntelligentWorkRoute,
   MarketplaceAppsChecklistRoute: MarketplaceAppsChecklistRoute,
   MarketplaceAppsIssueTemplateRoute: MarketplaceAppsIssueTemplateRoute,
   MarketplaceAppsTimeSheetRoute: MarketplaceAppsTimeSheetRoute,
@@ -330,9 +457,12 @@ const rootRouteChildren: RootRouteChildren = {
   SolutionsCloudMigrationRoute: SolutionsCloudMigrationRoute,
   SolutionsIntegrationRoute: SolutionsIntegrationRoute,
   SolutionsItsmRoute: SolutionsItsmRoute,
+  SolutionsJiraAlignRoute: SolutionsJiraAlignRoute,
+  SolutionsRovoRoute: SolutionsRovoRoute,
   SolutionsSupportRoute: SolutionsSupportRoute,
   SolutionsTrainingRoute: SolutionsTrainingRoute,
   AboutUsIndexRoute: AboutUsIndexRoute,
+  BlogsIndexRoute: BlogsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

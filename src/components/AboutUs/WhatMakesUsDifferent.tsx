@@ -11,15 +11,15 @@ export function WhatMakesUsDifferent() {
         <section className="container mx-auto px-4 md:px-10">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-10">
-                    <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4">
+                    <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4">
                         What Makes Us Different
                     </h2>
-                    <p className="text-xl font-semibold text-purple-600">
+                    <p className="text-lg sm:text-xl font-semibold text-purple-600">
                         Consultants Who Also Build Products
                     </p>
                 </div>
 
-                <p className="text-lg text-slate-600 text-center mb-8">
+                <p className="text-base sm:text-lg text-slate-600 text-center mb-8">
                     Achlys Solutions is not just a consulting provider—we are also Atlassian Marketplace app developers. This gives us a unique advantage:
                 </p>
 
@@ -32,7 +32,7 @@ export function WhatMakesUsDifferent() {
                                 <div className="p-1 rounded-full bg-purple-100 mt-1">
                                     <Check className="h-5 w-5 text-purple-600" />
                                 </div>
-                                <span className="text-slate-700 text-xl font-medium">{item}</span>
+                                <span className="text-slate-700  font-medium">{item}</span>
                             </li>
                         ))}
                     </ul>

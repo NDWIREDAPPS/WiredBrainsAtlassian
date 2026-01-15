@@ -3,12 +3,9 @@ import {
   Scripts,
   createRootRouteWithContext,
 } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import Header from '../components/Header'
-
-import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
+import Footer from '../components/Footer'
 
 import appCss from '../styles.css?url'
 
@@ -31,10 +28,31 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'Achlys Solutions | Atlassian Consulting & Marketplace Apps',
+      },
+      {
+        name: 'description',
+        content: 'Achlys Solutions provides expert Atlassian consulting, cloud migration, ITSM solutions, and Marketplace apps for Jira and Confluence.',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        property: 'og:site_name',
+        content: 'Achlys Solutions',
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
       },
     ],
     links: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/achlys_logo.png',
+      },
       {
         rel: 'stylesheet',
         href: appCss,
@@ -51,13 +69,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className='bg-slate-100 relative overflow-x-hidden'>
+      <body className='bg-white relative overflow-x-hidden'>
         <BackgroundShapes />
         <Header />
         <main className="pt-28 min-h-screen">
           {children}
         </main>
-        <TanStackDevtools
+        <Footer />
+        {/* <TanStackDevtools
           config={{
             position: 'bottom-right',
           }}
@@ -68,7 +87,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             },
             TanStackQueryDevtools,
           ]}
-        />
+        /> */}
         <Scripts />
       </body>
     </html>

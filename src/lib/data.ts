@@ -97,3 +97,52 @@ export const footerNavItems = [
     { title: "About Us", href: "/about-us" },
     { title: "Blogs", href: "/blogs" },
 ]
+
+export const blogPosts = [
+    {
+        title: "Why Atlassian Forge Is Changing the Future of Marketplace Apps",
+        slug: "atlassian-forge-future",
+        href: "/blogs/atlassian-forge-future",
+        description: "Forge is Atlassian's cloud-native app platform, changing what customers should expect from Marketplace apps with better security and performance.",
+        image: "/blogs/atlassian-forge.png",
+        heroImage: "/blogs/atlassian-forge-hero.png",
+        date: "January 15, 2026"
+    },
+    {
+        title: "Why Atlassian Services Matter More Than the Tools Themselves",
+        slug: "atlassian-services-importance",
+        href: "/blogs/atlassian-services-importance",
+        description: "Tools alone don't guarantee results. Success comes from designing workflows and strategies around how people actually work.",
+        image: "/blogs/atlassian-services-hero.png",
+        heroImage: "/blogs/atlassian-services-hero.png",
+        date: "January 14, 2026"
+    },
+    {
+        title: "Rovo: Turning Atlassian Into an Intelligent Work System",
+        slug: "rovo-intelligent-work",
+        href: "/blogs/rovo-intelligent-work",
+        description: "Rovo is Atlassian's AI layer that connects work, knowledge, and context across your tools to help teams find answers faster.",
+        image: "/jira-rovo-full.png",
+        heroImage: "/blogs/rovo-ai-hero.png",
+        date: "January 13, 2026"
+    },
+    {
+        title: "Jira Align: How Leaders Turn Strategy into Measurable Outcomes",
+        slug: "jira-align-strategy",
+        href: "/blogs/jira-align-strategy",
+        description: "An enterprise planning platform built to connect strategy to execution, giving leaders visibility into where investments are going.",
+        image: "/jira-align-full.png",
+        heroImage: "/blogs/jira-align-hero.png",
+        date: "January 12, 2026"
+    },
+    {
+        title: "Marketplace Apps Designed for How Teams Actually Work",
+        slug: "marketplace-apps-design",
+        href: "/blogs/marketplace-apps-design",
+        description: "We build focused apps to solve real, recurring problems teams face every day inside Jira—without overengineering.",
+        image: "/blogs/marketplace-apps.png",
+        heroImage: "/blogs/marketplace-apps-hero.png",
+        date: "January 11, 2026"
+    }
+];
+
