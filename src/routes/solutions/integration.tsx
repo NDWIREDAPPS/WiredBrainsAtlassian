@@ -12,7 +12,7 @@ import { Link2, Code, Workflow, Gauge, Shield, Cloud } from 'lucide-react'
 export const Route = createFileRoute('/solutions/integration')({
   head: () => ({
     meta: [
-      { title: 'Integration & Performance Optimization | Achlys Solutions' },
+      { title: 'Integration & Performance Optimization | Wired Brains' },
       {
         name: 'description',
         content:
@@ -20,7 +20,7 @@ export const Route = createFileRoute('/solutions/integration')({
       },
       {
         property: 'og:title',
-        content: 'Integration & Performance Optimization | Achlys Solutions',
+        content: 'Integration & Performance Optimization | Wired Brains',
       },
       {
         property: 'og:description',
@@ -57,7 +57,7 @@ function HeroSection() {
       title="Integration &"
       highlightedTitle="Performance"
       tagline="Connected Atlassian Platforms. Optimized for Scale."
-      description="Achlys Solutions helps organizations build seamlessly integrated and high-performance Atlassian environments."
+      description="Wired Brains helps organizations build seamlessly integrated and high-performance Atlassian environments."
       secondaryDescription="We design and implement integrations with third-party systems, create custom automation and API-based extensions and optimize platform performance to support enterprise-scale usage. Our focus is on reliability, scalability and long-term maintainability-ensuring Atlassian tools work as a connected ecosystem, not isolated applications."
       image="/integration_and_performance.jpg"
     />
@@ -171,7 +171,7 @@ function WhyAchlysSection() {
   return (
     <TwoColumnSection
       heading="Our Integration Advantage"
-      subheading="Why Achlys Solutions for Integration & Performance"
+      subheading="Why Wired Brains for Integration & Performance"
       content="We ensure integrations enhance your Atlassian platform-without introducing risk or complexity."
       items={[
         'Deep understanding of Atlassian APIs and platform internals',
@@ -204,7 +204,7 @@ function CTASection() {
   return (
     <SolutionCTA
       heading="Build a Connected, High-Performance Atlassian Platform"
-      content="Whether you need to integrate Atlassian with enterprise systems, automate critical workflows, or optimize platform performance, Achlys Solutions delivers solutions designed for scale and sustainability."
+      content="Whether you need to integrate Atlassian with enterprise systems, automate critical workflows, or optimize platform performance, Wired Brains delivers solutions designed for scale and sustainability."
     />
   )
 }

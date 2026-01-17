@@ -11,15 +11,15 @@ import {
 export const Route = createFileRoute('/solutions/cloud-migration')({
   head: () => ({
     meta: [
-      { title: 'Cloud Migration Services | Achlys Solutions' },
+      { title: 'Cloud Migration Services | Wired Brains' },
       {
         name: 'description',
         content:
-          'Seamless migration from Atlassian Server or Data Center to Cloud with minimal disruption. Expert cloud migration services by Achlys Solutions.',
+          'Seamless migration from Atlassian Server or Data Center to Cloud with minimal disruption. Expert cloud migration services by Wired Brains.',
       },
       {
         property: 'og:title',
-        content: 'Cloud Migration Services | Achlys Solutions',
+        content: 'Cloud Migration Services | Wired Brains',
       },
       {
         property: 'og:description',
@@ -58,7 +58,7 @@ function HeroSection() {
       title="Cloud"
       highlightedTitle="Migration"
       tagline="Seamless Migration to Atlassian Cloud"
-      description="Achlys Solutions helps organizations migrate from Server or Data Center to Atlassian Cloud with minimal disruption and maximum confidence."
+      description="Wired Brains helps organizations migrate from Server or Data Center to Atlassian Cloud with minimal disruption and maximum confidence."
       secondaryDescription="Our cloud migration approach ensures data integrity, performance optimization, security alignment and post-migration readiness, enabling teams to fully leverage the benefits of Atlassian's cloud-first platform."
       image="/cloud_migration.jpg"
     />
@@ -155,13 +155,13 @@ function SecuritySection() {
   return (
     <section className="container mx-auto px-4 md:px-10">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4">
+        <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-foreground mb-4">
           Cloud Migration with Security in Mind
         </h2>
-        <p className="text-lg sm:text-xl font-semibold text-purple-600 mb-6">
+        <p className="text-lg sm:text-xl font-semibold text-primary mb-6">
           Security & Compliance Focus
         </p>
-        <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
           We design cloud migrations with a strong focus on security, data
           protection and compliance. Our approach aligns with Atlassian Cloud
           security standards and supports organizations operating in regulated
@@ -176,7 +176,7 @@ function WhyAchlysSection() {
   return (
     <TwoColumnSection
       heading="Our Cloud Migration Advantage"
-      subheading="Why Achlys Solutions for Cloud Migration"
+      subheading="Why Wired Brains for Cloud Migration"
       content="We don't just move data-we help organizations transition confidently to a cloud-first operating model."
       items={[
         'Deep Atlassian platform expertise',
@@ -209,7 +209,7 @@ function CTASection() {
   return (
     <SolutionCTA
       heading="Start Your Atlassian Cloud Journey"
-      content="Whether you are preparing for end-of-support or proactively modernizing your Atlassian environment, Achlys Solutions ensures a smooth, secure and future-ready transition to Atlassian Cloud."
+      content="Whether you are preparing for end-of-support or proactively modernizing your Atlassian environment, Wired Brains ensures a smooth, secure and future-ready transition to Atlassian Cloud."
     />
   )
 }

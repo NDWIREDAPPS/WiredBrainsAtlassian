@@ -21,13 +21,13 @@ import {
 export const Route = createFileRoute('/solutions/rovo')({
   head: () => ({
     meta: [
-      { title: 'Rovo AI Solutions | Achlys Solutions' },
+      { title: 'Rovo AI Solutions | Wired Brains' },
       {
         name: 'description',
         content:
           'Adopt and operationalize Atlassian Rovo AI. Transform how teams find information, gain insights and take action across Jira and Confluence.',
       },
-      { property: 'og:title', content: 'Rovo AI Solutions | Achlys Solutions' },
+      { property: 'og:title', content: 'Rovo AI Solutions | Wired Brains' },
       {
         property: 'og:description',
         content:
@@ -64,7 +64,7 @@ function HeroSection() {
       title="Rovo"
       highlightedTitle="(Atlassian AI)"
       tagline="AI-Powered Work, Built into Atlassian"
-      description="Achlys Solutions helps organizations adopt and operationalize Rovo, Atlassian's AI-powered experience designed to transform how teams find information, gain insights and take action across the Atlassian ecosystem."
+      description="Wired Brains helps organizations adopt and operationalize Rovo, Atlassian's AI-powered experience designed to transform how teams find information, gain insights and take action across the Atlassian ecosystem."
       secondaryDescription="Rovo brings intelligence directly into Jira, Confluence and connected tools-helping teams work faster, make better decisions and reduce friction across knowledge and delivery workflows."
     />
   )
@@ -201,16 +201,16 @@ function WhyRovoMattersSection() {
   return (
     <section className="container mx-auto px-4 md:px-10">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="inline-flex items-center justify-center p-4 bg-purple-100 rounded-2xl mb-8 shadow-xs">
-          <Sparkles className="h-10 w-10 text-purple-600" />
+        <div className="inline-flex items-center justify-center p-4 bg-[#f14a15]/10 rounded-2xl mb-8 shadow-xs">
+          <Sparkles className="h-10 w-10 text-primary" />
         </div>
-        <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-slate-900 mb-4">
+        <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-foreground mb-4">
           From Information Overload to Intelligent Action
         </h2>
-        <p className="text-lg sm:text-xl font-semibold text-purple-600 mb-6">
+        <p className="text-lg sm:text-xl font-semibold text-primary mb-6">
           Why Rovo Matters
         </p>
-        <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
           As organizations scale, information becomes fragmented across tools
           and teams. Rovo helps reduce noise and surface what matters-turning
           Atlassian into an intelligent work system rather than just a
@@ -225,7 +225,7 @@ function WhyAchlysSection() {
   return (
     <TwoColumnSection
       heading="AI Adoption Led by Atlassian Practitioners"
-      subheading="Why Achlys Solutions for Rovo"
+      subheading="Why Wired Brains for Rovo"
       content="We help organizations adopt AI with purpose-not hype."
       items={[
         'Deep understanding of Atlassian data models',
@@ -258,7 +258,7 @@ function CTASection() {
   return (
     <SolutionCTA
       heading="Bring Intelligence to Your Atlassian Platform"
-      content="Whether you are exploring Atlassian AI or preparing your platform for intelligent workflows, Achlys Solutions helps you adopt Rovo in a way that is practical, secure and impactful."
+      content="Whether you are exploring Atlassian AI or preparing your platform for intelligent workflows, Wired Brains helps you adopt Rovo in a way that is practical, secure and impactful."
     />
   )
 }

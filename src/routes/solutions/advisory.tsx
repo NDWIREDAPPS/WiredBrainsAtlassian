@@ -12,7 +12,7 @@ import { Target, Layout, CreditCard, Package, Map, Shield } from 'lucide-react'
 export const Route = createFileRoute('/solutions/advisory')({
   head: () => ({
     meta: [
-      { title: 'Advisory & Licensing | Achlys Solutions' },
+      { title: 'Advisory & Licensing | Wired Brains' },
       {
         name: 'description',
         content:
@@ -20,7 +20,7 @@ export const Route = createFileRoute('/solutions/advisory')({
       },
       {
         property: 'og:title',
-        content: 'Advisory & Licensing | Achlys Solutions',
+        content: 'Advisory & Licensing | Wired Brains',
       },
       {
         property: 'og:description',
@@ -56,7 +56,7 @@ function HeroSection() {
       title="Advisory &"
       highlightedTitle="Licensing"
       tagline="Strategic Guidance for Smarter Atlassian Decisions"
-      description="Achlys Solutions provides strategic advisory and licensing guidance to help organizations make informed decisions across the Atlassian ecosystem."
+      description="Wired Brains provides strategic advisory and licensing guidance to help organizations make informed decisions across the Atlassian ecosystem."
       secondaryDescription="From selecting the right tools and designing scalable architecture to optimizing licenses and planning long-term roadmaps, we help teams align Atlassian investments with business outcomes. Our advisory services are independent, practical and grounded in real implementation and app-development experience."
       image="/advisory_and_license.jpg"
     />
@@ -161,7 +161,7 @@ function WhyAchlysSection() {
   return (
     <TwoColumnSection
       heading="Our Advisory Advantage"
-      subheading="Why Achlys Solutions for Advisory & Licensing"
+      subheading="Why Wired Brains for Advisory & Licensing"
       content="We advise with a builder's mindset-not just theory."
       items={[
         'Deep Atlassian platform expertise',
@@ -194,7 +194,7 @@ function CTASection() {
   return (
     <SolutionCTA
       heading="Make Confident Atlassian Decisions"
-      content="Whether you're selecting tools, optimizing licenses, or planning the future of your Atlassian platform, Achlys Solutions provides the clarity and expertise to move forward with confidence."
+      content="Whether you're selecting tools, optimizing licenses, or planning the future of your Atlassian platform, Wired Brains provides the clarity and expertise to move forward with confidence."
     />
   )
 }

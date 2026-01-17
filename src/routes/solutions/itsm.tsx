@@ -20,7 +20,7 @@ import {
 export const Route = createFileRoute('/solutions/itsm')({
   head: () => ({
     meta: [
-      { title: 'IT Service Management (ITSM) Solutions | Achlys Solutions' },
+      { title: 'IT Service Management (ITSM) Solutions | Wired Brains' },
       {
         name: 'description',
         content:
@@ -28,7 +28,7 @@ export const Route = createFileRoute('/solutions/itsm')({
       },
       {
         property: 'og:title',
-        content: 'IT Service Management (ITSM) Solutions | Achlys Solutions',
+        content: 'IT Service Management (ITSM) Solutions | Wired Brains',
       },
       {
         property: 'og:description',
@@ -65,7 +65,7 @@ function HeroSection() {
       title="IT Service Management"
       highlightedTitle="(ITSM)"
       tagline="Modern ITSM & ESM Solutions Built on Atlassian"
-      description="Achlys Solutions helps organizations design and implement robust IT Service Management (ITSM) and Enterprise Service Management (ESM) solutions using Jira Service Management."
+      description="Wired Brains helps organizations design and implement robust IT Service Management (ITSM) and Enterprise Service Management (ESM) solutions using Jira Service Management."
       secondaryDescription="We enable IT teams to efficiently manage incidents, service requests, problems, changes and assets-while providing business teams with fast, reliable and transparent service experiences. Our implementations are aligned with ITIL best practices and built to scale with organizational growth."
       image="/ITSM.png"
     />
@@ -192,7 +192,7 @@ function WhyAchlysSection() {
   return (
     <TwoColumnSection
       heading="Our ITSM Advantage"
-      subheading="Why Achlys Solutions for ITSM"
+      subheading="Why Wired Brains for ITSM"
       content="We don't just implement ITSM tools-we design service management systems that teams actually use and trust."
       items={[
         'Deep expertise in Jira Service Management',
@@ -225,7 +225,7 @@ function CTASection() {
   return (
     <SolutionCTA
       heading="Transform Your IT Service Management"
-      content="Whether you are implementing ITSM for the first time or modernizing an existing service desk, Achlys Solutions helps you build a scalable, efficient and future-ready service management platform on Atlassian."
+      content="Whether you are implementing ITSM for the first time or modernizing an existing service desk, Wired Brains helps you build a scalable, efficient and future-ready service management platform on Atlassian."
     />
   )
 }

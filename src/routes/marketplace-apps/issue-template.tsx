@@ -21,7 +21,7 @@ const DOCS_URL = '#' // TODO: Add Documentation URL
 export const Route = createFileRoute('/marketplace-apps/issue-template')({
   head: () => ({
     meta: [
-      { title: 'Issue Template App for Jira | Achlys Solutions' },
+      { title: 'Issue Template App for Jira | Wired Brains' },
       {
         name: 'description',
         content:
@@ -29,7 +29,7 @@ export const Route = createFileRoute('/marketplace-apps/issue-template')({
       },
       {
         property: 'og:title',
-        content: 'Issue Template App for Jira | Achlys Solutions',
+        content: 'Issue Template App for Jira | Wired Brains',
       },
       {
         property: 'og:description',
@@ -57,23 +57,23 @@ function IssueTemplatePage() {
             alt="Issue Template App"
             className="w-20 h-20 mx-auto"
           />
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100">
-            <FileText className="w-4 h-4 text-indigo-600" />
-            <span className="text-sm font-medium text-indigo-700">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f14a15]/10 border border-[#f14a15]/20">
+            <FileText className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">
               Create Issues Faster. Ensure Consistency.
             </span>
           </div>
-          <h1 className="text-3xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight">
+          <h1 className="text-3xl md:text-6xl font-bold tracking-tight text-foreground leading-tight">
             Standardize Jira Issue Creation with Reusable Templates
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Pre-defined templates for consistent, fast and accurate issue
             creation across teams and projects.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Button
               size="lg"
-              className="bg-slate-900 hover:bg-slate-800 text-white px-8 h-14 rounded-2xl text-lg group"
+              className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 rounded-2xl text-lg group"
               asChild
             >
               <a href={MARKETPLACE_URL} target="_blank" rel="noreferrer">
@@ -84,7 +84,7 @@ function IssueTemplatePage() {
             <Button
               variant="outline"
               size="lg"
-              className="px-8 h-14 rounded-2xl text-lg border-slate-200 hover:bg-slate-50 group"
+              className="px-8 h-14 rounded-2xl text-lg border-border hover:bg-[#f14a15]/10 group"
               asChild
             >
               <a href={DOCS_URL} target="_blank" rel="noreferrer">
@@ -101,37 +101,37 @@ function IssueTemplatePage() {
         {/* Feature 1: Reusable Templates */}
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <div className="flex-1 space-y-6">
-            <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center">
-              <FileText className="w-6 h-6 text-blue-600" />
+            <div className="w-12 h-12 rounded-2xl bg-[#f14a15]/10 flex items-center justify-center">
+              <FileText className="w-6 h-6 text-primary" />
             </div>
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900">
+            <h2 className="text-2xl sm:text-4xl font-bold text-foreground">
               Reusable Templates for Every Need
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Create a library of templates that teams can select when creating
               new issues. Templates can include summary text, default field
               values and pre-assigned settings to accelerate issue creation and
               maintain standards.
             </p>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>Summary and description text</span>
               </li>
-              <li className="flex items-start gap-3 text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>
                   Default values for labels, components and custom fields
                 </span>
               </li>
-              <li className="flex items-start gap-3 text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>Pre-assigned assignees or reporting defaults</span>
               </li>
             </ul>
           </div>
           <div className="flex-1 w-full">
-            <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-xl bg-white p-2">
+            <div className="rounded-3xl border border-border overflow-hidden shadow-xl bg-card p-2">
               {/* TODO: Replace with actual screenshot */}
               <ImageZoom
                 src="/issue-template-app/reusable-templates.jpg"
@@ -147,34 +147,34 @@ function IssueTemplatePage() {
         {/* Feature 2: Project & Role Customization (Reversed) */}
         <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
           <div className="flex-1 space-y-6">
-            <div className="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center">
-              <Settings className="w-6 h-6 text-purple-600" />
+            <div className="w-12 h-12 rounded-2xl bg-[#f14a15]/10 flex items-center justify-center">
+              <Settings className="w-6 h-6 text-primary" />
             </div>
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900">
+            <h2 className="text-2xl sm:text-4xl font-bold text-foreground">
               Customize Templates by Project & Role
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Templates can be scoped by project, team, or user group - ensuring
               only relevant templates are shown. This prevents template overload
               and improves usability for end users.
             </p>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>Restrict template usage by user or role</span>
               </li>
-              <li className="flex items-start gap-3 text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>Multi-project support for templates</span>
               </li>
-              <li className="flex items-start gap-3 text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>Template categories for easy selection</span>
               </li>
             </ul>
           </div>
           <div className="flex-1 w-full">
-            <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-xl bg-white p-2">
+            <div className="rounded-3xl border border-border overflow-hidden shadow-xl bg-card p-2">
               {/* TODO: Replace with actual screenshot */}
               <ImageZoom
                 src="/issue-template-app/project-role-customization.jpg"
@@ -190,37 +190,37 @@ function IssueTemplatePage() {
         {/* Feature 3: Auto-Populate Fields */}
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <div className="flex-1 space-y-6">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center">
-              <Zap className="w-6 h-6 text-emerald-600" />
+            <div className="w-12 h-12 rounded-2xl bg-[#f14a15]/10 flex items-center justify-center">
+              <Zap className="w-6 h-6 text-primary" />
             </div>
-            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900">
+            <h2 className="text-2xl sm:text-4xl font-bold text-foreground">
               Pre-Fill & Auto-Populate Fields
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Templates auto-populate critical fields in the issue creation
               form, reducing repetitive typing and ensuring key details are
               included every time. Organize templates into categories and add
               search filters for quick access.
             </p>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>
                   Auto-fill summary, description, labels and components
                 </span>
               </li>
-              <li className="flex items-start gap-3 text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>Template categories and search filters</span>
               </li>
-              <li className="flex items-start gap-3 text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 text-muted-foreground">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>Reduce errors and missing fields</span>
               </li>
             </ul>
           </div>
           <div className="flex-1 w-full">
-            <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-xl bg-white p-2">
+            <div className="rounded-3xl border border-border overflow-hidden shadow-xl bg-card p-2">
               {/* TODO: Replace with actual screenshot */}
               <ImageZoom
                 src="/issue-template-app/auto-populate-fields.jpg"
@@ -237,14 +237,15 @@ function IssueTemplatePage() {
       {/* More Details Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-10 max-w-4xl">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-            <span className="w-1.5 h-8 bg-indigo-600 rounded-full" />
+          <h2 className="text-3xl font-bold text-foreground mb-8 flex items-center gap-3">
+            <span className="w-1.5 h-8 bg-primary rounded-full" />
             More Details
           </h2>
-          <div className="space-y-6 text-slate-600">
+          <div className="space-y-6 text-muted-foreground">
             <p className="text-lg leading-relaxed">
-              The <strong className="text-slate-900">Issue Template App</strong>{' '}
-              by Achlys Solutions helps teams standardize issue creation in Jira
+              The{' '}
+              <strong className="text-foreground">Issue Template App</strong> by
+              Wired Brains helps teams standardize issue creation in Jira
               through reusable templates that pre-populate field values and
               reduce manual effort. Built for Atlassian Cloud, it integrates
               directly into your Jira issue creation experience without
@@ -254,14 +255,14 @@ function IssueTemplatePage() {
             {/* Key Details Grid */}
             <div className="grid md:grid-cols-2 gap-6 pt-4">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                  <FileText className="w-5 h-5 text-blue-600" />
+                <div className="w-10 h-10 rounded-xl bg-[#f14a15]/10 flex items-center justify-center shrink-0">
+                  <FileText className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900">
+                  <h3 className="font-semibold text-foreground">
                     Easy Template Management
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-sm text-muted-foreground">
                     Create, edit, delete, clone and version templates with
                     export/import capabilities.
                   </p>
@@ -269,14 +270,14 @@ function IssueTemplatePage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center shrink-0">
-                  <Users className="w-5 h-5 text-purple-600" />
+                <div className="w-10 h-10 rounded-xl bg-[#f14a15]/10 flex items-center justify-center shrink-0">
+                  <Users className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900">
+                  <h3 className="font-semibold text-foreground">
                     Built for Teams
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-sm text-muted-foreground">
                     Ideal for product, support and engineering teams ensuring
                     consistent issue formats.
                   </p>
@@ -284,14 +285,14 @@ function IssueTemplatePage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center shrink-0">
-                  <FolderOpen className="w-5 h-5 text-emerald-600" />
+                <div className="w-10 h-10 rounded-xl bg-[#f14a15]/10 flex items-center justify-center shrink-0">
+                  <FolderOpen className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900">
+                  <h3 className="font-semibold text-foreground">
                     Template Categories
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-sm text-muted-foreground">
                     Group templates for easy selection, even in environments
                     with many templates.
                   </p>
@@ -299,14 +300,14 @@ function IssueTemplatePage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
-                  <Search className="w-5 h-5 text-orange-600" />
+                <div className="w-10 h-10 rounded-xl bg-[#f14a15]/10 flex items-center justify-center shrink-0">
+                  <Search className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900">
+                  <h3 className="font-semibold text-foreground">
                     Quick Search & Filters
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-sm text-muted-foreground">
                     Find the right template quickly with search and filtering
                     capabilities.
                   </p>
@@ -314,14 +315,14 @@ function IssueTemplatePage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center shrink-0">
-                  <Zap className="w-5 h-5 text-cyan-600" />
+                <div className="w-10 h-10 rounded-xl bg-[#f14a15]/10 flex items-center justify-center shrink-0">
+                  <Zap className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900">
+                  <h3 className="font-semibold text-foreground">
                     Jira Cloud Native
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-sm text-muted-foreground">
                     Works with Jira Cloud projects, boards, filters and
                     permissions natively.
                   </p>
@@ -329,22 +330,22 @@ function IssueTemplatePage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center shrink-0">
-                  <LifeBuoy className="w-5 h-5 text-rose-600" />
+                <div className="w-10 h-10 rounded-xl bg-[#f14a15]/10 flex items-center justify-center shrink-0">
+                  <LifeBuoy className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900">
+                  <h3 className="font-semibold text-foreground">
                     Support & Resources
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-sm text-muted-foreground">
                     Access detailed user guides, tutorials and expert support
-                    from Achlys Solutions.
+                    from Wired Brains.
                   </p>
                 </div>
               </div>
             </div>
 
-            <p className="text-lg leading-relaxed italic border-l-4 border-indigo-200 pl-4">
+            <p className="text-lg leading-relaxed italic border-l-4 border-[#f14a15]/30 pl-4">
               Reduce repeated effort, eliminate missing fields and make Jira
               issue creation consistent and efficient across teams.
             </p>
@@ -357,7 +358,7 @@ function IssueTemplatePage() {
         <div className="container mx-auto px-4 md:px-10 text-center">
           <Button
             size="lg"
-            className="bg-slate-900 hover:bg-slate-800 text-white px-10 h-14 rounded-2xl text-lg group"
+            className="bg-foreground hover:bg-foreground/90 text-background px-10 h-14 rounded-2xl text-lg group"
             asChild
           >
             <a href={MARKETPLACE_URL} target="_blank" rel="noreferrer">

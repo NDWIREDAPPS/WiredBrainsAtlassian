@@ -29,9 +29,9 @@ function MarketplaceAppsBlog() {
     >
       <div className="space-y-16">
         <section>
-          <p className="text-xl text-slate-600 leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed">
             Jira is powerful, but most teams quickly discover the same thing:{' '}
-            <span className="text-slate-900 font-bold italic">
+            <span className="text-foreground font-bold italic">
               they need more structure, better visibility and simpler ways to
               work
             </span>
@@ -40,8 +40,8 @@ function MarketplaceAppsBlog() {
         </section>
 
         <section>
-          <h2 className="text-3xl font-semibold text-slate-900 mb-10 flex items-center gap-2">
-            <Puzzle className="text-purple-600" />
+          <h2 className="text-3xl font-semibold text-foreground mb-10 flex items-center gap-2">
+            <Puzzle className="text-primary" />
             Our Focused App Ecosystem
           </h2>
           <div className="space-y-8">
@@ -69,19 +69,19 @@ function MarketplaceAppsBlog() {
             ].map((app, i) => (
               <div
                 key={i}
-                className="flex flex-col md:flex-row gap-8 items-start p-8 rounded-3xl border border-slate-100 bg-white hover:bg-slate-50 transition-colors"
+                className="flex flex-col md:flex-row gap-8 items-start p-8 rounded-3xl border border-border bg-card hover:bg-[#f14a15]/10 transition-colors"
               >
-                <div className="bg-purple-100 p-4 rounded-2xl">
-                  <app.icon className="w-8 h-8 text-purple-600" />
+                <div className="bg-[#f14a15]/15 p-4 rounded-2xl">
+                  <app.icon className="w-8 h-8 text-primary" />
                 </div>
                 <div>
-                  <h4 className="text-2xl font-semibold text-slate-900 mb-2">
+                  <h4 className="text-2xl font-semibold text-foreground mb-2">
                     {app.title}
                   </h4>
-                  <p className="text-slate-600 leading-relaxed italic mb-4">
+                  <p className="text-muted-foreground leading-relaxed italic mb-4">
                     {app.desc}
                   </p>
-                  <button className="text-purple-600 font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                  <button className="text-primary font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
                     Learn more <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -90,13 +90,13 @@ function MarketplaceAppsBlog() {
           </div>
         </section>
 
-        <section className="bg-slate-50 rounded-[2.5rem] p-12 border border-slate-100 overflow-hidden relative text-center">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-purple-100/40 via-transparent to-transparent opacity-50" />
-          <Layers className="w-16 h-16 text-purple-600 mx-auto mb-8 relative z-10" />
-          <h2 className="text-4xl font-semibold text-slate-900 relative z-10">
+        <section className="bg-[#f14a15]/10 rounded-[2.5rem] p-12 border border-border overflow-hidden relative text-center">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-[#f14a15]/20 via-transparent to-transparent opacity-50" />
+          <Layers className="w-16 h-16 text-primary mx-auto mb-8 relative z-10" />
+          <h2 className="text-4xl font-semibold text-foreground relative z-10">
             Built to Work Together
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto mb-10 relative z-10 leading-relaxed text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-10 relative z-10 leading-relaxed text-lg">
             Each app solves a specific problem-but together, they create a
             powerful, unified environment that improves reporting, reduces
             overhead and increases Jira adoption.
@@ -106,7 +106,7 @@ function MarketplaceAppsBlog() {
               (tag, i) => (
                 <span
                   key={i}
-                  className="px-6 py-2 bg-white rounded-full border border-slate-200 text-sm font-semibold text-slate-700 shadow-sm"
+                  className="px-6 py-2 bg-card rounded-full border border-[#f14a15]/20 text-sm font-semibold text-muted-foreground shadow-sm"
                 >
                   {tag}
                 </span>
@@ -115,18 +115,18 @@ function MarketplaceAppsBlog() {
           </div>
         </section>
 
-        <div className="flex items-center justify-between p-10 bg-purple-50 rounded-3xl border border-purple-100">
+        <div className="flex items-center justify-between p-10 bg-[#f14a15]/10 rounded-3xl border border-[#f14a15]/20">
           <div>
-            <h3 className="text-2xl font-semibold text-slate-900 mb-2 flex items-center gap-2">
-              <Sparkles className="text-purple-600 w-6 h-6" />
+            <h3 className="text-2xl font-semibold text-foreground mb-2 flex items-center gap-2">
+              <Sparkles className="text-primary w-6 h-6" />
               Ready to work smarter?
             </h3>
-            <p className="text-slate-600 font-medium">
-              Explore the full Achlys Solutions marketplace today.
+            <p className="text-muted-foreground font-medium">
+              Explore the full Wired Brains marketplace today.
             </p>
           </div>
           <Link to="/" hash="marketplace-apps">
-            <button className="px-6 py-3 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-all shadow-lg shadow-purple-200 cursor-pointer text-sm">
+            <button className="px-6 py-3 bg-primary text-background font-semibold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-[#f14a15]/20 cursor-pointer text-sm">
               View Marketplace
             </button>
           </Link>

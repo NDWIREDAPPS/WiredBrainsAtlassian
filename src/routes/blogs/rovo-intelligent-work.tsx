@@ -27,11 +27,11 @@ function RovoBlog() {
     >
       <div className="space-y-16">
         <section className="relative">
-          <div className="absolute -left-4 top-0 w-1 h-full bg-linear-to-b from-purple-600 to-transparent opacity-50" />
-          <p className="text-xl text-slate-600 leading-relaxed pl-8">
+          <div className="absolute -left-4 top-0 w-1 h-full bg-linear-to-b from-[#f14a15] to-transparent opacity-50" />
+          <p className="text-xl text-muted-foreground leading-relaxed pl-8">
             Teams today don’t struggle because they lack tools. They struggle
             because{' '}
-            <span className="text-slate-900 font-semibold">
+            <span className="text-foreground font-semibold">
               information is scattered.
             </span>{' '}
             Project updates live in Jira, documentation in Confluence, service
@@ -39,15 +39,15 @@ function RovoBlog() {
             doing the work itself.
             <br />
             <br />
-            <span className="text-purple-600 font-semibold italic">
+            <span className="text-primary font-semibold italic">
               This is exactly the problem Rovo is designed to solve.
             </span>
           </p>
         </section>
 
         <section>
-          <h2 className="text-3xl font-semibold text-slate-900 mb-8 flex items-center gap-3">
-            <Sparkles className="text-purple-600" />
+          <h2 className="text-3xl font-semibold text-foreground mb-8 flex items-center gap-3">
+            <Sparkles className="text-primary" />
             What Rovo Brings to Atlassian
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -75,13 +75,13 @@ function RovoBlog() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                className="bg-card border border-border p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
               >
-                <item.icon className="w-8 h-8 text-purple-600 mb-4" />
-                <h4 className="font-semibold text-slate-900 mb-2">
+                <item.icon className="w-8 h-8 text-primary mb-4" />
+                <h4 className="font-semibold text-foreground mb-2">
                   {item.title}
                 </h4>
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -89,13 +89,13 @@ function RovoBlog() {
           </div>
         </section>
 
-        <section className="bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-sm relative overflow-hidden">
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-50 blur-[120px] rounded-full -mb-48 -mr-48" />
-          <h2 className="text-2xl font-semibold mb-6 text-slate-900 flex items-center gap-2 relative z-10">
-            <Database className="text-purple-600" />
+        <section className="bg-card rounded-[2.5rem] p-10 border border-border shadow-sm relative overflow-hidden">
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#f14a15]/10 blur-[120px] rounded-full -mb-48 -mr-48" />
+          <h2 className="text-2xl font-semibold mb-6 text-foreground flex items-center gap-2 relative z-10">
+            <Database className="text-primary" />
             Rovo Is Only as Good as Your Setup
           </h2>
-          <p className="text-slate-600 mb-8 relative z-10 leading-relaxed">
+          <p className="text-muted-foreground mb-8 relative z-10 leading-relaxed">
             AI doesn’t fix broken structure. It amplifies it. To truly unlock
             Rovo’s potential, your Atlassian platform needs high-quality,
             structured data.
@@ -109,10 +109,10 @@ function RovoBlog() {
             ].map((issue, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100"
+                className="flex items-center gap-3 bg-[#f14a15]/10 p-4 rounded-xl border border-border"
               >
-                <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                <span className="text-slate-700 text-sm font-medium">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <span className="text-muted-foreground text-sm font-medium">
                   {issue}
                 </span>
               </div>
@@ -121,7 +121,7 @@ function RovoBlog() {
         </section>
 
         <section>
-          <h2 className="text-3xl font-semibold text-slate-900 mb-8">
+          <h2 className="text-3xl font-semibold text-foreground mb-8">
             How We Implement Rovo
           </h2>
           <div className="space-y-8">
@@ -148,26 +148,26 @@ function RovoBlog() {
               },
             ].map((step, i) => (
               <div key={i} className="flex items-start gap-6 group">
-                <span className="text-4xl font-semibold text-slate-100 group-hover:text-purple-100 transition-colors uppercase font-mono">
+                <span className="text-4xl font-semibold text-[#f14a15]/20 group-hover:text-[#f14a15]/30 transition-colors uppercase font-mono">
                   {step.step}
                 </span>
                 <div className="pt-1">
-                  <h4 className="text-xl font-semibold text-slate-900 mb-1">
+                  <h4 className="text-xl font-semibold text-foreground mb-1">
                     {step.title}
                   </h4>
-                  <p className="text-slate-600">{step.desc}</p>
+                  <p className="text-muted-foreground">{step.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        <div className="bg-purple-50 rounded-3xl p-10 border border-purple-100 flex flex-col md:flex-row items-center gap-10">
+        <div className="bg-[#f14a15]/10 rounded-3xl p-10 border border-[#f14a15]/20 flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1">
-            <h3 className="text-3xl font-semibold mb-4 text-slate-900">
+            <h3 className="text-3xl font-semibold mb-4 text-foreground">
               The Future is Intelligent
             </h3>
-            <p className="text-slate-600 leading-relaxed font-medium">
+            <p className="text-muted-foreground leading-relaxed font-medium">
               Rovo is a foundational part of the AI-powered future of Atlassian.
               Let us help you prepare your platform today.
             </p>
@@ -177,7 +177,7 @@ function RovoBlog() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="whitespace-nowrap px-6 py-3 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-all flex items-center gap-2 shadow-lg shadow-purple-200 text-sm cursor-pointer">
+            <button className="whitespace-nowrap px-6 py-3 bg-primary text-background font-semibold rounded-xl hover:bg-primary/90 transition-all flex items-center gap-2 shadow-lg shadow-[#f14a15]/20 text-sm cursor-pointer">
               Start Your AI Journey <ArrowRight className="w-5 h-5" />
             </button>
           </a>

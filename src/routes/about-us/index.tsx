@@ -13,13 +13,13 @@ import { AboutFinalCTA } from '@/components/AboutUs/AboutFinalCTA'
 export const Route = createFileRoute('/about-us/')({
   head: () => ({
     meta: [
-      { title: 'About Us | Achlys Solutions' },
+      { title: 'About Us | Wired Brains' },
       {
         name: 'description',
         content:
-          'Learn about Achlys Solutions - an Atlassian consulting partner specializing in enterprise solutions, cloud migration and Marketplace app development.',
+          'Learn about Wired Brains - an Atlassian consulting partner specializing in enterprise solutions, cloud migration and Marketplace app development.',
       },
-      { property: 'og:title', content: 'About Us | Achlys Solutions' },
+      { property: 'og:title', content: 'About Us | Wired Brains' },
       {
         property: 'og:description',
         content:

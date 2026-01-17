@@ -28,12 +28,12 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Achlys Solutions | Atlassian Consulting & Marketplace Apps',
+        title: 'Wired Brains | Atlassian Consulting & Marketplace Apps',
       },
       {
         name: 'description',
         content:
-          'Achlys Solutions provides expert Atlassian consulting, cloud migration, ITSM solutions and Marketplace apps for Jira and Confluence.',
+          'Wired Brains provides expert Atlassian consulting, cloud migration, ITSM solutions and Marketplace apps for Jira and Confluence.',
       },
       {
         property: 'og:type',
@@ -41,7 +41,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
       {
         property: 'og:site_name',
-        content: 'Achlys Solutions',
+        content: 'Wired Brains',
       },
       {
         name: 'twitter:card',
@@ -70,7 +70,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="bg-white relative overflow-x-hidden">
+      <body className="dark bg-background relative overflow-x-hidden">
         <BackgroundShapes />
         <Header />
         <main className="pt-28 min-h-screen">{children}</main>

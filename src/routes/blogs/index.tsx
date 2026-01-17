@@ -5,17 +5,17 @@ import { BlogCard } from '../../components/Blogs/BlogCard'
 export const Route = createFileRoute('/blogs/')({
   head: () => ({
     meta: [
-      { title: 'Blog & Insights | Achlys Solutions' },
+      { title: 'Blog & Insights | Wired Brains' },
       {
         name: 'description',
         content:
-          'Insights, guides and best practices for Atlassian tools including Jira, Confluence and Jira Service Management from Achlys Solutions.',
+          'Insights, guides and best practices for Atlassian tools including Jira, Confluence and Jira Service Management from Wired Brains.',
       },
-      { property: 'og:title', content: 'Blog & Insights | Achlys Solutions' },
+      { property: 'og:title', content: 'Blog & Insights | Wired Brains' },
       {
         property: 'og:description',
         content:
-          'Insights, guides and best practices for Atlassian tools from Achlys Solutions.',
+          'Insights, guides and best practices for Atlassian tools from Wired Brains.',
       },
       {
         property: 'og:url',
@@ -30,13 +30,13 @@ function BlogIndex() {
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-semibold text-slate-900 mb-6 tracking-tight">
-              Blog & <span className="text-purple-600">Insights</span>
+            <h1 className="text-5xl font-semibold text-foreground mb-6 tracking-tight">
+              Blog & <span className="text-primary">Insights</span>
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed">
               Expert perspectives on Atlassian ecosystems, agile transformations
               and the future of work. Stay updated with the latest trends and
               best practices.

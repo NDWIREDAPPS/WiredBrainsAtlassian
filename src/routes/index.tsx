@@ -11,7 +11,7 @@ import { FinalCTASection } from '@/components/Home/FinalCTASection'
 export const Route = createFileRoute('/')({
   head: () => ({
     meta: [
-      { title: 'Achlys Solutions | Atlassian Consulting & Marketplace Apps' },
+      { title: 'Wired Brains | Atlassian Consulting & Marketplace Apps' },
       {
         name: 'description',
         content:
@@ -19,7 +19,7 @@ export const Route = createFileRoute('/')({
       },
       {
         property: 'og:title',
-        content: 'Achlys Solutions | Atlassian Consulting & Marketplace Apps',
+        content: 'Wired Brains | Atlassian Consulting & Marketplace Apps',
       },
       {
         property: 'og:description',

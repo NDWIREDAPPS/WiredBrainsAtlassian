@@ -12,7 +12,7 @@ import { Settings, TrendingUp, Gauge, LifeBuoy, RefreshCw } from 'lucide-react'
 export const Route = createFileRoute('/solutions/support')({
   head: () => ({
     meta: [
-      { title: 'Support & Managed Services | Achlys Solutions' },
+      { title: 'Support & Managed Services | Wired Brains' },
       {
         name: 'description',
         content:
@@ -20,7 +20,7 @@ export const Route = createFileRoute('/solutions/support')({
       },
       {
         property: 'og:title',
-        content: 'Support & Managed Services | Achlys Solutions',
+        content: 'Support & Managed Services | Wired Brains',
       },
       {
         property: 'og:description',
@@ -57,7 +57,7 @@ function HeroSection() {
       title="Support &"
       highlightedTitle="Managed Services"
       tagline="Reliable Atlassian Support That Grows with You"
-      description="Achlys Solutions provides end-to-end support and managed services to ensure your Atlassian platform continues to deliver value long after implementation."
+      description="Wired Brains provides end-to-end support and managed services to ensure your Atlassian platform continues to deliver value long after implementation."
       secondaryDescription="From day-to-day administration to performance optimization and continuous enhancements, we help organizations keep their Atlassian tools stable, secure and aligned with evolving business needs."
       image="/supports_and_managed_services.jpg"
     />
@@ -162,7 +162,7 @@ function WhyAchlysSection() {
   return (
     <TwoColumnSection
       heading="Our Support Advantage"
-      subheading="Why Achlys Solutions for Managed Services"
+      subheading="Why Wired Brains for Managed Services"
       content="We act as an extension of your team-not just a ticket-based support provider."
       items={[
         'Atlassian-focused expertise',
@@ -195,7 +195,7 @@ function CTASection() {
   return (
     <SolutionCTA
       heading="Keep Your Atlassian Platform Performing at Its Best"
-      content="Whether you need ongoing administration, expert support, or continuous platform optimization, Achlys Solutions ensures your Atlassian tools remain reliable, scalable and aligned with your business goals."
+      content="Whether you need ongoing administration, expert support, or continuous platform optimization, Wired Brains ensures your Atlassian tools remain reliable, scalable and aligned with your business goals."
     />
   )
 }

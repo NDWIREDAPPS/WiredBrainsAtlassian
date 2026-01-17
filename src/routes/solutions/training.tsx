@@ -21,7 +21,7 @@ import {
 export const Route = createFileRoute('/solutions/training')({
   head: () => ({
     meta: [
-      { title: 'Atlassian Training | Achlys Solutions' },
+      { title: 'Atlassian Training | Wired Brains' },
       {
         name: 'description',
         content:
@@ -29,7 +29,7 @@ export const Route = createFileRoute('/solutions/training')({
       },
       {
         property: 'og:title',
-        content: 'Atlassian Training | Achlys Solutions',
+        content: 'Atlassian Training | Wired Brains',
       },
       {
         property: 'og:description',
@@ -66,7 +66,7 @@ function HeroSection() {
       title="Atlassian"
       highlightedTitle="Training"
       tagline="Practical Atlassian Training for Real-World Teams"
-      description="Achlys Solutions delivers role-based Atlassian training programs designed for administrators, developers, agents and end users."
+      description="Wired Brains delivers role-based Atlassian training programs designed for administrators, developers, agents and end users."
       secondaryDescription="Our training focuses on real-world usage, platform best practices and long-term adoption, ensuring teams don't just learn Atlassian tools-but use them effectively. We combine platform expertise with hands-on experience to help teams build confidence and capability across the Atlassian ecosystem."
       image="/training.jpg"
     />
@@ -186,7 +186,7 @@ function WhyAchlysSection() {
   return (
     <TwoColumnSection
       heading="Training Led by Atlassian Practitioners"
-      subheading="Why Achlys Solutions for Training"
+      subheading="Why Wired Brains for Training"
       content="We train teams the way Atlassian tools are actually used in production environments."
       items={[
         'Delivered by experienced Atlassian consultants and app developers',
@@ -218,7 +218,7 @@ function CTASection() {
   return (
     <SolutionCTA
       heading="Empower Your Teams with Atlassian Training"
-      content="Whether you are onboarding new users, upskilling administrators, or enabling advanced platform usage, Achlys Solutions delivers training that drives confidence and adoption."
+      content="Whether you are onboarding new users, upskilling administrators, or enabling advanced platform usage, Wired Brains delivers training that drives confidence and adoption."
     />
   )
 }

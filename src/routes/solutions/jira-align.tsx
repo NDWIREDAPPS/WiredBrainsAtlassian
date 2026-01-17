@@ -14,7 +14,7 @@ import { Target, GitBranch, Eye, AlertTriangle, Layers } from 'lucide-react'
 export const Route = createFileRoute('/solutions/jira-align')({
   head: () => ({
     meta: [
-      { title: 'Jira Align Enterprise Agility | Achlys Solutions' },
+      { title: 'Jira Align Enterprise Agility | Wired Brains' },
       {
         name: 'description',
         content:
@@ -22,7 +22,7 @@ export const Route = createFileRoute('/solutions/jira-align')({
       },
       {
         property: 'og:title',
-        content: 'Jira Align Enterprise Agility | Achlys Solutions',
+        content: 'Jira Align Enterprise Agility | Wired Brains',
       },
       {
         property: 'og:description',
@@ -59,7 +59,7 @@ function HeroSection() {
       title="Jira Align"
       highlightedTitle="(Enterprise Agility)"
       tagline="Connect Strategy to Execution with Enterprise Agility"
-      description="Achlys Solutions helps organizations implement Jira Align to bridge the gap between business strategy and team-level execution."
+      description="Wired Brains helps organizations implement Jira Align to bridge the gap between business strategy and team-level execution."
       secondaryDescription="Jira Align enables leadership, portfolio managers and delivery teams to operate on a single source of truth-providing visibility from strategic objectives and investments down to programs, teams and work items. Our approach ensures Jira Align is not just deployed, but adopted as a strategic operating model."
     />
   )
@@ -210,7 +210,7 @@ function WhyAchlysSection() {
   return (
     <TwoColumnSection
       heading="Our Enterprise Agility Advantage"
-      subheading="Why Achlys Solutions for Jira Align"
+      subheading="Why Wired Brains for Jira Align"
       content="We help organizations move beyond tools-toward true enterprise agility."
       items={[
         "Deep understanding of Atlassian's strategy-to-execution model",
@@ -228,7 +228,7 @@ function CTASection() {
   return (
     <SolutionCTA
       heading="Bring Strategy and Execution Together"
-      content="Whether you're starting your enterprise agility journey or scaling Jira Align across portfolios, Achlys Solutions helps you connect strategy to execution with confidence and clarity."
+      content="Whether you're starting your enterprise agility journey or scaling Jira Align across portfolios, Wired Brains helps you connect strategy to execution with confidence and clarity."
     />
   )
 }
