@@ -25,7 +25,7 @@ export function AboutFinalCTA() {
               size="lg"
               className="h-12 bg-primary text-white rounded-xl px-6 text-base font-medium shadow-lg shadow-[#f14a15]/30 hover:bg-primary/90 hover:scale-105 active:scale-95"
             >
-              <a href="#contact-section">
+              <a href="/contact-us">
                 Contact Us
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>

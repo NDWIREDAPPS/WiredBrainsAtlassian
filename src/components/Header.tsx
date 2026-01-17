@@ -214,8 +214,7 @@ export default function Header() {
             </button>
 
             <Link
-              to="/about-us"
-              hash="contact-section"
+              to="/contact-us"
               className="hidden md:inline-flex h-9 items-center justify-center rounded-lg bg-primary px-6 text-sm font-semibold text-white shadow-md shadow-[#f14a15]/30 transition-colors hover:bg-primary/90"
             >
               Book Consultation
@@ -316,8 +315,7 @@ export default function Header() {
                     {/* Mobile CTA */}
                     <div className="mt-4 w-full">
                       <Link
-                        to="/about-us"
-                        hash="contact-section"
+                        to="/contact-us"
                         onClick={handleLinkClick}
                         className="flex w-full h-14 items-center justify-center rounded-2xl bg-primary text-lg font-semibold text-white transition-all hover:bg-primary/90"
                       >

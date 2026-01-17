@@ -189,7 +189,7 @@ function AtlassianServicesBlog() {
             <p className="text-muted-foreground text-sm leading-relaxed mb-8">
               Ready to turn your Atlassian tools into a high-performance engine?
             </p>
-            <Link to="/about-us" hash="contact-section">
+            <Link to="/contact-us">
               <button className="w-full py-3 bg-primary text-white rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-lg shadow-[#f14a15]/20 text-sm cursor-pointer">
                 Book Consultation <ArrowRight className="w-4 h-4" />
               </button>

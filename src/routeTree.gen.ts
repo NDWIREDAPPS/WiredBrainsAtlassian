@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactUsIndexRouteImport } from './routes/contact-us/index'
 import { Route as BlogsIndexRouteImport } from './routes/blogs/index'
 import { Route as AboutUsIndexRouteImport } from './routes/about-us/index'
 import { Route as SolutionsTrainingRouteImport } from './routes/solutions/training'
@@ -33,6 +34,11 @@ import { Route as BlogsAtlassianForgeFutureRouteImport } from './routes/blogs/at
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactUsIndexRoute = ContactUsIndexRouteImport.update({
+  id: '/contact-us/',
+  path: '/contact-us/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogsIndexRoute = BlogsIndexRouteImport.update({
@@ -159,6 +165,7 @@ export interface FileRoutesByFullPath {
   '/solutions/training': typeof SolutionsTrainingRoute
   '/about-us': typeof AboutUsIndexRoute
   '/blogs': typeof BlogsIndexRoute
+  '/contact-us': typeof ContactUsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -181,6 +188,7 @@ export interface FileRoutesByTo {
   '/solutions/training': typeof SolutionsTrainingRoute
   '/about-us': typeof AboutUsIndexRoute
   '/blogs': typeof BlogsIndexRoute
+  '/contact-us': typeof ContactUsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -204,6 +212,7 @@ export interface FileRoutesById {
   '/solutions/training': typeof SolutionsTrainingRoute
   '/about-us/': typeof AboutUsIndexRoute
   '/blogs/': typeof BlogsIndexRoute
+  '/contact-us/': typeof ContactUsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -228,6 +237,7 @@ export interface FileRouteTypes {
     | '/solutions/training'
     | '/about-us'
     | '/blogs'
+    | '/contact-us'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -250,6 +260,7 @@ export interface FileRouteTypes {
     | '/solutions/training'
     | '/about-us'
     | '/blogs'
+    | '/contact-us'
   id:
     | '__root__'
     | '/'
@@ -272,6 +283,7 @@ export interface FileRouteTypes {
     | '/solutions/training'
     | '/about-us/'
     | '/blogs/'
+    | '/contact-us/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -295,6 +307,7 @@ export interface RootRouteChildren {
   SolutionsTrainingRoute: typeof SolutionsTrainingRoute
   AboutUsIndexRoute: typeof AboutUsIndexRoute
   BlogsIndexRoute: typeof BlogsIndexRoute
+  ContactUsIndexRoute: typeof ContactUsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -304,6 +317,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact-us/': {
+      id: '/contact-us/'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blogs/': {
@@ -463,6 +483,7 @@ const rootRouteChildren: RootRouteChildren = {
   SolutionsTrainingRoute: SolutionsTrainingRoute,
   AboutUsIndexRoute: AboutUsIndexRoute,
   BlogsIndexRoute: BlogsIndexRoute,
+  ContactUsIndexRoute: ContactUsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

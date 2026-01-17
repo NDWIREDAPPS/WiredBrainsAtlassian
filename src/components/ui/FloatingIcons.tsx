@@ -255,7 +255,7 @@ export function FloatingIcons({ className, speed = 1 }: FloatingIconsProps) {
           }}
         >
           <div
-            className="w-full h-full bg-card/60 backdrop-blur-md rounded-4xl shadow-lg border border-border/60 p-3 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+            className="w-full h-full bg-card/70 backdrop-blur-md rounded-4xl shadow-lg shadow-[#f14a15]/20 border border-[#f14a15]/30 p-3 flex items-center justify-center hover:scale-110 transition-transform duration-300"
             style={{
               animation: `zoom-pulse ${3 + ((index * 0.5) % 4)}s ease-in-out infinite`,
               animationDelay: `${index * 0.7}s`,

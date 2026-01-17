@@ -2,29 +2,6 @@ import { Link } from '@tanstack/react-router'
 import { MapPin, Mail, Phone } from 'lucide-react'
 import { atlassianSolutions } from '@/lib/data'
 
-const socialLinks = [
-  {
-    href: 'https://www.facebook.com/AchlysSolutions/',
-    label: 'Facebook',
-    icon: 'https://cdn.brandfetch.io/idpKX136kp/w/2084/h/2084/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1758525490502',
-  },
-  {
-    href: 'https://x.com/AchlysSolutions/',
-    label: 'X (Twitter)',
-    icon: 'https://cdn.brandfetch.io/idS5WhqBbM/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1692089092800',
-  },
-  {
-    href: 'https://in.linkedin.com/company/achlyssolutions',
-    label: 'LinkedIn',
-    icon: 'https://cdn.brandfetch.io/idJFz6sAsl/theme/dark/idtEseDv1X.svg?c=1bxid64Mup7aczewSAYMX&t=1740370996685',
-  },
-  {
-    href: 'https://www.instagram.com/AchlysSolutions/',
-    label: 'Instagram',
-    icon: 'https://cdn.brandfetch.io/ido5G85nya/theme/light/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1724650641154',
-  },
-]
-
 export default function Footer() {
   return (
     <footer className="w-full bg-[#f14a15]/10 border-t border-border pt-16 pb-8 text-muted-foreground">
@@ -37,30 +14,36 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
                 <p className="leading-relaxed">
-                  Whitefield Building, Near ITBP Camp,
+                  33 S Wood Ave #600
                   <br />
-                  Ring Road, Kanke, Ranchi - 834006
-                  <br />
-                  India
+                  Iselin, NJ 08830
                 </p>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
                 <a
-                  href="mailto:info@achlys-solutions.com"
+                  href="mailto:hello@wiredbrains.io"
                   className="hover:text-primary transition-colors"
                 >
-                  info@achlys-solutions.com
+                  hello@wiredbrains.io
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
                 <a
-                  href="tel:+917204015914"
+                  href="tel:+19084936720"
                   className="hover:text-primary transition-colors"
                 >
-                  +91 720-401-5914
+                  (908) 493-6720
                 </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Link
+                  to="/contact-us"
+                  className="text-sm font-medium hover:text-primary transition-colors"
+                >
+                  Contact Us
+                </Link>
               </div>
             </div>
           </div>
@@ -82,29 +65,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Stay Connected */}
           <div className="space-y-6">
-            <h3 className="text-lg font-bold text-foreground">
-              Stay Connected
-            </h3>
-            <div className="flex gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-[#f14a15]/10 hover:border-[#f14a15]/50 transition-all duration-300"
-                >
-                  <img
-                    src={social.icon}
-                    alt={social.label}
-                    className="w-5 h-5 object-contain"
-                  />
-                </a>
-              ))}
-            </div>
+            <img
+              src="/Wb.jpg"
+              alt="Wired Brains"
+              className="h-12 md:h-16 w-auto"
+            />
+            <img
+              src="/Partners.png"
+              alt="Partners"
+              className="h-10 w-auto dark:hidden"
+            />
+            <img
+              src="/PartnersW.png"
+              alt="Partners"
+              className="h-10 w-auto hidden dark:block"
+            />
           </div>
         </div>
 

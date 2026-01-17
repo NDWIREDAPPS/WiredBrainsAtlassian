@@ -146,7 +146,7 @@ function JiraAlignBlog() {
               both executive vision and team reality.
             </p>
           </div>
-          <Link to="/about-us" hash="contact-section">
+          <Link to="/contact-us">
             <button className="px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-[#f14a15]/20 flex items-center gap-2 cursor-pointer text-sm">
               Talk to Experts <ArrowRight className="w-5 h-5" />
             </button>
