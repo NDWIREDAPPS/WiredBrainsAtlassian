@@ -29,7 +29,7 @@ export const BlogLayout = ({
         <div className="absolute inset-0 flex items-end">
           <div className="max-w-4xl mx-auto px-6 pb-16 w-full relative z-10">
             <div className="mb-6 inline-flex items-center gap-3">
-              <span className="px-4 py-1.5 bg-primary text-background text-xs font-semibold rounded-full shadow-lg shadow-[#f14a15]/20 uppercase tracking-wider">
+              <span className="px-4 py-1.5 bg-primary text-white text-xs font-semibold rounded-full shadow-lg shadow-[#f14a15]/20 uppercase tracking-wider">
                 Insights
               </span>
               <span className="text-muted-foreground font-medium text-sm">

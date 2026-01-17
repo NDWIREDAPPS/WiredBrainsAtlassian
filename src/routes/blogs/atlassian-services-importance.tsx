@@ -99,8 +99,8 @@ function AtlassianServicesBlog() {
                 key={i}
                 className="group hover:bg-primary p-8 rounded-3xl transition-all duration-300 border border-border hover:border-primary"
               >
-                <benefit.icon className="w-10 h-10 text-primary group-hover:text-background mb-6 transition-colors" />
-                <h4 className="text-xl font-semibold text-foreground group-hover:text-background mb-3 transition-colors">
+                <benefit.icon className="w-10 h-10 text-primary group-hover:text-white mb-6 transition-colors" />
+                <h4 className="text-xl font-semibold text-foreground group-hover:text-white mb-3 transition-colors">
                   {benefit.title}
                 </h4>
                 <p className="text-muted-foreground group-hover:text-[#f14a15]/20 transition-colors uppercase tracking-wider text-xs font-semibold">
@@ -190,7 +190,7 @@ function AtlassianServicesBlog() {
               Ready to turn your Atlassian tools into a high-performance engine?
             </p>
             <Link to="/about-us" hash="contact-section">
-              <button className="w-full py-3 bg-primary text-background rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-lg shadow-[#f14a15]/20 text-sm cursor-pointer">
+              <button className="w-full py-3 bg-primary text-white rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-lg shadow-[#f14a15]/20 text-sm cursor-pointer">
                 Book Consultation <ArrowRight className="w-4 h-4" />
               </button>
             </Link>

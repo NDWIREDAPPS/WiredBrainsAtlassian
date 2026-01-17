@@ -70,7 +70,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="dark bg-background relative overflow-x-hidden">
+      <body className="bg-background relative overflow-x-hidden">
         <BackgroundShapes />
         <Header />
         <main className="pt-28 min-h-screen">{children}</main>

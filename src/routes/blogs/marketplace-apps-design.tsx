@@ -126,7 +126,7 @@ function MarketplaceAppsBlog() {
             </p>
           </div>
           <Link to="/" hash="marketplace-apps">
-            <button className="px-6 py-3 bg-primary text-background font-semibold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-[#f14a15]/20 cursor-pointer text-sm">
+            <button className="px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-[#f14a15]/20 cursor-pointer text-sm">
               View Marketplace
             </button>
           </Link>

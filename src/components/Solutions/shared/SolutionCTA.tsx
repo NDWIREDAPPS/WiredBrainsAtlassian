@@ -34,7 +34,7 @@ export function SolutionCTA({
           <Button
             asChild
             size="lg"
-            className="h-12 bg-card text-primary border border-[#f14a15]/30 rounded-xl px-8 text-base font-medium shadow-lg shadow-[#f14a15]/20 hover:bg-[#f14a15]/10 hover:border-[#f14a15]/50 hover:scale-105 active:scale-95 transition-all"
+            className="h-12 bg-primary text-white rounded-xl px-8 text-base font-medium shadow-lg shadow-[#f14a15]/30 hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all"
           >
             <Link to={primaryButtonHref}>
               {primaryButtonText}
@@ -44,7 +44,7 @@ export function SolutionCTA({
           <Button
             asChild
             size="lg"
-            className="h-12 bg-card text-primary border border-[#f14a15]/30 rounded-xl px-8 text-base font-medium shadow-lg shadow-[#f14a15]/20 hover:bg-[#f14a15]/10 hover:border-[#f14a15]/50 hover:scale-105 active:scale-95 transition-all"
+            className="h-12 bg-primary text-white rounded-xl px-8 text-base font-medium shadow-lg shadow-[#f14a15]/30 hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all"
           >
             <a href={secondaryButtonHref}>{secondaryButtonText}</a>
           </Button>

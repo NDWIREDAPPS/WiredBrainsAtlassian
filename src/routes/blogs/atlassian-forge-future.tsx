@@ -175,7 +175,7 @@ function AtlassianForgeBlog() {
           </div>
           <div className="flex gap-4">
             <Link to="/" hash="marketplace-apps">
-              <button className="px-5 py-2.5 bg-primary text-background font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-lg shadow-[#f14a15]/20 flex items-center gap-2 cursor-pointer text-sm">
+              <button className="px-5 py-2.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-lg shadow-[#f14a15]/20 flex items-center gap-2 cursor-pointer text-sm">
                 Explore Apps <ArrowRight className="w-4 h-4" />
               </button>
             </Link>

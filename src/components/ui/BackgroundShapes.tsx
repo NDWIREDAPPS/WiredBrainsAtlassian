@@ -9,13 +9,13 @@ export function BackgroundShapes({ className }: { className?: string }) {
       )}
     >
       <div className="absolute top-0 right-0 translate-x-1/4 -translate-y-1/4">
-        <div className="w-[600px] h-[600px] rounded-full bg-[#f14a15]/15 opacity-60 animate-pulse" />
+        <div className="w-[600px] h-[600px] rounded-full bg-[#f14a15]/18 dark:bg-[#f14a15]/28 opacity-70 animate-pulse" />
       </div>
       <div className="absolute bottom-0 right-10 translate-x-1/3 translate-y-1/4">
-        <div className="w-[500px] h-[500px] rounded-full bg-[#010101]/10 opacity-50" />
+        <div className="w-[500px] h-[500px] rounded-full bg-[#2b1a14]/14 dark:bg-[#f14a15]/16 opacity-55" />
       </div>
       <div className="absolute top-1/2 right-[-5%] -translate-y-1/2">
-        <div className="w-[300px] h-[300px] rounded-full bg-[#010101]/10 opacity-40" />
+        <div className="w-[300px] h-[300px] rounded-full bg-[#2b1a14]/12 dark:bg-[#f14a15]/14 opacity-45" />
       </div>
     </div>
   )

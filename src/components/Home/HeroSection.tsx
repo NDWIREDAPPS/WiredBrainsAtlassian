@@ -7,8 +7,8 @@ export function HeroSection() {
   return (
     <div className="relative overflow-hidden w-full pb-20 pt-10 md:pt-20 px-5">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col items-center sm:items-start space-y-8 animate-in fade-in slide-in-from-left-10 duration-700">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:min-h-[calc(100vh-140px)]">
+          <div className="flex flex-col items-center sm:items-start space-y-8 animate-in fade-in slide-in-from-left-10 duration-700 lg:-translate-y-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground drop-shadow-sm text-center sm:text-left">
               Atlassian Consulting &{' '}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-[#f14a15] to-foreground">
@@ -34,22 +34,21 @@ export function HeroSection() {
               <Button
                 asChild
                 size="lg"
-                className="h-12 bg-card text-primary rounded-xl px-6 text-base font-medium shadow-lg shadow-[#f14a15]/20 hover:bg-[#f14a15]/10 hover:scale-105 active:scale-95"
+                className="h-12 bg-primary text-white rounded-xl px-6 text-base font-medium shadow-lg shadow-[#f14a15]/30 hover:bg-primary/90 hover:scale-105 active:scale-95"
               >
                 <a href="#solutions">Explore Atlassian Solutions</a>
               </Button>
               <Button
                 asChild
                 size="lg"
-                className="h-12 bg-card text-primary rounded-xl px-6 text-base font-medium shadow-lg shadow-[#f14a15]/20 hover:bg-[#f14a15]/10 hover:scale-105 active:scale-95"
+                className="h-12 bg-primary text-white rounded-xl px-6 text-base font-medium shadow-lg shadow-[#f14a15]/30 hover:bg-primary/90 hover:scale-105 active:scale-95"
               >
                 <a href="#marketplace-apps">View Marketplace Apps</a>
               </Button>
               <Button
                 asChild
-                variant="outline"
                 size="lg"
-                className="h-12 bg-card text-primary rounded-xl px-6 text-base font-medium shadow-lg shadow-[#f14a15]/20 hover:bg-[#f14a15]/10 hover:scale-105 active:scale-95"
+                className="h-12 bg-primary text-white rounded-xl px-6 text-base font-medium shadow-lg shadow-[#f14a15]/40 hover:bg-primary/90 hover:scale-105 active:scale-95"
               >
                 <Link to="/about-us" hash="contact-section">
                   Contact Us

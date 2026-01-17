@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link, useLocation } from '@tanstack/react-router'
-import { Menu, X } from 'lucide-react'
+import { Menu, Moon, Sun, X } from 'lucide-react'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -29,7 +29,33 @@ export default function Header() {
   const isOnSolutionsPage = location.pathname.startsWith('/solutions/')
   const isOnMarketplacePage = location.pathname.startsWith('/marketplace-apps/')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const [theme, setTheme] = React.useState<'light' | 'dark'>('light')
   const mobileMenuRef = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const storedTheme = localStorage.getItem('theme')
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches
+    const initialTheme =
+      storedTheme === 'dark' || storedTheme === 'light'
+        ? storedTheme
+        : prefersDark
+          ? 'dark'
+          : 'light'
+
+    setTheme(initialTheme)
+    document.documentElement.classList.toggle('dark', initialTheme === 'dark')
+  }, [])
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+    localStorage.setItem('theme', theme)
+  }, [theme])
 
   // Close mobile menu when clicking outside
   React.useEffect(() => {
@@ -58,7 +84,7 @@ export default function Header() {
 
   return (
     <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
-      <header className="w-full max-w-7xl border bg-card/95 backdrop-blur-sm rounded-xl px-4 md:px-6 shadow-sm relative">
+      <header className="dark w-full max-w-7xl border border-border bg-card/95 backdrop-blur-sm rounded-xl px-4 md:px-6 shadow-sm relative">
         <div className="flex h-16 items-center justify-between gap-4">
           <div className="flex items-center shrink-0">
             <Link to="/" className="flex items-center shrink-0">
@@ -80,7 +106,7 @@ export default function Header() {
                       asChild
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        'bg-transparent text-md',
+                        'bg-transparent text-md text-foreground/90 hover:text-primary',
                       )}
                     >
                       <Link
@@ -88,6 +114,7 @@ export default function Header() {
                         activeProps={{
                           className: 'text-primary font-semibold',
                         }}
+                        className="text-foreground/90 hover:text-primary"
                       >
                         {item.title}
                       </Link>
@@ -98,7 +125,7 @@ export default function Header() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
                     className={cn(
-                      'bg-transparent text-md',
+                      'bg-transparent text-md text-foreground/90 hover:text-primary',
                       isOnSolutionsPage && 'text-primary font-semibold',
                     )}
                   >
@@ -122,7 +149,7 @@ export default function Header() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
                     className={cn(
-                      'bg-transparent text-md',
+                      'bg-transparent text-md text-foreground/90 hover:text-primary',
                       isOnMarketplacePage && 'text-primary font-semibold',
                     )}
                   >
@@ -149,7 +176,7 @@ export default function Header() {
                       asChild
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        'bg-transparent text-md',
+                        'bg-transparent text-md text-foreground/90 hover:text-primary',
                       )}
                     >
                       <Link
@@ -157,6 +184,7 @@ export default function Header() {
                         activeProps={{
                           className: 'text-primary font-semibold',
                         }}
+                        className="text-foreground/90 hover:text-primary"
                       >
                         {item.title}
                       </Link>
@@ -168,10 +196,27 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-2 md:gap-4 shrink-0">
+            <button
+              type="button"
+              onClick={() =>
+                setTheme((prevTheme) =>
+                  prevTheme === 'dark' ? 'light' : 'dark',
+                )
+              }
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20"
+              aria-label="Toggle color mode"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
+            </button>
+
             <Link
               to="/about-us"
               hash="contact-section"
-              className="hidden md:inline-flex h-9 items-center justify-center rounded-lg bg-primary px-6 text-sm font-semibold text-background transition-colors hover:bg-primary/90"
+              className="hidden md:inline-flex h-9 items-center justify-center rounded-lg bg-primary px-6 text-sm font-semibold text-white shadow-md shadow-[#f14a15]/30 transition-colors hover:bg-primary/90"
             >
               Book Consultation
             </Link>
@@ -274,7 +319,7 @@ export default function Header() {
                         to="/about-us"
                         hash="contact-section"
                         onClick={handleLinkClick}
-                        className="flex w-full h-14 items-center justify-center rounded-2xl bg-primary text-lg font-semibold text-background transition-all hover:bg-primary/90"
+                        className="flex w-full h-14 items-center justify-center rounded-2xl bg-primary text-lg font-semibold text-white transition-all hover:bg-primary/90"
                       >
                         Book Consultation
                       </Link>

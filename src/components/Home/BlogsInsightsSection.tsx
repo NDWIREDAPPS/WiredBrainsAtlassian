@@ -36,7 +36,7 @@ export function BlogsInsightsSection() {
                 className="inline-flex items-center text-lg font-semibold text-foreground hover:text-primary transition-colors group"
               >
                 Read Our Blog
-                <span className="ml-2 bg-[#f14a15]/15 p-1 rounded-full group-hover:bg-primary group-hover:text-background transition-all">
+                <span className="ml-2 bg-[#f14a15]/15 p-1 rounded-full group-hover:bg-primary group-hover:text-white transition-all">
                   <ArrowRight className="h-4 w-4" />
                 </span>
               </Link>

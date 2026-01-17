@@ -23,7 +23,7 @@ export function AboutFinalCTA() {
             <Button
               asChild
               size="lg"
-              className="h-12 bg-card text-primary rounded-xl px-6 text-base font-medium shadow-lg shadow-[#f14a15]/20 hover:bg-[#f14a15]/10 hover:scale-105 active:scale-95"
+              className="h-12 bg-primary text-white rounded-xl px-6 text-base font-medium shadow-lg shadow-[#f14a15]/30 hover:bg-primary/90 hover:scale-105 active:scale-95"
             >
               <a href="#contact-section">
                 Contact Us
@@ -33,7 +33,7 @@ export function AboutFinalCTA() {
             <Button
               asChild
               size="lg"
-              className="h-12 bg-card text-primary rounded-xl px-6 text-base font-medium shadow-lg shadow-[#f14a15]/20 hover:bg-[#f14a15]/10 hover:scale-105 active:scale-95"
+              className="h-12 bg-primary text-white rounded-xl px-6 text-base font-medium shadow-lg shadow-[#f14a15]/30 hover:bg-primary/90 hover:scale-105 active:scale-95"
             >
               <a href="#marketplace-apps">Explore Our Apps</a>
             </Button>

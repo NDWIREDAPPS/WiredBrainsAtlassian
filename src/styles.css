@@ -17,39 +17,39 @@ code {
 }
 
 :root {
-  --background: #010101;
-  --foreground: #ffffff;
-  --card: #1b1b1b;
-  --card-foreground: #ffffff;
-  --popover: #1b1b1b;
-  --popover-foreground: #ffffff;
+  --background: #f4f1ef;
+  --foreground: #101010;
+  --card: #fdf8f6;
+  --card-foreground: #101010;
+  --popover: #ffffff;
+  --popover-foreground: #101010;
   --primary: #f14a15;
   --primary-foreground: #ffffff;
-  --secondary: #1b1b1b;
-  --secondary-foreground: #ffffff;
-  --muted: #1b1b1b;
-  --muted-foreground: #bfbfbf;
-  --accent: #1b1b1b;
-  --accent-foreground: #ffffff;
+  --secondary: #ede4df;
+  --secondary-foreground: #101010;
+  --muted: #ede4df;
+  --muted-foreground: #3f3f3f;
+  --accent: #f3eae5;
+  --accent-foreground: #101010;
   --destructive: #c9360f;
   --destructive-foreground: #ffffff;
-  --border: color-mix(in srgb, #f14a15 35%, #010101);
-  --input: color-mix(in srgb, #f14a15 35%, #010101);
-  --ring: color-mix(in srgb, #f14a15 55%, #010101);
+  --border: #dccfc9;
+  --input: #dccfc9;
+  --ring: color-mix(in srgb, #f14a15 55%, #ffffff);
   --chart-1: #f14a15;
-  --chart-2: #ffffff;
-  --chart-3: #bfbfbf;
+  --chart-2: #101010;
+  --chart-3: #3f3f3f;
   --chart-4: #f47d59;
   --chart-5: #f6a089;
   --radius: 0.625rem;
-  --sidebar: #010101;
-  --sidebar-foreground: #ffffff;
+  --sidebar: #f7f1ee;
+  --sidebar-foreground: #101010;
   --sidebar-primary: #f14a15;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1b1b1b;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: color-mix(in srgb, #f14a15 35%, #010101);
-  --sidebar-ring: color-mix(in srgb, #f14a15 55%, #010101);
+  --sidebar-accent: #ede4df;
+  --sidebar-accent-foreground: #101010;
+  --sidebar-border: #dccfc9;
+  --sidebar-ring: color-mix(in srgb, #f14a15 55%, #ffffff);
 }
 
 .dark {
@@ -64,7 +64,7 @@ code {
   --secondary: #1b1b1b;
   --secondary-foreground: #ffffff;
   --muted: #1b1b1b;
-  --muted-foreground: #bfbfbf;
+  --muted-foreground: #e2e2e2;
   --accent: #1b1b1b;
   --accent-foreground: #ffffff;
   --destructive: #c9360f;

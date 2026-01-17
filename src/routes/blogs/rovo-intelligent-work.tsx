@@ -177,7 +177,7 @@ function RovoBlog() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="whitespace-nowrap px-6 py-3 bg-primary text-background font-semibold rounded-xl hover:bg-primary/90 transition-all flex items-center gap-2 shadow-lg shadow-[#f14a15]/20 text-sm cursor-pointer">
+            <button className="whitespace-nowrap px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-all flex items-center gap-2 shadow-lg shadow-[#f14a15]/20 text-sm cursor-pointer">
               Start Your AI Journey <ArrowRight className="w-5 h-5" />
             </button>
           </a>
