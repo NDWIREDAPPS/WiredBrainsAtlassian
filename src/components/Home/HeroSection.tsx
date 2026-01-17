@@ -1,7 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { ArrowRight } from 'lucide-react'
 import { ClusteredBackGroundShapes } from '../ui/ClusteredBackGroundShapes'
-import { FloatingIcons } from '../ui/FloatingIcons'
 import { Button } from '../ui/button'
 
 export function HeroSection() {
@@ -62,10 +61,6 @@ export function HeroSection() {
 
           <div className="relative hidden lg:block h-[500px] w-full">
             <ClusteredBackGroundShapes className="absolute inset-0 w-full h-full" />
-            <FloatingIcons
-              className="absolute inset-0 w-full h-full z-10"
-              speed={0.5}
-            />
           </div>
         </div>
       </div>
