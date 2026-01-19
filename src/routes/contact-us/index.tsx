@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { Calendar, Mail, MapPin, Phone, Send } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { submitContactLead } from '@/server/contact'
 
 export const Route = createFileRoute('/contact-us/')({
   head: () => ({
@@ -25,6 +27,54 @@ export const Route = createFileRoute('/contact-us/')({
 })
 
 function ContactUsPage() {
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [organization, setOrganization] = useState('')
+  const [phone, setPhone] = useState('')
+  const [message, setMessage] = useState('')
+  const [consent, setConsent] = useState(false)
+  const [website, setWebsite] = useState('')
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [successMessage, setSuccessMessage] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setError(null)
+    setIsLoading(true)
+
+    try {
+      const response = await submitContactLead({
+        data: {
+          name: fullName,
+          email,
+          organization: organization || undefined,
+          phone: phone || undefined,
+          message,
+          consent,
+          website,
+        },
+      })
+      setSuccessMessage(response.message)
+      setIsSubmitted(true)
+      setFullName('')
+      setEmail('')
+      setOrganization('')
+      setPhone('')
+      setMessage('')
+      setConsent(false)
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Something went wrong. Please try again.',
+      )
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <section className="container mx-auto px-4 md:px-10 py-20">
       <div className="max-w-6xl mx-auto">
@@ -43,62 +93,120 @@ function ContactUsPage() {
             <h2 className="text-2xl font-semibold text-foreground">
               Send Us a Message
             </h2>
-            <form className="space-y-5">
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground">
-                  Full Name <span className="text-primary">*</span>
-                </label>
-                <Input
-                  placeholder="John Smith"
-                  className="h-12 bg-transparent text-foreground"
-                />
+            {isSubmitted ? (
+              <div className="rounded-2xl border border-[#f14a15]/30 bg-[#f14a15]/10 p-6 text-center text-primary font-medium">
+                {successMessage}
               </div>
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground">
-                  Email Address <span className="text-primary">*</span>
-                </label>
-                <Input
-                  type="email"
-                  placeholder="john@company.com"
-                  className="h-12 bg-transparent text-foreground"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground">
-                  Practice/Organization
-                </label>
-                <Input
-                  placeholder="Your Practice Name"
-                  className="h-12 bg-transparent text-foreground"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground">
-                  Phone Number
-                </label>
-                <Input
-                  placeholder="(555) 123-4567"
-                  className="h-12 bg-transparent text-foreground"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground">
-                  Message <span className="text-primary">*</span>
-                </label>
-                <Textarea
-                  rows={5}
-                  placeholder="Tell us about your Atlassian needs..."
-                  className="bg-transparent text-foreground"
-                />
-              </div>
-              <Button
-                type="button"
-                className="w-full h-12 bg-primary text-white rounded-xl text-base font-semibold shadow-lg shadow-[#f14a15]/30 hover:bg-primary/90"
-              >
-                Send Message
-                <Send className="h-4 w-4" />
-              </Button>
-            </form>
+            ) : (
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                {error && (
+                  <div className="rounded-2xl border border-[#f14a15]/30 bg-[#f14a15]/10 p-4 text-sm font-medium text-primary">
+                    {error}
+                  </div>
+                )}
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground">
+                    Full Name <span className="text-primary">*</span>
+                  </label>
+                  <Input
+                    placeholder="John Smith"
+                    value={fullName}
+                    onChange={(event) => setFullName(event.target.value)}
+                    required
+                    disabled={isLoading}
+                    className="h-12 bg-transparent text-foreground"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground">
+                    Email Address <span className="text-primary">*</span>
+                  </label>
+                  <Input
+                    type="email"
+                    placeholder="john@company.com"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    required
+                    disabled={isLoading}
+                    className="h-12 bg-transparent text-foreground"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground">
+                    Practice/Organization
+                  </label>
+                  <Input
+                    placeholder="Your Practice Name"
+                    value={organization}
+                    onChange={(event) => setOrganization(event.target.value)}
+                    disabled={isLoading}
+                    className="h-12 bg-transparent text-foreground"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground">
+                    Phone Number
+                  </label>
+                  <Input
+                    placeholder="(555) 123-4567"
+                    value={phone}
+                    onChange={(event) => setPhone(event.target.value)}
+                    disabled={isLoading}
+                    className="h-12 bg-transparent text-foreground"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground">
+                    Message <span className="text-primary">*</span>
+                  </label>
+                  <Textarea
+                    rows={5}
+                    placeholder="Tell us about your Atlassian needs..."
+                    value={message}
+                    onChange={(event) => setMessage(event.target.value)}
+                    required
+                    disabled={isLoading}
+                    className="bg-transparent text-foreground"
+                  />
+                </div>
+                <div className="flex items-start gap-3 rounded-2xl border border-border bg-[#f14a15]/10 p-4">
+                  <input
+                    id="contact-consent"
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(event) => setConsent(event.target.checked)}
+                    required
+                    disabled={isLoading}
+                    className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary"
+                  />
+                  <label
+                    htmlFor="contact-consent"
+                    className="text-sm text-muted-foreground"
+                  >
+                    I agree to be contacted by Wired Brains regarding my
+                    request.
+                  </label>
+                </div>
+                <div className="absolute -left-[9999px]" aria-hidden="true">
+                  <Input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={website}
+                    onChange={(event) => setWebsite(event.target.value)}
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  className="w-full h-12 bg-primary text-white rounded-xl text-base font-semibold shadow-lg shadow-[#f14a15]/30 hover:bg-primary/90"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Submitting...' : 'Send Message'}
+                  <Send className="h-4 w-4" />
+                </Button>
+              </form>
+            )}
           </div>
 
           <div className="space-y-6">
