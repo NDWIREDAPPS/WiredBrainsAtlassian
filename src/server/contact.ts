@@ -33,6 +33,13 @@ function getGhlConfig() {
   const apiKey = process.env.GHL_API_KEY
   const locationId = process.env.GHL_LOCATION_ID
 
+  console.warn('[GHL CONFIG]', {
+    hasApiKey: Boolean(apiKey),
+    apiKeyLength: apiKey?.length ?? 0,
+    hasLocationId: Boolean(locationId),
+    locationId,
+  })
+
   if (!apiKey || !locationId) {
     throw new Error(
       'Missing GoHighLevel configuration. Please set GHL_API_KEY and GHL_LOCATION_ID.',
