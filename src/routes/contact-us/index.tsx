@@ -133,10 +133,10 @@ function ContactUsPage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-foreground">
-                    Practice/Organization
+                    Company
                   </label>
                   <Input
-                    placeholder="Your Practice Name"
+                    placeholder="Your Company Name"
                     value={organization}
                     onChange={(event) => setOrganization(event.target.value)}
                     disabled={isLoading}
