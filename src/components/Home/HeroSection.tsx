@@ -57,6 +57,23 @@ export function HeroSection() {
                 </Link>
               </Button>
             </div>
+            <div className="pt-3 flex flex-col items-center sm:items-start gap-3">
+              <span className="text-xs uppercase tracking-widest text-muted-foreground">
+                Atlassian Partner
+              </span>
+              <div className="flex items-center gap-4">
+                <img
+                  src="/Partners.png"
+                  alt="Atlassian Partners"
+                  className="h-8 w-auto dark:hidden"
+                />
+                <img
+                  src="/PartnersW.png"
+                  alt="Atlassian Partners"
+                  className="h-8 w-auto hidden dark:block"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="relative hidden lg:block h-[500px] w-full">

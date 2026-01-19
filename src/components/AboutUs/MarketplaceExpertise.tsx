@@ -26,6 +26,23 @@ export function MarketplaceExpertise() {
               Atlassian Forge, ensuring the highest standards of security and
               performance.
             </p>
+            <div className="flex flex-col items-center md:items-start gap-3 pt-2">
+              <span className="text-xs uppercase tracking-widest text-muted-foreground">
+                Atlassian Partner
+              </span>
+              <div className="flex items-center gap-4">
+                <img
+                  src="/Partners.png"
+                  alt="Atlassian Partners"
+                  className="h-8 w-auto dark:hidden"
+                />
+                <img
+                  src="/PartnersW.png"
+                  alt="Atlassian Partners"
+                  className="h-8 w-auto hidden dark:block"
+                />
+              </div>
+            </div>
           </div>
 
           <div className="flex-1">

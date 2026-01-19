@@ -1,139 +1,66 @@
-import { useState } from 'react'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import {
-  Mail,
-  ArrowRight,
-  CheckCircle2,
-  AlertCircle,
-  Loader2,
-} from 'lucide-react'
-import { submitContactLead } from '@/server/contact'
+import { Award, Sparkles } from 'lucide-react'
 
 export function ContactSection() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [website, setWebsite] = useState('') // Honeypot field
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [success, setSuccess] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError(null)
-    setIsLoading(true)
-
-    try {
-      const res = await submitContactLead({ data: { name, email, website } })
-      setSuccess(res.message)
-      setIsSubmitted(true)
-      setName('')
-      setEmail('')
-    } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : 'Something went wrong. Please try again.',
-      )
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
   return (
     <section id="contact-section" className="container mx-auto px-4 md:px-10">
-      <div className="rounded-3xl bg-[#f14a15]/10 border border-[#f14a15]/20 p-8 md:p-12 lg:p-16">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-          {/* Left Side - Contact Info */}
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-[#f14a15]/30 mb-6">
-              <Mail className="w-4 h-4 text-primary" />
+      <div className="relative overflow-hidden rounded-3xl bg-card border border-[#f14a15]/20 p-8 md:p-12 lg:p-16 shadow-xl">
+        <div className="absolute -top-20 -right-24 h-56 w-56 rounded-full bg-[#f14a15]/20 blur-3xl" />
+        <div className="absolute -bottom-24 left-10 h-56 w-56 rounded-full bg-[#f14a15]/15 blur-3xl" />
+
+        <div className="relative flex flex-col lg:flex-row items-center gap-10">
+          <div className="flex-1 space-y-6 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f14a15]/15 border border-[#f14a15]/30">
+              <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">
-                Stay Connected
+                Atlassian Solutions Partner
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Get in Touch
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
+              Trusted Atlassian Solutions Partner
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Drop your details and we'll reach out to discuss how we can help
-              transform your business.
+              Wired Brains is recognized for delivering secure, scalable
+              Atlassian solutions. Our partnership reflects deep platform
+              expertise and a commitment to building outcomes teams can rely on.
             </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              {[
+                'Certified delivery experts',
+                'Marketplace-first engineering',
+                'Enterprise-ready rollouts',
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-[#f14a15]/20 bg-[#f14a15]/10 p-4 text-sm font-medium text-foreground"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Right Side - Email Input */}
-          <div className="flex-1 w-full max-w-md">
-            {isSubmitted ? (
-              <div className="flex items-center justify-center gap-3 p-6 rounded-2xl bg-[#f14a15]/10 border border-[#f14a15]/20">
-                <CheckCircle2 className="w-6 h-6 text-primary" />
-                <span className="text-lg font-medium text-primary">
-                  {success}
-                </span>
+          <div className="flex-1 flex flex-col items-center gap-6">
+            <div className="text-center">
+              <p className="text-sm uppercase tracking-widest text-muted-foreground">
+                Atlassian Partner
+              </p>
+              <div className="mt-4 flex items-center justify-center">
+                <img
+                  src="/Partners.png"
+                  alt="Atlassian Partners"
+                  className="h-16 md:h-20 w-auto dark:hidden"
+                />
+                <img
+                  src="/PartnersW.png"
+                  alt="Atlassian Partners"
+                  className="h-16 md:h-20 w-auto hidden dark:block"
+                />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {error && (
-                  <div className="flex items-center gap-3 p-4 rounded-xl bg-[#f14a15]/10 border border-[#f14a15]/30">
-                    <AlertCircle className="w-5 h-5 text-primary shrink-0" />
-                    <span className="text-sm font-medium text-primary">
-                      {error}
-                    </span>
-                  </div>
-                )}
-                <div className="relative">
-                  <Input
-                    type="text"
-                    placeholder="Enter your name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    disabled={isLoading}
-                    className="h-14 pl-5 pr-4 text-base bg-card border border-input text-foreground placeholder:text-muted-foreground rounded-xl focus-visible:border-primary focus-visible:ring-primary/30 disabled:opacity-50"
-                  />
-                </div>
-                <div className="relative">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    disabled={isLoading}
-                    className="h-14 pl-5 pr-4 text-base bg-card border border-input text-foreground placeholder:text-muted-foreground rounded-xl focus-visible:border-primary focus-visible:ring-primary/30 disabled:opacity-50"
-                  />
-                </div>
-                {/* Honeypot field - hidden from humans, bots will fill it */}
-                <div className="absolute -left-[9999px]" aria-hidden="true">
-                  <Input
-                    type="text"
-                    name="website"
-                    tabIndex={-1}
-                    autoComplete="off"
-                    value={website}
-                    onChange={(e) => setWebsite(e.target.value)}
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isLoading}
-                  className="w-full h-14 bg-foreground hover:bg-foreground/90 text-background rounded-xl text-lg font-medium group disabled:opacity-70"
-                >
-                  {isLoading ? (
-                    <>
-                      <Loader2 className="mr-2 w-5 h-5 animate-spin" />
-                      Submitting...
-                    </>
-                  ) : (
-                    <>
-                      Connect
-                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </>
-                  )}
-                </Button>
-              </form>
-            )}
+            </div>
+            <div className="flex items-center gap-3 rounded-full border border-[#f14a15]/30 bg-[#f14a15]/15 px-5 py-2 text-sm text-foreground">
+              <Award className="h-4 w-4 text-primary" />
+              Atlassian-first delivery, guided by best practices.
+            </div>
           </div>
         </div>
       </div>
