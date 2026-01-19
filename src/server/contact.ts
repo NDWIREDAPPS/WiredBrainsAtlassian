@@ -84,6 +84,38 @@ async function fetchContactByEmail({
   return match?.id ?? null
 }
 
+async function fetchContactByPhone({
+  apiKey,
+  locationId,
+  phone,
+}: {
+  apiKey: string
+  locationId: string
+  phone: string
+}) {
+  const url = new URL(`${GHL_BASE_URL}/contacts/`)
+  url.searchParams.set('locationId', locationId)
+  url.searchParams.set('query', phone)
+
+  const response = await fetch(url.toString(), {
+    method: 'GET',
+    headers: buildHeaders(apiKey),
+  })
+
+  if (!response.ok) {
+    const errorBody = await response.text()
+    throw new Error(`Failed to search GoHighLevel contacts: ${errorBody}`)
+  }
+
+  const payload = (await response.json()) as {
+    contacts?: Array<{ id: string; phone?: string }>
+  }
+
+  const contacts = payload.contacts ?? []
+  const match = contacts.find((contact) => contact.phone === phone)
+  return match?.id ?? null
+}
+
 async function upsertContact({
   apiKey,
   locationId,
@@ -111,29 +143,6 @@ async function upsertContact({
   if (!response.ok) {
     const errorBody = await response.text()
     throw new Error(`Failed to submit to GoHighLevel: ${errorBody}`)
-  }
-
-  return response.json()
-}
-
-async function addContactNote({
-  apiKey,
-  contactId,
-  note,
-}: {
-  apiKey: string
-  contactId: string
-  note: string
-}) {
-  const response = await fetch(`${GHL_BASE_URL}/contacts/${contactId}/notes`, {
-    method: 'POST',
-    headers: buildHeaders(apiKey),
-    body: JSON.stringify({ body: note }),
-  })
-
-  if (!response.ok) {
-    const errorBody = await response.text()
-    throw new Error(`Failed to add GoHighLevel note: ${errorBody}`)
   }
 
   return response.json()
@@ -180,35 +189,45 @@ export const submitContactLead = createServerFn({ method: 'POST' })
         email: data.email,
       })
 
+      const phoneContactId =
+        !existingContactId && data.phone
+          ? await fetchContactByPhone({
+              apiKey,
+              locationId,
+              phone: data.phone,
+            })
+          : null
+
       const payload = {
         name: data.name,
         email: data.email,
         phone: data.phone ?? undefined,
         companyName: data.organization ?? undefined,
+        source: 'Atlassian Page',
         tags: CONTACT_TAGS,
+        customFields: [
+          {
+            id: 'lVjSpLMAxZmeoeA9RbMo',
+            value: data.message,
+          },
+        ],
       }
 
       const upsertResponse = await upsertContact({
         apiKey,
         locationId,
-        contactId: existingContactId,
+        contactId: existingContactId ?? phoneContactId,
         body: payload,
       })
 
       const resolvedContactId = resolveContactId({
-        existingId: existingContactId,
+        existingId: existingContactId ?? phoneContactId,
         response: upsertResponse,
       })
 
       if (!resolvedContactId) {
         throw new Error('Failed to resolve GoHighLevel contact ID.')
       }
-
-      await addContactNote({
-        apiKey,
-        contactId: resolvedContactId,
-        note: data.message,
-      })
 
       return {
         success: true,
