@@ -98,7 +98,7 @@ export const marketplaceApps = [
   },
 ]
 
-export const mainNavItems = []
+export const mainNavItems: Array<{ title: string; href: string }> = []
 
 export const footerNavItems = [
   { title: 'About Us', href: '/about-us' },

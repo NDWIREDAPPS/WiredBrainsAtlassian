@@ -37,14 +37,6 @@ export default function Footer() {
                   (908) 493-6720
                 </a>
               </div>
-              <div className="flex items-center gap-3">
-                <Link
-                  to="/contact-us"
-                  className="text-sm font-medium hover:text-primary transition-colors"
-                >
-                  Contact Us
-                </Link>
-              </div>
             </div>
           </div>
 

@@ -243,7 +243,7 @@ export default function Header() {
                         key={item.title}
                         to={item.href}
                         onClick={handleLinkClick}
-                        className="w-full py-4 text-center text-xl font-semibold rounded-xl hover:bg-[#f14a15]/10 hover:text-primary transition-all active:scale-95"
+                        className="w-full py-4 text-center text-xl font-semibold text-white rounded-xl hover:bg-[#f14a15]/10 hover:text-primary transition-all active:scale-95"
                         activeProps={{
                           className: 'bg-[#f14a15]/15 text-primary',
                         }}
@@ -254,7 +254,7 @@ export default function Header() {
 
                     <Accordion type="single" collapsible className="w-full">
                       <AccordionItem value="solutions" className="border-none">
-                        <AccordionTrigger className="text-xl font-semibold hover:no-underline py-4 flex justify-center gap-2 rounded-xl hover:bg-[#f14a15]/10 hover:text-primary transition-all data-[state=open]:text-primary">
+                        <AccordionTrigger className="text-xl font-semibold text-white hover:no-underline py-4 flex justify-center gap-2 rounded-xl hover:bg-[#f14a15]/10 hover:text-primary transition-all data-[state=open]:text-primary">
                           Atlassian Solutions
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-1 pb-2">
@@ -263,7 +263,7 @@ export default function Header() {
                               key={item.title}
                               to={item.href}
                               onClick={handleLinkClick}
-                              className="w-full py-3 text-center text-base font-medium text-muted-foreground rounded-lg hover:bg-[#f14a15]/10 hover:text-primary transition-all"
+                              className="w-full py-3 text-center text-base font-medium text-white/80 rounded-lg hover:bg-[#f14a15]/10 hover:text-primary transition-all"
                               activeProps={{
                                 className:
                                   'bg-[#f14a15]/15 text-primary font-semibold',
@@ -276,7 +276,7 @@ export default function Header() {
                       </AccordionItem>
 
                       <AccordionItem value="apps" className="border-none mt-1">
-                        <AccordionTrigger className="text-xl font-semibold hover:no-underline py-4 flex justify-center gap-2 rounded-xl hover:bg-[#f14a15]/10 hover:text-primary transition-all data-[state=open]:text-primary">
+                        <AccordionTrigger className="text-xl font-semibold text-white hover:no-underline py-4 flex justify-center gap-2 rounded-xl hover:bg-[#f14a15]/10 hover:text-primary transition-all data-[state=open]:text-primary">
                           Marketplace Apps
                         </AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-1 pb-2">
@@ -285,7 +285,7 @@ export default function Header() {
                               key={item.title}
                               to={item.href}
                               onClick={handleLinkClick}
-                              className="w-full py-3 text-center text-base font-medium text-muted-foreground rounded-lg hover:bg-[#f14a15]/10 hover:text-primary transition-all"
+                              className="w-full py-3 text-center text-base font-medium text-white/80 rounded-lg hover:bg-[#f14a15]/10 hover:text-primary transition-all"
                               activeProps={{
                                 className:
                                   'bg-[#f14a15]/15 text-primary font-semibold',
@@ -303,7 +303,7 @@ export default function Header() {
                         key={item.title}
                         to={item.href}
                         onClick={handleLinkClick}
-                        className="w-full py-4 text-center text-xl font-semibold rounded-xl hover:bg-[#f14a15]/10 hover:text-primary transition-all active:scale-95"
+                        className="w-full py-4 text-center text-xl font-semibold text-white rounded-xl hover:bg-[#f14a15]/10 hover:text-primary transition-all active:scale-95"
                         activeProps={{
                           className: 'bg-[#f14a15]/15 text-primary',
                         }}

@@ -47,7 +47,7 @@ export function EnterpriseAgileSection() {
         </div>
 
         {/* Mobile Connector */}
-        <div className="flex md:hidden items-center justify-center py-2">
+        <div className="flex md:hidden items-center justify-center my-6">
           <div className="h-1 w-24 bg-gradient-to-r from-[#f14a15] via-[#010101] to-[#f14a15] rounded-full relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-gradient-to-br from-[#f14a15] to-[#010101] shadow-lg flex items-center justify-center">
               <div className="w-2 h-2 rounded-full bg-white/90" />
