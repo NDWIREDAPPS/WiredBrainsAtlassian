@@ -10,7 +10,7 @@ const expertiseItems = [
 
 export function ExpertiseSection() {
   return (
-    <section className="scroll-mt-24 container mx-auto px-4 md:px-10">
+    <section className="scroll-mt-24 container mx-auto px-4 md:px-10 pt-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-foreground">

@@ -6,7 +6,7 @@ import { Button } from '../ui/button'
 
 export function HeroSection() {
   return (
-    <div className="relative overflow-hidden w-full pb-20 pt-10 md:pt-20 px-5">
+    <div className="relative overflow-hidden w-full pb-12 pt-10 md:pt-16 px-5">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:min-h-[calc(100vh-140px)]">
           <div className="flex flex-col items-center sm:items-start space-y-8 animate-in fade-in slide-in-from-left-10 duration-700 lg:-translate-y-16">
