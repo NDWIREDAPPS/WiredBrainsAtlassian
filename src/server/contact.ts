@@ -1,7 +1,7 @@
 import { createServerFn } from '@tanstack/react-start'
 import { getRequestHeader } from '@tanstack/react-start/server'
 import { contactLeadSchema } from '@/lib/validations/contact'
-import { checkRateLimit, CONTACT_FORM_RATE_LIMIT } from '@/lib/rate-limit'
+import { CONTACT_FORM_RATE_LIMIT, checkRateLimit } from '@/lib/rate-limit'
 
 const GHL_BASE_URL = 'https://services.leadconnectorhq.com'
 const GHL_API_VERSION = '2021-07-28'
@@ -177,11 +177,18 @@ function resolveContactId({
 export const submitContactLead = createServerFn({ method: 'POST' })
   .inputValidator(contactLeadSchema)
   .handler(async ({ data }) => {
+    console.log(
+      '[SUBMIT_CONTACT_LEAD] Starting submission for email:',
+      data.email,
+    )
+
     // Rate limiting check
     const clientIP = getClientIP()
+    console.log('[SUBMIT_CONTACT_LEAD] Client IP:', clientIP)
     const rateLimitResult = checkRateLimit(clientIP, CONTACT_FORM_RATE_LIMIT)
 
     if (!rateLimitResult.allowed) {
+      console.log('[SUBMIT_CONTACT_LEAD] Rate limit exceeded for IP:', clientIP)
       throw new Error(
         `Too many submissions. Please try again in ${rateLimitResult.resetInSeconds} seconds.`,
       )
@@ -189,12 +196,20 @@ export const submitContactLead = createServerFn({ method: 'POST' })
 
     try {
       const { apiKey, locationId } = getGhlConfig()
+      console.log(
+        '[SUBMIT_CONTACT_LEAD] Config loaded, locationId:',
+        locationId,
+      )
 
       const existingContactId = await fetchContactByEmail({
         apiKey,
         locationId,
         email: data.email,
       })
+      console.log(
+        '[SUBMIT_CONTACT_LEAD] Existing contact ID by email:',
+        existingContactId,
+      )
 
       const phoneContactId =
         !existingContactId && data.phone
@@ -204,6 +219,7 @@ export const submitContactLead = createServerFn({ method: 'POST' })
               phone: data.phone,
             })
           : null
+      console.log('[SUBMIT_CONTACT_LEAD] Contact ID by phone:', phoneContactId)
 
       const payload = {
         name: data.name,
@@ -219,6 +235,11 @@ export const submitContactLead = createServerFn({ method: 'POST' })
           },
         ],
       }
+      console.log('[SUBMIT_CONTACT_LEAD] Payload prepared:', {
+        name: payload.name,
+        email: payload.email,
+        phone: payload.phone,
+      })
 
       const upsertResponse = await upsertContact({
         apiKey,
@@ -226,22 +247,29 @@ export const submitContactLead = createServerFn({ method: 'POST' })
         contactId: existingContactId ?? phoneContactId,
         body: payload,
       })
+      console.log('[SUBMIT_CONTACT_LEAD] Upsert response:', upsertResponse)
 
       const resolvedContactId = resolveContactId({
         existingId: existingContactId ?? phoneContactId,
         response: upsertResponse,
       })
+      console.log(
+        '[SUBMIT_CONTACT_LEAD] Resolved contact ID:',
+        resolvedContactId,
+      )
 
       if (!resolvedContactId) {
+        console.log('[SUBMIT_CONTACT_LEAD] Failed to resolve contact ID')
         throw new Error('Failed to resolve GoHighLevel contact ID.')
       }
 
+      console.log('[SUBMIT_CONTACT_LEAD] Submission successful')
       return {
         success: true,
         message: 'Thank you for reaching out! We will contact you soon.',
       }
     } catch (error) {
-      console.error('Failed to submit contact lead:', error)
+      console.error('[SUBMIT_CONTACT_LEAD] Error:', error)
       throw new Error('Failed to submit your request. Please try again later.')
     }
   })
