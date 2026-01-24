@@ -34,6 +34,7 @@ function ContactUsPage() {
   const [message, setMessage] = useState('')
   const [consent, setConsent] = useState(false)
   const [website, setWebsite] = useState('')
+  const [formStartedAt] = useState(() => Date.now())
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [successMessage, setSuccessMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -54,6 +55,7 @@ function ContactUsPage() {
           message,
           consent,
           website,
+          formStartedAt,
         },
       })
       setSuccessMessage(response.message)

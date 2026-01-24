@@ -1,11 +1,18 @@
 import { createServerFn } from '@tanstack/react-start'
 import { getRequestHeader } from '@tanstack/react-start/server'
 import { contactLeadSchema } from '@/lib/validations/contact'
-import { CONTACT_FORM_RATE_LIMIT, checkRateLimit } from '@/lib/rate-limit'
+import {
+  CONTACT_FORM_EMAIL_RATE_LIMIT,
+  CONTACT_FORM_RATE_LIMIT,
+  checkRateLimit,
+} from '@/lib/rate-limit'
 
 const GHL_BASE_URL = 'https://services.leadconnectorhq.com'
 const GHL_API_VERSION = '2021-07-28'
 const CONTACT_TAGS = ['atlassian lead']
+const SPAM_MESSAGE =
+  'Spam detected. Please use a real email address and try again.'
+const MIN_FORM_FILL_TIME_MS = 3000
 
 /**
  * Get client IP from request headers
@@ -192,6 +199,27 @@ export const submitContactLead = createServerFn({ method: 'POST' })
       throw new Error(
         `Too many submissions. Please try again in ${rateLimitResult.resetInSeconds} seconds.`,
       )
+    }
+
+    const emailRateLimitResult = checkRateLimit(
+      `email:${data.email}`,
+      CONTACT_FORM_EMAIL_RATE_LIMIT,
+    )
+    if (!emailRateLimitResult.allowed) {
+      console.log(
+        '[SUBMIT_CONTACT_LEAD] Rate limit exceeded for email:',
+        data.email,
+      )
+      throw new Error(SPAM_MESSAGE)
+    }
+
+    const formFillTime = Date.now() - data.formStartedAt
+    if (Number.isFinite(formFillTime) && formFillTime < MIN_FORM_FILL_TIME_MS) {
+      console.log(
+        '[SUBMIT_CONTACT_LEAD] Submission too fast (ms):',
+        formFillTime,
+      )
+      throw new Error(SPAM_MESSAGE)
     }
 
     try {
